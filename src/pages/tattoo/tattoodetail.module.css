@@ -8,6 +8,7 @@
     background-color: var(--gray-light-150);
     padding: 20px 0 30px 0;
     align-items: flex-start;
+    position: relative;
 }
 
 .search_profile_pic {
@@ -104,6 +105,7 @@
     float: left;
     width: 100%;
     margin: 25px 0px 26px 0px;
+    position: relative;
 }
 
 .product_media {
@@ -475,21 +477,18 @@ ul.download_app li.download_app_title h6 {
     width: 100%;
     margin-top: 11px;
 }
-
-
-
-
+.back_arrow {
+    display: none;
+}
 @media screen and (max-width: 380px) {
     .search_profile_pic {
         margin-right: 10px;
     }
-
     .search_profile_link .profile_getin {
         padding: 6px 10px;
         min-width: 100px;
     }
 }
-
 @media screen and (max-width: 767.98px) {
     .search_profile_block {
         background: var(--white);
@@ -499,48 +498,39 @@ ul.download_app li.download_app_title h6 {
         padding-bottom: 16px;
         border: 0;
     }
-
     .search_profile {
         flex-flow: column;
         align-items: flex-start;
     }
-
     .search_profile_pic {
         width: 88px;
         height: 88px;
     }
-
     .search_profile_content {
         margin-bottom: 0;
     }
-
     .search_profile_pic img {
         width: 88px;
         height: 88px;
     }
-
     .search_profile_name {
         font-size: 18px;
         font-weight: 500;
     }
-
     .search_profile_details {
         font-size: 14px;
         font-weight: 400;
         line-height: 21px;
     }
-
     .search_profile_link {
         margin-top: 8px;
         grid-gap: 16px;
     }
-
     .search_profile_link .profile_bookmark img,
     .search_profile_link .profile_share img {
         width: 16px;
         height: 16px;
     }
-
     .search_profile_details {
         display: inline-block;
     }
@@ -621,10 +611,6 @@ ul.download_app li.download_app_title h6 {
         width: calc(100% + 30px);
     }
 }
-
-
-
-
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
     .profile_getin {
         padding: 6px 15px;
@@ -639,10 +625,33 @@ ul.download_app li.download_app_title h6 {
         grid-gap: 13px;
     }
 }
-
-
-@media screen and (max-width: 461px) {   
+@media screen and (max-width: 461px) {
     .grid_wrapper_tattoo {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+    .back_arrow {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 36px;
+        height: 36px;
+    }
+    .back_arrow img {
+        width: 36px;
+        height: 36px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .back_arrow {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: -94px;
+        width: 44px;
+        height: 44px;
     }
 }

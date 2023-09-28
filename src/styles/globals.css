@@ -2649,9 +2649,6 @@ form.form_floating .form_group.radio_block>label {
   padding-top: 20px;
   color: #212121;
 }
-.back_arrow {
-  display: none;
-}
 /* siddique styles ------   12 sep */
 /* .swiper-slide {
   background-color: transparent;
@@ -4490,16 +4487,7 @@ top: -1px;
   }
   section.progress_block {
     max-width: 540px;
-  }
-
-  .back_arrow {
-    display: inline-block;
-    position: absolute;
-    top: 28%;
-    left: 5vw;
-    width: 44px;
-    height: 44px;
-  }
+  }  
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
