@@ -61,7 +61,8 @@ export default function All({ data }) {
                       ? item._source.style._source.name
                       : item._source.slug
                   }
-                
+
+
                   placeholder="blur"
                   blurDataURL={blurDataURL}
                 />

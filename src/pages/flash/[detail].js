@@ -99,11 +99,14 @@ export default function Detail({ data, status }) {
           </div>
 
           <div className={styles.product_detail_wrap}>
-            <Link  href={`/search?term=${""}&category=${"flash"}`} className={styles.back_arrow}>
+            <Link
+              href={`/search?term=${""}&category=${"flash"}`}
+              className={styles.back_arrow}
+            >
               <Image
-                src={'/back-arrow.svg'}
+                src={"/back-arrow.svg"}
                 alt="backArrow"
-                width={44} 
+                width={44}
                 height={44}
                 priority
               />
@@ -207,7 +210,7 @@ export default function Detail({ data, status }) {
                             src="/location-small.svg"
                             alt="Berlin, Germany"
                           />
-                          {el.city} {el.country}
+                          {el.city}, {el.country}
                         </span>
                       );
                     })}
@@ -216,42 +219,41 @@ export default function Detail({ data, status }) {
 
               <div className={styles.product_price_block}>
                 <div className={styles.product_price_wrap}>
-                {data.tattoo.max_price !== null || data.tattoo.min_price !== null ? (
-  <div>
-    {data.tattoo.min_price !== null && (
-      <span>
-        <span className={styles.product_price_label}>
-          Fixed price
-        </span>
+                  {data.tattoo.max_price !== null ||
+                  data.tattoo.min_price !== null ? (
+                    <div>
+                      {data.tattoo.min_price !== null && (
+                        <span>
+                          <span className={styles.product_price_label}>
+                            {data.tattoo.max_price !== null
+                              ? "Flexible price"
+                              : "Fixed Price"}
+                          </span>
 
-        <span className={styles.product_price_value}>
-          {data.currency.code} {data.tattoo.min_price} 
-        </span>
-      </span>
-    )}
+                          <span className={styles.product_price_value}>
+                            {data.currency.code} {data.tattoo.min_price}
+                          </span>
+                        </span>
+                      )}
 
-    {(data.tattoo.max_price !== null && data.tattoo.min_price !== null) && (
-      <span className={styles.product_price_to}>to</span>
-    )}
+                      {data.tattoo.max_price !== null &&
+                        data.tattoo.min_price !== null && (
+                          <span className={styles.product_price_to}>to</span>
+                        )}
 
-    {data.tattoo.max_price !== null && (
-      <span className={styles.product_price_value}>
-        {data.currency.code} {data.tattoo.max_price}
-      </span>
-    )}
-  </div>
-) : (
-  <div>
-    <span className={styles.product_price_label}>
-      This Flash doesn&apos;t have a price
-    </span>
-  </div>
-)}
-
-
-
-
-
+                      {data.tattoo.max_price !== null && (
+                        <span className={styles.product_price_value}>
+                          {data.currency.code} {data.tattoo.max_price}
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <div>
+                      <span className={styles.product_price_label}>
+                        This Flash doesn&apos;t have a price
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
               <ul className={styles.download_app}>
@@ -289,7 +291,6 @@ export default function Detail({ data, status }) {
                     priority
                     src={item.image_medium}
                     layout="fill"
-                    objectFit="cover"
                     placeholder="blur"
                     blurDataURL={blurDataURL}
                   />

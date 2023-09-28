@@ -23,7 +23,7 @@ const Flash = ({ data }) => {
                 priority
                 src={item.image}
                 layout="fill"
-                objectFit="cover"
+               
                 placeholder="blur"
                 blurDataURL={blurDataURL}
               />

@@ -211,7 +211,7 @@ export default function Detail({ data, status }) {
                             src="/location-small.svg"
                             alt="Berlin, Germany"
                           />
-                          {el.city} {el.country}
+                          {el.city}, {el.country}
                         </span>
                       );
                     })}
@@ -267,7 +267,7 @@ export default function Detail({ data, status }) {
                     priority
                     src={item.image_medium}
                     layout="fill"
-                    objectFit="cover"
+             
                     placeholder="blur"
                     blurDataURL={blurDataURL}
                   />
