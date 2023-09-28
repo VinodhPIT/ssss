@@ -99,7 +99,7 @@ export default function Detail({ data, status }) {
           </div>
 
           <div className={styles.product_detail_wrap}>
-            <Link  href={`/search?term=${""}&category=${"artist"}`} className={styles.back_arrow}>
+            <Link  href={`/search?term=${""}&category=${"flash"}`} className={styles.back_arrow}>
               <Image
                 src={'/back-arrow.svg'}
                 alt="backArrow"

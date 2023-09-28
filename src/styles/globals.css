@@ -3121,13 +3121,7 @@ display: none;
   background: #eee;border-radius: 5px;
 }
 
-ul > :first-child {
-  border-radius: 5px 5px 0px 0px;
-}
 
-ul > :last-child {
-  border-radius: 0px 0px 5px 5px;
-}
 
 li {
   list-style-type: none;
