@@ -218,7 +218,6 @@
 
 	.banner_caption h1 {
 		font-size: 60px;
-		font-weight: 700;
 		line-height: 100%;
 		letter-spacing: -2.4px;
 	}
@@ -284,12 +283,20 @@
 		display: none;
 	}
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {	
+	.banner_caption h1 {
+		font-size: 80px;
+	}
+}
 @media screen and (min-width: 768px) and (max-width: 1300px) {
 	.banner_content {
 		max-width: 760px;
-	}
+	}	
+}
 
+@media screen and (min-width: 1200px) {	
 	.banner_caption h1 {
-		font-size: 82px;
+		font-size: 90px;
+		line-height: 90px;
 	}
 }

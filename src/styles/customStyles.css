@@ -1,0 +1,69 @@
+@media screen and (min-width: 768px) and (max-width: 1199px) { 
+  .text_box_wrap.app_download_box_wrap .text_box_content .dictionary_explore ul.download_app .download_app_title h6 {
+    font-size: 55px;
+    line-height: 55px;
+  }
+  .text_box_wrap.app_download_box_wrap .text_box_content .dictionary_explore ul.download_app .download_app_title p {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .full-block-wrap .img_text_box_inner .text_box_content_inner h3 {
+    font-size: 50px;
+    line-height: 50px;
+  } 
+}
+
+@media screen and (min-width: 1200px) {
+  .text_box_wrap .img_text_box_inner .text_box_content h2 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  .box_text_img_over h2 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .text_box_wrap .img_text_box_inner .text_box_content p {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .box_text_img_over h2 .small {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .text_box_find_tattoo .find_tattoo_wrap .find_tattoo_left h3 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .search_form {
+    max-width: 600px;
+  }
+
+  .text_box_wrap.app_download_box_wrap .img_text_box_inner ul.download_app li.download_app_title h6 {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .text_box_wrap.app_download_box_wrap .text_box_content .dictionary_explore ul.download_app .download_app_title h6 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .text_box_wrap.app_download_box_wrap .text_box_content .dictionary_explore ul.download_app .download_app_title p {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  ul.custom-listing.how_work_list li {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .full-block-wrap .img_text_box_inner .text_box_content_inner h3 {
+    font-size: 50px;
+    line-height: 50px;
+  } 
+
+}

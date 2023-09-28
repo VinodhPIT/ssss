@@ -185,7 +185,6 @@
 
 	.banner_content_wrap_klarna .banner_caption h1 {
 		font-size: 60px;
-		font-weight: 700;
 		line-height: 100%;
 		letter-spacing: -2.4px;
 		text-align: center;
@@ -223,14 +222,26 @@
 		max-width: 80%;
 	}
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {	
+	.banner_caption h1 {
+		font-size: 80px;
+	}
+	.banner_caption p {	
+		font-size: 22px;
+		line-height: 32px;
+	}
+}
 @media screen and (min-width: 1200px) {	
 	.banner_content {
 		padding-left: 10.0694444444vw;
     	padding-right: 9.375vw;
 	}
-}
-@media screen and (min-width: 768px) and (max-width: 1300px) {	
 	.banner_caption h1 {
-		font-size: 82px;
+		font-size: 90px;
+		line-height: 90px;
+	}
+	.banner_caption p {	
+		font-size: 22px;
+		line-height: 32px;
 	}
 }

@@ -4608,10 +4608,10 @@ li {
   }  
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .text_box_wrap .img_text_box_inner .text_box_content h2 {
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 50px;
+    line-height: 50px;
   }
 
   .text_box_wrap .img_text_box_inner .text_box_content p {
@@ -4620,8 +4620,8 @@ li {
   }
 
   .box_text_img_over h2 {
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 50px;
+    line-height: 50px;
   }
 
   .box_text_img_over h2 .small {

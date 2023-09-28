@@ -156,11 +156,7 @@
 		max-width: 100%;
 		padding-left: 15px;
 		padding-right: 15px;
-	}
-
-	.home_banner_content_wrap {
-		/*margin-bottom: 40px;*/
-	}
+	}	
 
 	.home_banner_caption {
 		margin-bottom: 40px;
@@ -168,7 +164,6 @@
 
 	.home_banner_caption h1 {
 		font-size: 60px;
-		font-weight: 700;
 		line-height: 100%;
 		letter-spacing: -3.3px;
 	}
@@ -181,14 +176,16 @@
 		display: none!important
 	}
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {	
+	.home_banner_caption h1 {
+		font-size: 80px;
+	}
+}
+
 @media screen and (min-width: 768px) and (max-width: 1300px) {
 	.home_banner_content {
 		max-width: 760px;
-	}
-
-	.home_banner_caption h1 {
-		font-size: 82px;
-	}
+	}	
 }
 
 @media screen and (max-width:1199px) {
@@ -196,4 +193,10 @@
 		margin-top:0px;	
 	}
 }
-	
+
+@media screen and (min-width: 1200px) {	
+	.home_banner_caption h1 {
+		font-size: 90px;
+		line-height: 90px;
+	}
+}
