@@ -32,7 +32,7 @@ export default function Tattooartists() {
                     </span>
                   </h1>
                   <p>
-                  Grow your tattoo business by fulfilling your customers' tattoo vision and offering them flexible payment options.
+                  Grow your tattoo business by fulfilling your customers&apos; tattoo vision and offering them flexible payment options.
                   </p>
                 </div>
                 <ul className={styles.download_app}>
