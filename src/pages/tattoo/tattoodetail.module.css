@@ -605,10 +605,15 @@ ul.download_app li.download_app_title h6 {
         line-height: 27px;
     }
 
+    .galleryWrapper {       
+        margin-top: 0;
+    }
+
     .grid_wrapper_tattoo {
         margin-right: -15px;
         margin-left: -15px;
         width: calc(100% + 30px);
+        margin-top: 0;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 991.98px) {

@@ -121,10 +121,9 @@ const _Form = () => {
                         <Field
                           type="email"
                           name="email"
-                          placeholder=""
+                          placeholder="Enter email address"
                           className="form_control"
-                        />
-                        <label for="your e-mail">Enter email address</label>
+                        />                        
                         <ErrorMessage
                           name="email"
                           component="div"

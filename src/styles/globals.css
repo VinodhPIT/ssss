@@ -2169,6 +2169,21 @@ form.form_floating .form_group.radio_block>label {
   max-height: inherit;
   padding: 35px 32px;
 }
+.contact_form_block form.form_floating .form_group .form_control:focus,
+.contact_form_block form.form_floating .form_group .form_control:not(:placeholder-shown) {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.contact_form_block form.form_floating .form_group .form_control:focus,
+.contact_form_block form.form_floating .form_group .form_control:not(:placeholder-shown) {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.contact_form_block form.form_floating .form_group .form_control:-webkit-autofill {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 
 /* full banner custom slider */
 .full_banner_custom_slider {

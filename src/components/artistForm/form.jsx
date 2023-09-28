@@ -34,7 +34,7 @@ const router = useRouter()
     <div style={{ margin: "0 auto", padding: "0px" }}>
       {state.isShown === false ? (
         <div>
-        <h4>Enter detatils</h4>
+        <h4>Enter details</h4>
         <Formik
           initialValues={{
             name: "",
@@ -190,7 +190,7 @@ const router = useRouter()
                     disabled={isSubmitting}
                     style={{ opacity: isSubmitting ? 0.5 : 1 }}
                   >
-                    {isSubmitting ? "Submitting ...." : "submit"}
+                    {isSubmitting ? "Submitting ...." : "Submit"}
                   </button>
                 </div>
               </div>

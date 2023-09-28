@@ -277,11 +277,16 @@ export default function Home() {
                     <h2 class="letter_spacing_04 txt_mob_fs50">
                       Pay all at once? <br /> Never again!
                     </h2>
-                  </div>
+                  </div>                  
                   <img
                     src="./pexels-cottonbro-studio-5320148-6.png"
                     alt=""
-                    className="object_position_left"
+                    className="object_position_left mob_hidden"
+                  />
+                  <img
+                    src="./pexels-cottonbro-studio-5320148-6-mob.png"
+                    alt=""
+                    className="desk_hidden"
                   />
                 </div>
                 <div class="text_box_content justify_content_start">
@@ -317,7 +322,7 @@ export default function Home() {
                 <div className="img_text_box_inner">
                   <div className="text_box_content justify_content_start pl_0 pr_2_pc  m_pb_0">
                     <div className="text_box_content_inner m_pr_0">
-                      <h2 className="letter_spacing_05">Tattoo Dictonary</h2>
+                      <h2 className="letter_spacing_05">Tattoo Dictionary</h2>
                       <p>
                         We hand-pick every tattoo artist to ensure your tattoo
                         experience is handled with care, quality and

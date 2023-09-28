@@ -468,6 +468,13 @@
     line-height: 27px;
   }
 
+  .grid_wrapper_tattoo {
+    float: left;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: calc(100% + 30px);
+  }
+
 }
 
 @media screen and (max-width: 491px) {

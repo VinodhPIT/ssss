@@ -181,26 +181,28 @@ export default function Detail({ data }) {
             </div>
           </div>
 
-          <div className={style.tabSection}>
-            <ul>
-              {artistTab.map((tab) => (
-                <li
-                  key={tab.id}
-                  className={
-                    currenState === tab.id ? style.activeTab : style.inActivetab
-                  }
-                  onClick={() => changeTab(tab.id)}
-                >
-                  <div className={style.tabBox}>
-                    <img
-                      src={currenState === tab.id ? tab.activeImage : tab.image}
-                    />
+          <div className={style.tab_container}>
+            <div className={style.tabSection}>
+              <ul>
+                {artistTab.map((tab) => (
+                  <li
+                    key={tab.id}
+                    className={
+                      currenState === tab.id ? style.activeTab : style.inActivetab
+                    }
+                    onClick={() => changeTab(tab.id)}
+                  >
+                    <div className={style.tabBox}>
+                      <img
+                        src={currenState === tab.id ? tab.activeImage : tab.image}
+                      />
 
-                    <p style={{ margin: "0" }}>{tab.label}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                      <p style={{ margin: "0" }}>{tab.label}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {renderArtistGallery(

@@ -173,46 +173,25 @@ export default function StyleGuide() {
                 </div>
                 {!isMobileView ? (
                   <div class="img_box_wrap">
-                    <ul class="app_download_img_list mt_mb_6pc after_none">
+                    <ul class="app_download_img_list mt_mb_6pc after_none">                      
                       <li>
-                        <Image
-                          priority={true}
+                        <img
                           src="/Style-page.png"
-                          className=""
-                          width={221}
-                          height={447}
                           alt="Picture of the author"
-                          placeholder="blur"
-                          blurDataURL={blurDataURL}
-                          layout="responsive"
                         />
                       </li>
                       <li>
-                        <Image
-                          priority={true}
+                        <img
                           src="/Style-page.png"
-                          className=""
-                          width={221}
-                          height={447}
                           alt="Picture of the author"
-                          placeholder="blur"
-                          blurDataURL={blurDataURL}
-                          layout="responsive"
                         />
                       </li>
                       <li>
-                        <Image
-                          priority={true}
+                        <img
                           src="/Style-page.png"
-                          className=""
-                          width={221}
-                          height={447}
                           alt="Picture of the author"
-                          placeholder="blur"
-                          blurDataURL={blurDataURL}
-                          layout="responsive"
                         />
-                      </li>
+                      </li>                       
                     </ul>
                   </div>
                 ) : (
