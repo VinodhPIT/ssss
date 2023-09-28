@@ -1,11 +1,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import swiper from "swiper";
 import "swiper/swiper-bundle.min.css"; // Import the CSS file from your styles directory
 import SwiperCore, { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
-const images = ["./dragon.png", "./egyptian.jpeg", "./butterfly.jpeg"];
+const images = ["./dragon_swiper.svg","./mummy egypt.svg","./butterfly.svg"];
 const ImageSwiper = () => {
+  swiper.om;
   const params = {
     autoHeight: false,
 
@@ -13,15 +15,15 @@ const ImageSwiper = () => {
     preventInteractionOnTransition: true,
     grabCursor: true,
     centeredSlides: true,
-    intialSlide: 1,
+
     slidesPerView: 1.5,
     loop: true,
-    speed: 1000,
-    simulateTouch: false,
-
+    speed: 150,
+    grabCursor: false,
     effect: "coverflow",
+
     coverflowEffect: {
-      rotate: 0,
+      rotate: 1,
       depth: 200,
       slideShadows: false,
       modifier: 1,
@@ -33,6 +35,10 @@ const ImageSwiper = () => {
 
       clickable: true,
     },
+
+    noSwiping: true, // Disable swiping
+    noSwipingClass: "swiper-no-swiping",
+    simulateTouch: false,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
@@ -47,9 +53,13 @@ const ImageSwiper = () => {
   };
 
   return (
-    <Swiper {...params}>
+    <Swiper
+      {...params}
+      style={{ transform: `translateX(0)` }}
+      className="swiper-container"
+    >
       {images.map((image, index) => (
-        <SwiperSlide key={index} swiper-container>
+        <SwiperSlide key={index}>
           <div className="swiper-slide">
             <img src={image} alt="" />
           </div>
