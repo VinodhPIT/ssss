@@ -57,7 +57,7 @@ const Search = ({
   };
 
   const updateTab = (tab) => {
-    console.log('dd', tab)
+
     getUrl(searchKey, tab, selectedStyle, lat, lon, router);
   };
 

@@ -14,7 +14,7 @@ import Offer from "../adds/offer";
 
 export default function Tattoo({ data }) {
 
-  console.log(data ,"jcjdcdasc")
+
 
 
   const { state } = useGlobalState();

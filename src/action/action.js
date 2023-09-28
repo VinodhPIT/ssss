@@ -17,7 +17,7 @@ export const fetchCategoryData = async (params) => {
 
     }
    catch (error) {
-    console.log(error ,"Error")
+
    
     return [];
   }
@@ -112,7 +112,7 @@ try {
   };
   
 } catch (error) {
-  console.log(error ,"Error")
+
 
 }
 

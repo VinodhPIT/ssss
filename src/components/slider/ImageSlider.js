@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const ImageSlider = ({imgPath,imgAlt,imgblurDataURL,imgWidth,imgHeight}) => {
   const [isMobileView, setIsMobileView] = useState(false);
-console.log(imgPath,imgAlt,imgblurDataURL,imgWidth,imgHeight)
+
   useEffect(() => {
     // Check the window width and set isMobileView accordingly
     const handleResize = () => {
