@@ -104,7 +104,7 @@ export default function Klarna() {
                     </span>
                   </h1>
                   <p>
-                  Get tattoo now, pay later. That`&apos;s right, there `&apos;s a new way to get tattooed smoooth!
+                  Get tattoo now, pay later. That&apos;s right, there&apos;s a new way to get tattooed smoooth!
                   </p>
                 </div>
                 <ul className={styles.download_app}>
