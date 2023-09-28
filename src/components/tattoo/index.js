@@ -37,9 +37,12 @@ export default function Tattoo({ data }) {
                 <Image
                     priority={true}
                     src={item._source.image}
-                    layout="fill"
+                    // height={500}
+                    // width={200}
+                     fill
+          
                     alt={item._source.style._source.name}
-                    objectFit="cover"
+                 
                     placeholder="blur"
                     blurDataURL={blurDataURL}
                   />

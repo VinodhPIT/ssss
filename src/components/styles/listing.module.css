@@ -393,6 +393,7 @@
 .grid_wrapper_tattoo .listing_gridItem {
   position: relative;
   height: 230px;
+  overflow: hidden;
 }
 
 .blockCenter {

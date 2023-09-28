@@ -47,7 +47,7 @@ export default function Flash({ data }) {
                   src={item._source.image}
                   layout="fill"
                   alt={item._source.style._source.name}
-                  objectFit="cover"
+               
                   placeholder="blur"
                   blurDataURL={blurDataURL}
                 />

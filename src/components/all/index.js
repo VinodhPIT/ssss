@@ -55,13 +55,13 @@ export default function All({ data }) {
                       ? item._source.image
                       : item._source.image_url
                   }
-                  layout="fill"
+                  fill
                   alt={
                     item._index === "tattoo"
                       ? item._source.style._source.name
                       : item._source.slug
                   }
-                  objectFit="cover"
+                
                   placeholder="blur"
                   blurDataURL={blurDataURL}
                 />
