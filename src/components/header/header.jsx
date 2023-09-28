@@ -103,9 +103,9 @@ export default function Header() {
                       <Image
                         src={"/dropDown.svg"}
                         alt="langDropdown"
-                        width={17}
+                        width={15}
                         priority
-                        height={13}
+                        height={9}
                       />
                     </div>
                     <div class="lang-dropdown">
