@@ -129,7 +129,6 @@
     gap: 54px;
     display: flex;
     justify-content: center;
-
 }
 
 .tabSection ul>li {
@@ -163,6 +162,7 @@
     border: 0;
     padding: 10px 40px;
 }
+
 @media screen and (max-width: 640px) {
     .filter_container {
         display: flex;

@@ -14,7 +14,11 @@ export default function Tattooartists() {
               <div className={styles.banner_inner}>
                 <img
                   src="./istockphoto-1367127235-1024x1024-6-tatoo-banner.png"
-                  alt="Boost your business with inckd"
+                  alt="Boost your business with inckd" className="mob_hidden"
+                />
+                <img
+                  src="./istockphoto-1367127235-1024x1024 6-mob.png"
+                  alt="Boost your business with inckd" className="desk_hidden"
                 />
               </div>
             </div>
@@ -28,8 +32,7 @@ export default function Tattooartists() {
                     </span>
                   </h1>
                   <p>
-                    Grow your tattoo business by fulfilling your customers
-                    tattoo vision and offering them flexible payment options.
+                  Grow your tattoo business by fulfilling your customers' tattoo vision and offering them flexible payment options.
                   </p>
                 </div>
                 <ul className={styles.download_app}>

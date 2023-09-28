@@ -79,7 +79,7 @@ export default function Dictionary() {
                 <div className="img_text_box_inner">
                   <div className="text_box_content justify_content_start pl_0 pr_2_pc m_text_center m_pb_0">
                     <div className="text_box_content_inner m_pr_0">
-                      <h2 className="letter_spacing_05">Tattoo Dictonary</h2>
+                      <h2 className="letter_spacing_05">Tattoo Dictionary</h2>
                       <p>
                         We hand-pick every tattoo artist to ensure your tattoo
                         experience is handled with care, quality and
@@ -177,29 +177,15 @@ export default function Dictionary() {
                   <div className="img_box_wrap">
                     <ul className="app_download_img_list mt_mb_80 after_none justify_content_right text_center mr_0 ml_15">
                       <li>
-                        <Image
-                          priority={true}
+                        <img
                           src="/image-189-exp.png"
-                          width={215}
-                          height={443}
                           alt="Picture of the author"
-                          placeholder="blur"
-                          blurDataURL={blurDataURL}
-                          layout="responsive"
-                          className="image_shadow_bg"
                         />
                       </li>
                       <li>
-                        <Image
-                          priority={true}
+                        <img
                           src="/image-189-exp.png"
-                          width={215}
-                          height={443}
                           alt="Picture of the author"
-                          placeholder="blur"
-                          blurDataURL={blurDataURL}
-                          className="image_shadow_bg"
-                          layout="responsive"
                         />
                       </li>
                     </ul>
@@ -236,7 +222,7 @@ export default function Dictionary() {
               <div className="img_box_wrap">
                 {isMobileView ? (
                   <ImageSlider
-                    imgPath="/iPhone-192.png"
+                    imgPath="/image-189-exp.png"
                     imgAlt="Picture of the author"
                     imgblurDataURL={blurDataURL}
                     imgWidth={215}

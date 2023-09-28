@@ -29,7 +29,7 @@ const ImageSlider = ({imgPath,imgAlt,imgblurDataURL,imgWidth,imgHeight}) => {
   if (isMobileView) {
     sliderSettings = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 200,
       slidesToShow: 1.5,
       slidesToScroll: 1.5,
