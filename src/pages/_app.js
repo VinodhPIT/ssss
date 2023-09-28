@@ -3,14 +3,12 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import { GlobalStateProvider } from "@/context/Context";
 import { Figtree } from "next/font/google";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import "@/styles/globals.css";
-
 import Layout from "@/utils/Layout";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@/styles/globals.css";
+import  "@/styles/appStyles.css"
 
- 
+
 
 const figtree = Figtree({
 
