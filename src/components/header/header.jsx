@@ -5,7 +5,9 @@ import SideDrawer from "@/components/sideDrawer/sideDrawer";
 import Image from 'next/image'
 
 
+
 export default function Header() {
+
 
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
@@ -59,6 +61,10 @@ export default function Header() {
   ];
 
   const router = useRouter();
+
+  const isRootPath = router.pathname === '/';
+
+
   return (
     <>
       <header className="header_wrapper">
@@ -92,6 +98,12 @@ export default function Header() {
                 </ul>
               </div>
 
+         
+
+
+
+
+
               <div className="header_right">
                 <button
                   type="button"
@@ -103,6 +115,43 @@ export default function Header() {
                 </button>
 
 
+{isRootPath && (
+
+                <div class="switch-lang">
+  <div class="current-lang">
+    <p class="select-Lang">EN</p>
+    <Image
+      src={'/dropDown.svg'}
+      alt="langDropdown"
+       width={17} priority
+       height={13}
+
+    />
+  </div>
+  <div class="lang-dropdown">
+  <div class="selecting-lang">
+      <p class="lang-text">EN</p>
+    </div>
+    <div class="selecting-lang">
+      <p class="lang-text">DE</p>
+    </div>
+    <div class="selecting-lang">
+      <p class="lang-text">FR</p>
+    </div>
+    <div class="selecting-lang"> 
+      <p class="lang-text">IT</p>
+    </div>
+    <div class="selecting-lang"> 
+      <p class="lang-text">ES</p>
+    </div>
+   
+  </div>
+</div>
+)}
+ 
+              
+
+
                 <Image
                  onClick={() => onToggle(true)} className="nav_btn_toggle"
         src="/hamburger-menu.svg"
@@ -112,6 +161,7 @@ export default function Header() {
         priority
         
       /> 
+
 
            
 
