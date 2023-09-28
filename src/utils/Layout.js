@@ -15,14 +15,13 @@ const Layout = ({ children, pathname }) => {
       // Reset styles for other pages
       document.body.style.backgroundColor = "#fff";
     }
-
     // Clean up the styles when the component unmounts
     return () => {
       document.body.style.backgroundColor = "#fff";
     };
   }, [pathname]);
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
 
 export default Layout;
