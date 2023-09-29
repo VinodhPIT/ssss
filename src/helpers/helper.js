@@ -1,4 +1,7 @@
 
+
+
+
 export const prepareRequest = (parameters) => {
   const request = {
     sort: parameters.sort,
@@ -72,6 +75,10 @@ export const searchParam = (parameters) => {
 
 
 export const addAdsToResults = async (results) => {
+
+  // const { isMobileView, cookieDropdown } = useWindowResize();
+
+
   const totalCount = results.length;
 
   if (totalCount < 15) {

@@ -71,10 +71,7 @@ const Search = ({
 
       <div className={style.page_search_wrapper}>
         <div className="container">
-          <Head>
-            <title>Inckd Search Page</title>
-            <meta name="description" content="Search Me"></meta>
-          </Head>
+        
 
           <div className={style.filter_container}>
             <div className={style.tattoo_search_wrap}>

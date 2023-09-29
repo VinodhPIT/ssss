@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Layout = ({ children, pathname }) => {
+const UseLayout = ({ children, pathname }) => {
   
   useEffect(() => {
     if (pathname === "/") {
@@ -24,4 +24,4 @@ const Layout = ({ children, pathname }) => {
   return <>{children}</>;
 };
 
-export default Layout;
+export default UseLayout;

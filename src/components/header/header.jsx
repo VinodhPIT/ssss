@@ -96,7 +96,7 @@ export default function Header() {
                   For Tattoo Artists
                 </button>
 
-                {isRootPath && (
+                
                   <div class="switch-lang">
                     <div class="current-lang">
                       <p class="select-Lang">EN</p>
@@ -126,7 +126,11 @@ export default function Header() {
                       </div>
                     </div>
                   </div>
-                )}
+
+
+
+
+                
 
                 <Image
                   onClick={() => onToggle(true)}

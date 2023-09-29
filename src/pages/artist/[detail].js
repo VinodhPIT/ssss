@@ -15,9 +15,15 @@ import { renderArtistGallery } from "@/components/customTabs/tab";
 import TattooSearchModalPopup from "@/components/modalPopup/TattooSearchModalPopup";
 
 export default function Detail({ data }) {
-  const { state, findArtist } = useGlobalState();
+  const { state, } = useGlobalState();
 
   const router = useRouter();
+
+
+  const goBack = () => {
+    router.back();
+  };
+
 
   const [currenState, setCurrentTab] = useState("all");
   const [getAll, setAll] = useState([]);
@@ -125,15 +131,16 @@ export default function Detail({ data }) {
           </div>
 
           <div className={styles.search_profile_block}>
-            <Link  href={`/search?term=${""}&category=${"artist"}`} className={styles.back_arrow}>
+           <div className={styles.back_arrow}>
               <Image
                 src={'/back-arrow.svg'}
                 alt="backArrow"
                 width={44} 
                 height={44}
                 priority
+                onClick={goBack}
               />
-            </Link>
+            </div>
             <div className={styles.search_profile_pic}>
               <Image
                 alt={data.slug}
