@@ -29,7 +29,7 @@ export default function JoinArtist() {
                   <ul class="progressbar">
                     <li class="active">
                       <div className="progressbar_block">
-                        <h4>Submit the contact from</h4>
+                        <h4>Submit the contact form</h4>
                         <p>Tell us more about yourself.</p>
                       </div>
                     </li>

@@ -1262,13 +1262,13 @@ body.theme_dark footer .foot_links ul.links li a:hover {
 button.btn_view_more {
   align-items: center;
   text-transform: uppercase;
-  padding: 1.56em 1.5em 1.31em;
+  padding: 11px 20px;
   border-radius: 56px;
   font-size: 14px;
-  font-weight: 800;
-  color: white;
-  max-width: 350px;
-  width: 100%;
+  line-height: 17px;
+  font-weight: 700;
+  color: var(--white);
+  height: auto;
 }
 
 .bdr_rad_4 {
@@ -2187,8 +2187,8 @@ form.form_floating .form_group.radio_block>label {
 
 /* full banner custom slider */
 .full_banner_custom_slider {
-  padding-top: 135px;
-  padding-bottom: 35px;
+  padding-top: 70px;
+  padding-bottom: 20px;
 }
 /* full banner custom slider */
 .full_banner_custom_slider_home {
