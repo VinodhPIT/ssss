@@ -10,7 +10,6 @@ import KlarnaAdd from "../adds/klarnaAdd";
 import Offer from "../adds/offer";
 import Link from "next/link";
 
-
 export default function Flash({ data }) {
   const { state } = useGlobalState();
 
@@ -45,29 +44,20 @@ export default function Flash({ data }) {
                 <Image
                   priority={true}
                   src={item._source.image}
-                                  
-width={100}
-height={100}
-style={{
-  width:"100%",
-  height:"auto"
-}}
+                  fill
+                  objectFit="cover"
                   alt={item._source.style._source.name}
-               
                   placeholder="blur"
                   blurDataURL={blurDataURL}
                 />
 
-
-{item._source.min_price && (
-  <div className={styles.priceBox}>
-    <p style={{ margin: '0' }}>
-      {item._source.min_price} {item._source.currency.code}
-    </p>
-  </div>
-)}
-
-
+                {item._source.min_price && (
+                  <div className={styles.priceBox}>
+                    <p style={{ margin: "0" }}>
+                      {item._source.min_price} {item._source.currency.code}
+                    </p>
+                  </div>
+                )}
               </Link>
             );
           })}

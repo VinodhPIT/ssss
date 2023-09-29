@@ -21,7 +21,7 @@ export default function All({ data }) {
         </div>
       ) : data.length === 0 ? (
         <div className={styles.blockCenter}>
-          <NoData   category={'all'} /> 
+          <NoData category={"all"} />
         </div>
       ) : (
         <div className={styles.grid_wrapper_tattoo}>
@@ -55,22 +55,14 @@ export default function All({ data }) {
                       ? item._source.image
                       : item._source.image_url
                   }
-                  
-width={100}
-height={100}
-style={{
-  width:"100%",
-  height:"auto"
-}}
-
-
+                  fill
+                
                   alt={
                     item._index === "tattoo"
                       ? item._source.style._source.name
                       : item._source.slug
                   }
-
-
+                  objectFit="cover"
                   placeholder="blur"
                   blurDataURL={blurDataURL}
                 />

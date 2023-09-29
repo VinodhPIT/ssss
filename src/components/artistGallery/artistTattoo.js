@@ -23,13 +23,9 @@ const Tattoo = ({ data }) => {
                 alt={item.tattoo_type}
                 priority
                 src={item.image}
-               width={100}
-               height={100}
-               style={{
-                width:"100%",
-                height:"auto"
-               }}
-
+                fill
+               
+                objectFit="cover"
 
                
                 placeholder="blur"

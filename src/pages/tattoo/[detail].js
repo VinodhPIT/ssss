@@ -17,6 +17,7 @@ import style from "@/pages/search/search.module.css";
 import TattooSearchModalPopup from "@/components/modalPopup/TattooSearchModalPopup";
 
 export default function Detail({ data, status }) {
+
   const router = useRouter();
   const { state } = useGlobalState();
 
@@ -34,6 +35,10 @@ export default function Detail({ data, status }) {
     setPopupOpen(false);
   };
 
+
+
+
+  
   useEffect(() => {
     if (!data) {
       return null;
@@ -107,6 +112,7 @@ export default function Detail({ data, status }) {
                 width={44} 
                 height={44}
                 priority
+                
               />
             </Link>
             <div className={styles.product_media}>
@@ -267,14 +273,8 @@ export default function Detail({ data, status }) {
                     priority
                     src={item.image_medium}
                   
-                    width={100}
-height={100}
-style={{
-  width:"100%",
-  height:"auto"
-}}
-
-
+fill
+objectFit="cover"
              
                     placeholder="blur"
                     blurDataURL={blurDataURL}
