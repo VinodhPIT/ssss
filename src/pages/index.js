@@ -421,7 +421,7 @@ export default function Home() {
             </div>
             <div class="text_box_wrap right block_bg_black">
               <div class="img_text_box_inner m_switcher">
-                <div class="text_box_content justify_content_start align_item_end txt-btm-7pc m_txt-btm-40">
+                <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0 pr_0">
                     <h2 class="letter_spacing_05">
                       Boost your <br />
