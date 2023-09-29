@@ -453,6 +453,9 @@ ul.download_app li.download_app_title h6 {
 .grid_wrapper_tattoo .listing_gridItem {
     position: relative;
     height: 230px; overflow: hidden;     background-color: #CCCCCC;
+    display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .titleWrapper {

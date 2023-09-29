@@ -395,7 +395,11 @@
   height: 230px;
   overflow: hidden;
   background-color: #CCCCCC;
+  display: flex;
+justify-content: center;
+align-items: center;
 }
+
 
 
 
