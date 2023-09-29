@@ -45,7 +45,13 @@ export default function Flash({ data }) {
                 <Image
                   priority={true}
                   src={item._source.image}
-                  layout="fill"
+                                  
+width={100}
+height={100}
+style={{
+  width:"100%",
+  height:"auto"
+}}
                   alt={item._source.style._source.name}
                
                   placeholder="blur"

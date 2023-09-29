@@ -166,7 +166,7 @@ function SearchBar({ isPage  ,currentTab}) {
             tabindex="-1"
             className={style.btn_search}
           >
-            <img src="./tattoo-magnifer.svg" alt="" />
+            <img src="/tattoo-magnifer.svg" alt="search" />
           </button>
 
           {searchState.showDropdown && (

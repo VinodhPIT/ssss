@@ -394,7 +394,14 @@
   position: relative;
   height: 230px;
   overflow: hidden;
+  background-color: #CCCCCC;
 }
+
+
+
+
+
+
 
 .blockCenter {
   display: flex;

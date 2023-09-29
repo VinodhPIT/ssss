@@ -290,7 +290,13 @@ export default function Detail({ data, status }) {
                     alt={item.style_name}
                     priority
                     src={item.image_medium}
-                    layout="fill"
+                    height={200}
+                    width={200}
+                    sizes="100vw"
+                    style={{
+                      height: "auto",
+                      width: "100%",
+                    }}
                     placeholder="blur"
                     blurDataURL={blurDataURL}
                   />

@@ -37,9 +37,14 @@ export default function Tattoo({ data }) {
                 <Image
                     priority={true}
                     src={item._source.image}
-                    // height={500}
-                    // width={200}
-                     fill
+                   
+                                    
+width={100}
+height={100}
+style={{
+  width:"100%",
+  height:"auto"
+}}
           
                     alt={item._source.style._source.name}
                  

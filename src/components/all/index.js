@@ -55,7 +55,15 @@ export default function All({ data }) {
                       ? item._source.image
                       : item._source.image_url
                   }
-                  fill
+                  
+width={100}
+height={100}
+style={{
+  width:"100%",
+  height:"auto"
+}}
+
+
                   alt={
                     item._index === "tattoo"
                       ? item._source.style._source.name

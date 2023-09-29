@@ -30,7 +30,12 @@ const All = ({ data }) => {
                 alt={item.tattoo_type}
                 priority
                 src={item.image}
-                layout="fill"
+                width={100}
+                height={100}
+                style={{
+                 width:"100%",
+                 height:"auto"
+                }}
                
                 placeholder="blur"
                 blurDataURL={blurDataURL}
