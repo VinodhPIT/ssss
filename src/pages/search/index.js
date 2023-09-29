@@ -13,7 +13,7 @@ import { addAdsToResults } from "@/helpers/helper";
 import { getUrl } from "@/utils/getUrl";
 
 import { useGlobalState } from "@/context/Context";
-
+const MobileDetect = require('mobile-detect');
 const Search = ({
   data,
   currentTab,
@@ -180,8 +180,12 @@ export default Search;
 
 export async function getServerSideProps(context) {
 
+  //detect Mobile
+  const userAgent = context.req.headers["user-agent"];
 
-  //  let isLoading = true; // Initialize isLoading to true
+  const md = new MobileDetect(userAgent);
+
+  const isMobile = md.mobile();
 
   try {
     if (context.query.category === "all") {
@@ -194,7 +198,7 @@ export async function getServerSideProps(context) {
         longitude: context.query.lon ?? "",
       });
 
-      let addData = await addAdsToResults(results.data);
+      let addData = await addAdsToResults(results.data, isMobile);
 
       return {
         props: {
@@ -218,7 +222,7 @@ export async function getServerSideProps(context) {
         longitude: context.query.lon ?? "",
       });
 
-      let addData = await addAdsToResults(data.rows.hits);
+      let addData = await addAdsToResults(data.rows.hits, isMobile);
 
       return {
         props: {

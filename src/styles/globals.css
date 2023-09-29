@@ -3088,6 +3088,17 @@ header .navbar {
   height: 43px;
   margin-right: 32px;
 }
+.wh-current-lang{
+  border: 1px solid var(--black);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  width: 100%;
+  height: 100%;
+
+}
 
 .current-lang {
   border: 1px solid var(--white);
@@ -3107,14 +3118,41 @@ header .navbar {
   font-weight: var(--fw-medium);
 }
 
+
+
+.select-Lang{
+  color: var(--white); 
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+}
+
+.wh-select-lang{
+  color: var(--black); 
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--fw-medium);
+}
 .lang-dropdown {
-  display: none;
+  display: none; 
   background-color: var(--white);
   width: 90px;
   padding: 0;
   position: absolute;
   border-radius: 6px;
 }
+.wh-lang-dropdown{
+  display: none; 
+  border: 1px solid #000; background: var(--white);
+  width: 90px;
+  padding: 0;
+  position: absolute;
+  border-radius: 6px;z-index: 1111;
+
+}
+
+
+
 
 .selecting-lang {
   padding: 4px 10px 4px 10px;
@@ -3133,6 +3171,11 @@ header .navbar {
 .switch-lang:hover .lang-dropdown {
   display: block;
 }
+.switch-lang:hover .wh-lang-dropdown {
+  display: block; 
+}
+
+
 
 .switcher-link {
   color: #fff;
