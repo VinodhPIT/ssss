@@ -129,7 +129,7 @@ export default function StyleGuide() {
                 </div>
                 <div class="img_box_wrap block_bg_gradient_1 justify_content_right img-btm-7pc">
                   <div class="box_text_img_over color_orange txt-right-align">
-                    <h2 class="letter_spacing_03 text_right">
+                    <h2 class="text_right">
                       <span class="small letter_spacing_02">My Style is </span>
                       Fineline
                     </h2>
@@ -263,7 +263,7 @@ export default function StyleGuide() {
                 </div>
                 <div class="img_box_wrap block_bg_gradient_1 justify_content_right img-btm-7pc">
                   <div class="box_text_img_over color_aero_blue txt-right-align">
-                    <h2 class="letter_spacing_03 text_right">
+                    <h2 class="text_right">
                       <span class="small letter_spacing_02">My Style is </span>
                       Traditional
                     </h2>

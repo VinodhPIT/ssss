@@ -135,7 +135,7 @@ export default function Klarna() {
               <div class="img_text_box_inner">
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner max_w_100pc m_pr_0">
-                    <h2 class="letter_spacing_03 color_gray_550">How it Works!</h2>
+                    <h2 class="color_gray_550">How it Works!</h2>
                     <ul class="custom-listing how_work_list">
                       <li>
                         <img
@@ -245,7 +245,7 @@ export default function Klarna() {
               <div class="img_text_box_inner m_switcher">
                 <div class="text_box_content justify_content_start align_item_start">
                   <div class="text_box_content_inner w_100pc custom_full_block pr_0">
-                    <h2 class="letter_spacing_03 m_text_center">Availability</h2>
+                    <h2 class="m_text_center">Availability</h2>
                     <ul class="custom-listing-grid">
                       <li>
                         <img src="./afghanistan.svg" alt="afghanistan" />
@@ -315,7 +315,7 @@ export default function Klarna() {
                     <img src="./klarna-white.svg" alt="" />                    
                   </div>
                   <div class="box_text_img_over color_pink txt-right-align">
-                    <h2 class="letter_spacing_03 text_right m_text_center txt_mob_fs50">
+                    <h2 class="text_right m_text_center txt_mob_fs50">
                       Where i can pay my tattoo with Klarna?
                     </h2>
                   </div>

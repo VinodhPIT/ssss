@@ -79,7 +79,7 @@ export default function Tattooartists() {
               <div class="img_text_box_inner">
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0 tattoo_art_mgt_mob">
-                    <h2 class="letter_spacing_03">Manage your business</h2>
+                    <h2>Manage your business</h2>
                     <ul class="custom-listing">
                       <li>
                         <img
@@ -127,7 +127,7 @@ export default function Tattooartists() {
                 </div>
                 <div className="text_box_content justify_content_start">
                   <div className="text_box_content_inner pr_40 m_pr_0">
-                    <h2 className="letter_spacing_03">Your tattoo business ally</h2>
+                    <h2>Your tattoo business ally</h2>
                     <p className="custom_fs_20 custom_fs_m_16">
                       Inckd is your ally in creating a thriving, client-focused
                       tattoo business. Display your portfolio proudly to attract
@@ -152,7 +152,7 @@ export default function Tattooartists() {
               <div className="img_text_box_inner">
                 <div className="text_box_content justify_content_start">
                   <div className="text_box_content_inner m_pr_0">
-                    <h2 className="letter_spacing_03">Keep clients in the Loop</h2>
+                    <h2>Keep clients in the Loop</h2>
                     <p className="custom_fs_20 custom_fs_m_16">
                       Engage in real-time chats to understand your clients
                       preferences firsthand. Efficiently handle appointments and
@@ -209,7 +209,7 @@ export default function Tattooartists() {
                 </div>
                 <div className="text_box_content justify_content_start">
                   <div className="text_box_content_inner pr_40 m_pr_0">
-                    <h2 className="letter_spacing_03">Your booking buddy</h2>
+                    <h2>Your booking buddy</h2>
                     <p className="custom_fs_20 custom_fs_m_16">
                       inckd. puts you in the drivers seat of your tattoo
                       business schedule, providing a comprehensive overview of
@@ -234,7 +234,7 @@ export default function Tattooartists() {
               <div className="img_text_box_inner">
                 <div className="text_box_content justify_content_start">
                   <div className="text_box_content_inner m_pr_0">
-                    <h2 className="letter_spacing_03">Manage Payments</h2>
+                    <h2>Manage Payments</h2>
                     <p className="custom_fs_20 custom_fs_m_16">
                       Get payments quickly and securely, monitor them in
                       real-time, and offer attractive discounts to encourage
@@ -273,7 +273,7 @@ export default function Tattooartists() {
                 </div>
                 <div className="text_box_content justify_content_start">
                   <div className="text_box_content_inner pr_40 m_pr_0">
-                    <h2 className="letter_spacing_03">Manage your Studios</h2>
+                    <h2>Manage your Studios</h2>
                     <p className="custom_fs_20 custom_fs_m_16">
                       Lorem ipsum inckd. puts you in the drivers seat of your
                       tattoo business schedule, providing a overview of all

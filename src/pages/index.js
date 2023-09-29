@@ -214,7 +214,7 @@ export default function Home() {
               <div class="img_text_box_inner">
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0">
-                    <h2 class="letter_spacing_03">
+                    <h2>
                       Find the right Artist for your next Tattoo!
                     </h2>
                     <p>
@@ -277,7 +277,7 @@ export default function Home() {
                     <img src="./klarna-white.svg" alt="" />
                   </div>
                   <div class="box_text_img_over color_pink">
-                    <h2 class="letter_spacing_04 txt_mob_fs50">
+                    <h2 class="txt_mob_fs50">
                       Pay all at once? <br /> Never again!
                     </h2>
                   </div>                  
@@ -297,7 +297,7 @@ export default function Home() {
                     <img src="./klarna.svg" alt="" />
                   </div>
                   <div class="text_box_content_inner m_pr_0 pr_0">
-                    <h2 class="letter_spacing_02">
+                    <h2>
                       Tattoo now, <br />
                       Pay later
                     </h2>
@@ -325,7 +325,7 @@ export default function Home() {
                 <div className="img_text_box_inner">
                   <div className="text_box_content justify_content_start pl_0 pr_2_pc  m_pb_0">
                     <div className="text_box_content_inner m_pr_0">
-                      <h2 className="letter_spacing_02">Tattoo Dictionary</h2>
+                      <h2>Tattoo Dictionary</h2>
                       <p>
                         We hand-pick every tattoo artist to ensure your tattoo
                         experience is handled with care, quality and
@@ -426,7 +426,7 @@ export default function Home() {
               <div class="img_text_box_inner m_switcher">
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0 pr_0">
-                    <h2 class="letter_spacing_05">
+                    <h2>
                       Boost your <br />
                       business with <br />
                       inckd.
@@ -450,7 +450,7 @@ export default function Home() {
                 </div>
                 <div class="img_box_wrap block_bg_gradient_1 justify_content_right img-btm-7pc">
                   <div class="box_text_img_over color_aero_blue_lite txt-right-align">
-                    <h2 class="letter_spacing_03 text_right">
+                    <h2 class="text_right">
                       <span class="small letter_spacing_02">Are you a </span>
                       Tattoo artist?
                     </h2>
