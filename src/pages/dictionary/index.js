@@ -79,7 +79,7 @@ export default function Dictionary() {
                 <div className="img_text_box_inner">
                   <div className="text_box_content justify_content_start pl_0 pr_2_pc m_text_center m_pb_0">
                     <div className="text_box_content_inner m_pr_0">
-                      <h2 className="letter_spacing_05">Tattoo Dictionary</h2>
+                      <h2 className="letter_spacing_02">Tattoo Dictionary</h2>
                       <p>
                         We hand-pick every tattoo artist to ensure your tattoo
                         experience is handled with care, quality and
