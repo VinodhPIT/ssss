@@ -418,27 +418,28 @@
   bottom: 12px;
 }
 
+
 @media screen and (max-width: 767.98px) {
   .pageContainer{   
     margin-top: 10px;
   
+  }  
+  .custom_adv_block_1 .custom_adv_content,
+  .custom_adv_block_2 .custom_adv_content,
+  .custom_adv_block_3 .custom_adv_content {
+    min-height: 172px;
+    padding-left: 15px;
   }
-}
 
-@media screen and (max-width: 768px) {
   .custom_adv_block_1 .custom_adv_content h6,
   .custom_adv_block_2 .custom_adv_content h6,
   .custom_adv_block_3 .custom_adv_content h6 {
     font-size: 25px;
     font-weight: 700;
     line-height: 30px;
-    margin: 10px 0 10px 0
+    margin: 10px 0 10px 0;
+    max-width: 100%;
   }
-
-  .custom_adv_block_1 .custom_adv_content img {
-    max-height: 162px;
-  }
-
   .btn_secondary {
     height: 30px;
     padding: 6px 10px;
@@ -447,9 +448,13 @@
     font-weight: 600;
   }
 
+  .custom_adv_block_1 .custom_adv_content img,
   .custom_adv_block_2 .custom_adv_content img,
   .custom_adv_block_3 .custom_adv_content img {
-    max-height: 162px;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: right;
   }
 
   .custom_adv_block_3 .listing_adv_btn_wrap {
@@ -467,12 +472,55 @@
     font-size: 22px;
     line-height: 27px;
   }
-
   .grid_wrapper_tattoo {
     float: left;
     margin-right: -15px;
     margin-left: -15px;
     width: calc(100% + 30px);
+  }
+
+  /* tattoo */
+  .listing_gridItem {
+    height: 192px;
+  }    
+  .grid_item_block {
+    max-height: 192px;
+    border-radius: 12px 12px 0 0;
+  }
+  .grid_img_col {
+    min-height: 119px;
+    max-height: 119px;
+  }
+  .grid_content_wrap {
+    border-radius: 12px;    
+  }
+  .grid_img_profile {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+  .grid_profile_details {
+    padding: 34px 17px 10px 17px;
+  }
+  .grid_profile_details h6.grid_profile_title {
+    line-height: 24px;
+    font-size: 16px;
+  }
+  .grid_profile_address {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .grid_profile_link {
+    margin-top: 5px;
+    padding-top: 5px;
+  }
+  .grid_profile_link a {
+    line-height: 18px;
+    font-size: 12px;
+  }
+  /* */
+  .grid_wrapper_tattoo .listing_gridItem {
+    height: 187px;
   }
 
 }
