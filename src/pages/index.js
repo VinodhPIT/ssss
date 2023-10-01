@@ -1,11 +1,10 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { useGlobalState } from "@/context/Context";
-import HomLoading from "@/components/homeLoading";
-import SearchField from "@/components/searchField";
+import SearchField from "@/components/searchField/search";
 import Header from "@/components/header/header";
 import ImageSlider from "@/components/slider/ImageSlider";
 import ImageSwiper from "@/components/slider/ImageSwiper";
@@ -14,8 +13,14 @@ import {
   APP_LINK_GOOGLE,
   blurDataURL,
 } from "@/constants/constants";
+import useWindowResize from "@/hooks/useWindowSize"; 
+
+
+
+
 export default function Home() {
-  const { state, serverLoad, styleCollection } = useGlobalState();
+  const { serverLoad, styleCollection } = useGlobalState();
+  const { isMobileView ,cookieDropdown } = useWindowResize();
 
   const imagePaths = [
     "./s-1.svg",
@@ -30,13 +35,10 @@ export default function Home() {
     "./s-10.svg",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobileView, setIsMobileView] = useState(false);
-  const [cookieDropdown, setCoookieDropdown] = useState(false);
-  const [toggle, setToggle] = useState(false);
+  const [showCookie, setCookie] = useState(false);
 
   useEffect(() => {
     styleCollection();
-
     const timer = setInterval(changeImage, 2000);
     return () => clearInterval(timer);
   }, []);
@@ -45,29 +47,18 @@ export default function Home() {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % imagePaths.length);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 767.98); // Adjust the breakpoint as needed
-      setCoookieDropdown(window.innerWidth <= 767.98);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
 
-  
 
-  const onToggle = () => {
-    setToggle(!toggle);
+
+
+  const onShowCookie = () => {
+    setCookie(!showCookie);
   };
 
-  return (
-    <div className="page_wrapper tete">
-      <div className="header_cookies">
+  return (<>
+
+       <div className="header_cookies">
         <div className="header_cookie_img">
           <img src="./logo-cookies.svg" alt="" />
         </div>
@@ -79,7 +70,7 @@ export default function Home() {
               <Link href="/klarna">Learn more</Link>
             </span>
 
-            {toggle && (
+            {showCookie && (
               <span className="header_cookie_mob">
                 That&apos;s right, there&apos;s a new way to get tattooed
                 smoooth! <Link href="/klarna">Learn more</Link>
@@ -89,7 +80,7 @@ export default function Home() {
         </div>
         {cookieDropdown && (
           <Image
-            onClick={() => onToggle()}
+            onClick={() => onShowCookie()}
             src={"/arrowDown.svg"}
             alt="arrowDown"
             width={16}
@@ -98,8 +89,14 @@ export default function Home() {
           />
         )}
       </div>
-      <Header />
 
+
+<Header />
+
+<main>
+
+    <div className="page_wrapper tete">
+  
       <div className={styles.home_banner_block}>
         <div className={styles.home_banner_wrap}>
           <div className={styles.home_banner_item}>
@@ -533,8 +530,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* {state.serverLoad && <HomLoading />} */}
     </div>
+    </main>
+    </>
   );
 }

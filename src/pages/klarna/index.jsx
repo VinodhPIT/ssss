@@ -12,31 +12,12 @@ import {
 } from "@/constants/constants";
 import CarouselKlarna from "@/components/carousel/CarouselKlarna";
 import ImageSlider from "@/components/slider/ImageSlider";
-
+import useWindowResize from "@/hooks/useWindowSize";
 
 
 export default function Klarna() {
-  const [isMobileView, setIsMobileView] = useState(false);
 
-
-  const [cookieDropdown, setCoookieDropdown] = useState(false);
-
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 767.98); // Adjust the breakpoint as needed
-      setCoookieDropdown(window.innerWidth <= 699.98);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-
-  }, []);
-
-
+  const { isMobileView } = useWindowResize();
   
   const items = [
     {
@@ -70,6 +51,9 @@ export default function Klarna() {
     },
   ];
   return (
+    <main>
+
+
     <div className="page-wrapper">
       <div className={styles.banner_block}>
         <div className={styles.banner_wrap}>
@@ -391,5 +375,6 @@ export default function Klarna() {
         </div>
       </section>
     </div>
+    </main>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "@/components/pageHeader/Header";
+import Header from "@/components/pageHeader/header";
 import Image from "next/image";
 import styles from "./tattoodetail.module.css";
 import { fetchTattooDetail } from "@/action/action";
@@ -11,13 +11,15 @@ import {
 import { fetchArtistDetail } from "@/action/action";
 import Link from "next/link";
 import { useGlobalState } from "@/context/Context";
-import SearchField from "@/components/tattooSearch/index";
+import SearchField from "@/components/tattooSearch/tattooSearch";
 import { useRouter } from "next/router";
 import style from "@/pages/search/search.module.css";
-import TattooSearchModalPopup from "@/components/modalPopup/TattooSearchModalPopup";
+import TattooSearchModalPopup from "@/utils/modalUtils";
+import { useModal } from "@/utils/modalUtils";
+
 
 export default function Detail({ data, status }) {
-
+  const { isPopupOpen, openPopup, closePopup } = useModal();
   const router = useRouter();
   const { state } = useGlobalState();
 
@@ -25,16 +27,7 @@ export default function Detail({ data, status }) {
   const [tattoo, setTattoo] = useState([]);
   const [getStyle, setStyle] = useState([]);
   const [location, setLocation] = useState([]);
-  const [isPopupOpen, setPopupOpen] = useState(false);
-
-  const openPopup = () => {
-    setPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setPopupOpen(false);
-  };
-
+ 
 
 
 
@@ -70,6 +63,8 @@ export default function Detail({ data, status }) {
   return (
     <>
       <Header logo={"/tattooSearch.svg"} theme={"white"} isPosition={false} />
+<main>
+
 
       <div className="page_wrapper">
         <div className="container">
@@ -290,6 +285,7 @@ objectFit="cover"
           closeModal={closePopup}
         />
       </div>
+      </main>
     </>
   );
 }

@@ -43,11 +43,11 @@ function MyApp({ Component, pageProps }) {
       <div className={figtree.className}>
         {!shouldHideHeader() && <Header />}
 
-        <main>
+
           <UseLayout pathname={router.pathname}>
             <Component {...pageProps} />
           </UseLayout>
-        </main>
+      
 
         <Footer />
       </div>

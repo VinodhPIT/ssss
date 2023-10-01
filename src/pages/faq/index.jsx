@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "@/components/pageHeader/Header";
+import Header from "@/components/pageHeader/header";
 import { FAQ_ARTISTS, FAQ_GENERAL, FAQ_CUSTOMERS } from "@/constants/faq";
 import {
   Accordion,
@@ -9,7 +9,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 import "react-accessible-accordion/dist/fancy-example.css";
-import Search from "@/components/tattooSearch/index";
+import Search from "@/components/tattooSearch/tattooSearch";
 import { faqTab } from "@/components/tabMenu/menu";
 import style from "@/pages/search/search.module.css";
 export default function FAQ() {
@@ -20,12 +20,16 @@ export default function FAQ() {
   };
 
   return (
-    <div>
+    <>
       <Header
         logo={"/Inckd-logo-footer-black.svg"}
         theme={"white"}
         isPosition={false}
       />
+
+<main>
+
+
       <div className="faq_search_wrap">
         <div className="container">
           <Search  currentTab={'all'}  />
@@ -116,6 +120,7 @@ export default function FAQ() {
           </div>
         </div>
       </div>
-    </div>
+      </main>
+    </>
   );
 }

@@ -5,6 +5,11 @@ import SideDrawer from "@/components/sideDrawer/sideDrawer";
 import Image from "next/image";
 
 export default function Header({ logo, theme, isPosition }) {
+
+
+
+
+  
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
     if (toggle) {
@@ -24,6 +29,11 @@ export default function Header({ logo, theme, isPosition }) {
   const onCloseToggle = () => {
     setToggle(false);
   };
+
+
+
+
+
 
   const links = [
     {

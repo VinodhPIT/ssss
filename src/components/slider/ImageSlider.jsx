@@ -3,27 +3,18 @@ import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import Image from "next/image";
+import useWindowResize from "@/hooks/useWindowSize";
+
 
 const ImageSlider = ({imgPath,imgAlt,imgblurDataURL,imgWidth,imgHeight}) => {
-  const [isMobileView, setIsMobileView] = useState(false);
 
-  useEffect(() => {
-    // Check the window width and set isMobileView accordingly
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 768); // Adjust the breakpoint as needed
-    };
+  const { isMobileView } = useWindowResize();
 
-    // Initially check the width and add a resize event listener
-    handleResize();
-    window.addEventListener("resize", handleResize);
+  
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+
+
 
   let sliderSettings = {};
   if (isMobileView) {

@@ -1,45 +1,39 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./artistdetail.module.css";
-import Header from "@/components/pageHeader/Header";
+import Header from "@/components/pageHeader/header";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import { fetchArtistDetail, artistGallery } from "@/action/action";
 import { blurDataURL } from "@/constants/constants";
-import SearchField from "@/components/tattooSearch/index";
+import SearchField from "@/components/tattooSearch/tattooSearch";
 import Autocomplete from "react-google-autocomplete";
 import style from "@/pages/search/search.module.css";
 import { useGlobalState } from "@/context/Context";
 import { artistTab } from "@/components/tabMenu/menu";
 import { renderArtistGallery } from "@/components/customTabs/tab";
-import TattooSearchModalPopup from "@/components/modalPopup/TattooSearchModalPopup";
+import TattooSearchModalPopup  from "@/utils/modalUtils";
+import  {useModal}  from "@/utils/modalUtils";
+
+
 
 export default function Detail({ data }) {
-  const { state, } = useGlobalState();
+  const { isPopupOpen, openPopup, closePopup } = useModal();
 
+  
+  const { state } = useGlobalState();
   const router = useRouter();
-
-
   const goBack = () => {
     router.back();
   };
-
 
   const [currenState, setCurrentTab] = useState("all");
   const [getAll, setAll] = useState([]);
   const [tattooList, setTattooList] = useState([]);
   const [flashList, setFlashList] = useState([]);
   const [artistProfile, setProfile] = useState();
-  const [isPopupOpen, setPopupOpen] = useState(false);
+
   const changeTab = (tab) => {
     setCurrentTab(tab);
-  };
-  const openPopup = () => {
-    setPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setPopupOpen(false);
   };
 
   useEffect(() => {
@@ -53,11 +47,7 @@ export default function Detail({ data }) {
           setAll(res.data);
           setTattooList(res.data.filter((e) => e.tattoo_type === "normal"));
           setFlashList(res.data.filter((e) => e.tattoo_type === "flash"));
-        } catch (error) {
-
-
-
-        }
+        } catch (error) {}
       };
       fetchData();
     }
@@ -68,30 +58,28 @@ export default function Detail({ data }) {
     const latitude = lat();
     const longitude = lng();
 
-    router.push(`/search?term=${""}&category=${'artist'}&lat=${latitude}&lon=${longitude}`)
-
-
-
+    router.push(
+      `/search?term=${""}&category=${"artist"}&lat=${latitude}&lon=${longitude}`
+    );
   };
 
-  const searchStyle =(searchStyle)=>{
-    router.push(`/search?term=${""}&category=${'artist'}&style=${searchStyle}`)
-  }
-  
-
-
+  const searchStyle = (searchStyle) => {
+    router.push(`/search?term=${""}&category=${"artist"}&style=${searchStyle}`);
+  };
 
   return (
     <>
       <Header logo={"/tattooSearch.svg"} theme={"white"} isPosition={false} />
+<min>
+
 
       <div className="page_wrapper">
-        <div className="container"> 
+        <div className="container">
           <div className={style.filter_container}>
             <div className={style.tattoo_search_wrap}>
               <div className={style.search_form}>
                 <div className="search_form_wrap">
-                  <SearchField   currentTab={'artist'}  />
+                  <SearchField currentTab={"artist"} />
                 </div>
               </div>
             </div>
@@ -131,11 +119,11 @@ export default function Detail({ data }) {
           </div>
 
           <div className={styles.search_profile_block}>
-           <div className={styles.back_arrow}>
+            <div className={styles.back_arrow}>
               <Image
-                src={'/back-arrow.svg'}
+                src={"/back-arrow.svg"}
                 alt="backArrow"
-                width={44} 
+                width={44}
                 height={44}
                 priority
                 onClick={goBack}
@@ -158,9 +146,9 @@ export default function Detail({ data }) {
                 <div className={styles.search_profile_name}>
                   {data.first_name} {data.last_name}
                 </div>
-               <div className={styles.search_profile_details}>
-                {data.studio[0].city}, {data.studio[0].country}
-              </div> 
+                <div className={styles.search_profile_details}>
+                  {data.studio[0].city}, {data.studio[0].country}
+                </div>
               </div>
               <div className={styles.search_profile_link}>
                 <a
@@ -195,13 +183,17 @@ export default function Detail({ data }) {
                   <li
                     key={tab.id}
                     className={
-                      currenState === tab.id ? style.activeTab : style.inActivetab
+                      currenState === tab.id
+                        ? style.activeTab
+                        : style.inActivetab
                     }
                     onClick={() => changeTab(tab.id)}
                   >
                     <div className={style.tabBox}>
                       <img
-                        src={currenState === tab.id ? tab.activeImage : tab.image}
+                        src={
+                          currenState === tab.id ? tab.activeImage : tab.image
+                        }
                       />
 
                       <p style={{ margin: "0" }}>{tab.label}</p>
@@ -221,16 +213,13 @@ export default function Detail({ data }) {
           )}
         </div>
 
-        
         <TattooSearchModalPopup
           className="custom-modal"
           isOpen={isPopupOpen}
           closeModal={closePopup}
         />
-
-
-
       </div>
+      </min>
     </>
   );
 }
@@ -239,13 +228,11 @@ export async function getServerSideProps(context) {
   try {
     const data = await fetchArtistDetail(context.query.detail);
 
-    
     if (!data.data) {
       return {
         notFound: true,
       };
     }
-
 
     return {
       props: {
@@ -254,7 +241,6 @@ export async function getServerSideProps(context) {
       },
     };
   } catch (error) {
-   
     return {
       props: {
         data: null,

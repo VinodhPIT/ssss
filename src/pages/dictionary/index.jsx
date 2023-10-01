@@ -1,32 +1,21 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import CarouselComponent from "@/components/carousel/Carousel";
 import ImageSwiper from "@/components/slider/ImageSwiper";
 import ImageSlider from "@/components/slider/ImageSlider";
-import Header from '@/components/pageHeader/Header'
+import Header from '@/components/pageHeader/header'
 import {
   APP_LINK_APPLE,
   APP_LINK_GOOGLE,
   blurDataURL,
 } from "@/constants/constants";
+import useWindowResize from "@/hooks/useWindowSize";
 
 export default function Dictionary() {
-  const [isMobileView, setIsMobileView] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 767.98); // Adjust the breakpoint as needed
-      //setCoookieDropdown(window.innerWidth <= 699.98);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+
+
+  const { isMobileView } = useWindowResize();
+  
 
   const items = [
     {
@@ -70,6 +59,10 @@ export default function Dictionary() {
   return (
     <>
     <Header logo={'/inckd-logo.svg'} theme={'black'} isPosition={true}/>
+
+    <main>
+
+
     <div className="page_wrapper">
       <section className="img_text_banner_box">
         <div className="col_full">
@@ -323,7 +316,6 @@ export default function Dictionary() {
                       items={items}
                       itemStyle="d_flex justify_content_end"
                     />
-                    {/* <img src="./slider-dummy-2.png" alt="Aztec Symbols" class="w_100pc"/>                      */}
                   </div>
                 </div>
               </div>
@@ -332,6 +324,7 @@ export default function Dictionary() {
         </div>
       </section>
     </div>
+    </main>
     </>
   );
 }

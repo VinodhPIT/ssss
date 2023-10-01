@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "@/components/pageHeader/Header";
+import Header from "@/components/pageHeader/header";
 import Head from "next/head";
 import { fetchCategoryData, fetchMultiData } from "@/action/action";
 import Autocomplete from "react-google-autocomplete";
@@ -8,7 +8,7 @@ import { renderCategoryComponent } from "@/components/customTabs/tab";
 import style from "@/pages/search/search.module.css";
 import { useRouter } from "next/router";
 import { tabs } from "@/components/tabMenu/menu";
-import SearchField from "@/components/tattooSearch/index";
+import SearchField from "@/components/tattooSearch/tattooSearch";
 import { addAdsToResults } from "@/helpers/helper";
 import { getUrl } from "@/utils/getUrl";
 
@@ -68,6 +68,8 @@ const Search = ({
   return (
     <>
       <Header logo={"/tattooSearch.svg"} theme={"white"} isPosition={false} />
+<main>
+
 
       <div className={style.page_search_wrapper}>
         <div className="container">
@@ -172,6 +174,7 @@ const Search = ({
             )}
         </div>
       </div>
+      </main>
     </>
   );
 };

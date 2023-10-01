@@ -5,8 +5,12 @@ import SideDrawer from "@/components/sideDrawer/sideDrawer";
 import Image from "next/image";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(false);
 
+
+
+  
+  const [toggle, setToggle] = useState(false);
+  
   useEffect(() => {
     if (toggle) {
       document.body.classList.add("nav_open");
@@ -27,7 +31,11 @@ export default function Header() {
   };
 
 
-  
+
+
+
+
+
   const links = [
     {
       id: 1,
@@ -53,8 +61,6 @@ export default function Header() {
   ];
 
   const router = useRouter();
-
-  const isRootPath = router.pathname === "/";
 
   return (
     <>
@@ -96,41 +102,35 @@ export default function Header() {
                   For Tattoo Artists
                 </button>
 
-                
-                  <div class="switch-lang">
-                    <div class="current-lang">
-                      <p class="select-Lang">EN</p>
-                      <Image
-                        src={"/dropDown.svg"}
-                        alt="langDropdown"
-                        width={15}
-                        priority
-                        height={9}
-                      />
+                <div class="switch-lang">
+                  <div class="current-lang">
+                    <p class="select-Lang">EN</p>
+                    <Image
+                      src={"/dropDown.svg"}
+                      alt="langDropdown"
+                      width={15}
+                      priority
+                      height={9}
+                    />
+                  </div>
+                  <div class="lang-dropdown">
+                    <div class="selecting-lang">
+                      <p class="lang-text">EN</p>
                     </div>
-                    <div class="lang-dropdown">
-                      <div class="selecting-lang">
-                        <p class="lang-text">EN</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">DE</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">FR</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">IT</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">ES</p>
-                      </div>
+                    <div class="selecting-lang">
+                      <p class="lang-text">DE</p>
+                    </div>
+                    <div class="selecting-lang">
+                      <p class="lang-text">FR</p>
+                    </div>
+                    <div class="selecting-lang">
+                      <p class="lang-text">IT</p>
+                    </div>
+                    <div class="selecting-lang">
+                      <p class="lang-text">ES</p>
                     </div>
                   </div>
-
-
-
-
-                
+                </div>
 
                 <Image
                   onClick={() => onToggle(true)}
