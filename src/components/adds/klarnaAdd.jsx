@@ -11,7 +11,7 @@ export default function KlarnaAdd() {
         <Link href={'/klarna'}>
     
         <img
-          src="./klarna-b-19.svg"
+          src="/klarna-b-19.svg"
           alt="Tattoo now Pay later"
           className={styles.adv_klarna}
         />    </Link>
@@ -23,18 +23,18 @@ export default function KlarnaAdd() {
         </h6>
         <span className={styles.adv_btn_wrap}>
           <img
-            src="./pngwing-39.png"
+            src="/pngwing-39.png"
             alt="Tattoo now Pay later"
             className={styles.adv_img_app}
           />
           <img
-            src="./pngwing-40.png"
+            src="/pngwing-40.png"
             alt="Tattoo now Pay later"
             className={styles.adv_img_app}
           />
         </span>
         <img
-          src="./shutterstock_2068639577.png"
+          src="/shutterstock_2068639577.png"
           alt="Tattoo now Pay later"
         />
       </div>

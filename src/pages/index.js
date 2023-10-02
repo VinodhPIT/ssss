@@ -23,16 +23,16 @@ export default function Home() {
   const { isMobileView ,cookieDropdown } = useWindowResize();
 
   const imagePaths = [
-    "./s-1.svg",
-    "./s-2.svg",
-    "./s-3.svg",
-    "./s-4.svg",
-    "./s-5.svg",
-    "./s-6.svg",
-    "./s-7.svg",
-    "./s-8.svg",
-    "./s-9.svg",
-    "./s-10.svg",
+    "/s-1.svg",
+    "/s-2.svg",
+    "/s-3.svg",
+    "/s-4.svg",
+    "/s-5.svg",
+    "/s-6.svg",
+    "/s-7.svg",
+    "/s-8.svg",
+    "/s-9.svg",
+    "/s-10.svg",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCookie, setCookie] = useState(false);
@@ -60,7 +60,7 @@ export default function Home() {
 
        <div className="header_cookies">
         <div className="header_cookie_img">
-          <img src="./logo-cookies.svg" alt="" />
+          <img src="/logo-cookies.svg" alt="" />
         </div>
         <div className="header_cookie_txt">
           <p>
@@ -103,10 +103,10 @@ export default function Home() {
             <div className={styles.home_banner}>
               <div className={styles.home_banner_inner}>
                 <video loop autoPlay muted className="mob_hidden">
-                  <source src="./home-video.mp4" type="video/mp4" />
+                  <source src="/home-video.mp4" type="video/mp4" />
                 </video>
                 <img
-                  src="./istockphoto-1386481647-640_adpp_is1-mob.png"
+                  src="/istockphoto-1386481647-640_adpp_is1-mob.png"
                   alt=""
                   className={`${styles.desk_hidden} ${styles.home_banner_img}`}
                 />
@@ -138,7 +138,7 @@ export default function Home() {
                             href={`/search?term=${""}&category=${"tattoo"}`}
                            
                           >
-                            <img src="./Flame.svg" alt="Tattoos" />
+                            <img src="/Flame.svg" alt="Tattoos" />
                             Tattoos
                           </Link>
                         </li>
@@ -147,7 +147,7 @@ export default function Home() {
                             href={`/search?term=${""}&category=${"flash"}`}
                            
                           >
-                            <img src="./Bolt.svg" alt="Flash" />
+                            <img src="/Bolt.svg" alt="Flash" />
                             Flash
                           </Link>
                         </li>
@@ -156,7 +156,7 @@ export default function Home() {
                             href={`/search?term=${""}&category=${"artist"}`}
                             
                           >
-                            <img src="./colour-palette.svg" alt="Artists" />
+                            <img src="/colour-palette.svg" alt="Artists" />
                             Artists
                           </Link>
                         </li>
@@ -171,12 +171,12 @@ export default function Home() {
                   </li>
                   <li>
                     <Link href={APP_LINK_APPLE} target="_blank">
-                      <img src="./app-store.svg" alt="" />
+                      <img src="/app-store.svg" alt="" />
                     </Link>
                   </li>
                   <li>
                     <Link href={APP_LINK_GOOGLE} target="_blank">
-                      <img src="./g-play.svg" alt="" />
+                      <img src="/g-play.svg" alt="" />
                     </Link>
                   </li>
                 </ul>
@@ -206,7 +206,7 @@ export default function Home() {
                     >
                       Find artists
                       <img
-                        src="./alt-arrow-right-white.svg"
+                        src="/alt-arrow-right-white.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -244,7 +244,7 @@ export default function Home() {
                     blurDataURL={blurDataURL}
                     layout="responsive"
                   />
-                  {/* <img src="./pexels-djordje-petrovic-1433270-3.png" alt="" />  */}
+                  
                 </div>
               </div>
             </div>
@@ -253,7 +253,7 @@ export default function Home() {
               <div class="img_text_box_inner">
                 <div class="img_box_wrap block_bg_gradient_1 m_min_h_425">
                   <div class="klarna_bg">
-                    <img src="./klarna-white.svg" alt="" />
+                    <img src="/klarna-white.svg" alt="" />
                   </div>
                   <div class="box_text_img_over color_pink">
                     <h2 class="txt_mob_fs50">
@@ -261,19 +261,19 @@ export default function Home() {
                     </h2>
                   </div>                  
                   <img
-                    src="./pexels-cottonbro-studio-5320148-6.png"
+                    src="/pexels-cottonbro-studio-5320148-6.png"
                     alt=""
                     className="object_position_left mob_hidden"
                   />
                   <img
-                    src="./pexels-cottonbro-studio-5320148-6-mob.png"
+                    src="/pexels-cottonbro-studio-5320148-6-mob.png"
                     alt=""
                     className="desk_hidden"
                   />
                 </div>
                 <div class="text_box_content justify_content_start">
                   <div class="klarna_bg">
-                    <img src="./klarna.svg" alt="" />
+                    <img src="/klarna.svg" alt="" />
                   </div>
                   <div class="text_box_content_inner m_pr_0 pr_0">
                     <h2>
@@ -290,7 +290,7 @@ export default function Home() {
                     >
                       Learn more
                       <img
-                        src="./alt-arrow-right-white.svg"
+                        src="/alt-arrow-right-white.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -313,7 +313,7 @@ export default function Home() {
                       <Link href="/dictionary" className="btn btn_default btn_xxl btn_sm_m">
                       Visit Tattoo Dictionary
                         <img
-                          src="./alt-arrow-right-black.svg"
+                          src="/alt-arrow-right-black.svg"
                           alt=""
                           className="ml-8 mt-2"
                         />
@@ -359,7 +359,7 @@ export default function Home() {
                     className="desk_hidden"
                   />
 
-                  {/* <img src="./pexels-ademola.png" alt="" />  */}
+                  
                 </div>
                 <div class="text_box_content">
                   <div class="bg_overlay_img">
@@ -392,7 +392,7 @@ export default function Home() {
                     >
                       Check the Styleguide
                       <img
-                        src="./alt-arrow-right-white.svg"
+                        src="/alt-arrow-right-white.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -420,7 +420,7 @@ export default function Home() {
                     >
                       Learn more
                       <img
-                        src="./alt-arrow-right-black.svg"
+                        src="/alt-arrow-right-black.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -459,12 +459,12 @@ export default function Home() {
                       </li>
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
-                          <img src="./app-store.svg" alt="" />
+                          <img src="/app-store.svg" alt="" />
                         </Link>
                       </li>
                       <li>
                         <Link href={APP_LINK_GOOGLE} target="_blank">
-                          <img src="./g-play.svg" alt="" />
+                          <img src="/g-play.svg" alt="" />
                         </Link>
                       </li>
                     </ul>

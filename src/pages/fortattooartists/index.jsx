@@ -96,7 +96,7 @@ export default function Tattooartists() {
                           </li>
                           <li>
                             <img
-                              src="./hourglass-icon.svg"
+                              src="hourglass-icon.svg"
                               alt="Easy to set up and manage"
                             />
                             Easy to set up and manage

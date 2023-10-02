@@ -19,28 +19,28 @@ export default function Dictionary() {
 
   const items = [
     {
-      image: "./Group.svg",
+      image: "/Group.svg",
       text: "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
       button1: "Trust",
       button2: "Remembrance",
       heading: "Cancer",
     },
     {
-      image: "./Group 82721.png",
+      image: "/Group 82721.png",
       text: "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
       button1: "Trust",
       button2: "Remembrance",
       heading: "Itzscuintli",
     },
     {
-      image: "./Group 82677.svg",
+      image: "/Group 82677.svg",
       text: "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
       button1: "Trust",
       button2: "Remembrance",
       heading: "Cancer",
     },
     {
-      image: "./Group 82674.svg",
+      image: "/Group 82674.svg",
       text: "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
       button1: "Trust",
       button2: "Remembrance",
@@ -81,7 +81,7 @@ export default function Dictionary() {
                       <Link  href={`/search?term=${""}&category=${"artist"}`} className="btn btn_default btn_xxl btn_sm_m">
                         Find artists
                         <img
-                          src="./alt-arrow-right-black.svg"
+                          src="/alt-arrow-right-black.svg"
                           alt=""
                           className="ml-8 mt-2"
                         />
@@ -118,7 +118,7 @@ export default function Dictionary() {
                               target="_blank"
                               href={APP_LINK_APPLE}
                             >
-                              <img src="./app-store.svg" alt="apple store" />
+                              <img src="/app-store.svg" alt="apple store" />
                             </Link>
                           </li>
                           <li>
@@ -126,7 +126,7 @@ export default function Dictionary() {
                               target="_blank"
                               href={APP_LINK_GOOGLE}
                             >
-                              <img src="./g-play.svg" alt="google play" />
+                              <img src="/g-play.svg" alt="google play" />
                             </Link>
                           </li>
                         </ul>
@@ -149,7 +149,7 @@ export default function Dictionary() {
                       the right meaning for you in the app
                     </p>
                   </div>
-                  <img src="./mythology.png" alt="" />
+                  <img src="/mythology.png" alt="" />
                 </div>
                 <div className="text_box_content justify_content_start block_bg_gray_150">
                   <div className="text_box_content_inner custom_carousel_wrap">
@@ -199,12 +199,12 @@ export default function Dictionary() {
                       </li>
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
-                          <img src="./app-store.svg" alt="" />
+                          <img src="/app-store.svg" alt="" />
                         </Link>
                       </li>
                       <li>
                         <Link href={APP_LINK_GOOGLE} target="_blank">
-                          <img src="./g-play.svg" alt="" />
+                          <img src="/g-play.svg" alt="" />
                         </Link>
                       </li>
                     </ul>
@@ -231,7 +231,7 @@ export default function Dictionary() {
               <div class="img_text_box_inner m_switcher">
                 <div class="text_box_content justify_content_start block_bg_gray_150">
                   <div class="text_box_content_inner custom_carousel_wrap">
-                    {/* <img src="./slider-dummy-2.png" alt="Zodiac Signs" class="w_100pc"/>                      */}
+            
 
                     <CarouselComponent
                       items={items}
@@ -249,7 +249,7 @@ export default function Dictionary() {
                       the right meaning for you in the app
                     </p>
                   </div>
-                  <img src="./mythology.png" alt="Greek Mythology" />
+                  <img src="/mythology.png" alt="Greek Mythology" />
                 </div>
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function Dictionary() {
                               target="_blank"
                               href={APP_LINK_APPLE}
                             >
-                              <img src="./app-store.svg" alt="apple store" />
+                              <img src="/app-store.svg" alt="apple store" />
                             </Link>
                           </li>
                           <li>
@@ -285,7 +285,7 @@ export default function Dictionary() {
                               target="_blank"
                               href={APP_LINK_GOOGLE}
                             >
-                              <img src="./g-play.svg" alt="google play" />
+                              <img src="/g-play.svg" alt="google play" />
                             </Link>
                           </li>
                         </ul>
@@ -308,7 +308,7 @@ export default function Dictionary() {
                       the right meaning for you in the app
                     </p>
                   </div>
-                  <img src="./aztec-symbols.png" alt="" />
+                  <img src="/aztec-symbols.png" alt="" />
                 </div>
                 <div class="text_box_content justify_content_start block_bg_gray_150">
                   <div class="text_box_content_inner custom_carousel_wrap">

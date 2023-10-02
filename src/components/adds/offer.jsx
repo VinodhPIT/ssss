@@ -1,21 +1,15 @@
 import React ,{useState} from 'react'
 import styles from "@/components/styles/listing.module.css";
-import TattooSearchModalPopup from "@/components/modalPopup/TattooSearchModalPopup";
-
+import TattooSearchModalPopup from "@/utils/modalUtils";
+import { useModal } from "@/utils/modalUtils";
 
 
 export default function Offer() {
 
-  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const { isPopupOpen, openPopup, closePopup } = useModal();
 
 
-  const openPopup = () => {
-    setPopupOpen(true);
-  };
-
-  const closePopup = () => {
-    setPopupOpen(false);
-  };
 
   return (
     <div className={styles.custom_adv_block_3}>
@@ -31,17 +25,16 @@ export default function Offer() {
           </a>
         </span>
         <img
-          src="./shutterstock_2068639577-1.png"
+          src="/shutterstock_2068639577-1.png"
           alt="Tattoo now Pay later"
         />
       </div>
     </div>
-
-        <TattooSearchModalPopup
-          className="custom-modal"
-          isOpen={isPopupOpen}
-          closeModal={closePopup}
-        />
+         <TattooSearchModalPopup
+            className="custom-modal"
+            isOpen={isPopupOpen}
+            closeModal={closePopup}
+          />
 
 
   </div>

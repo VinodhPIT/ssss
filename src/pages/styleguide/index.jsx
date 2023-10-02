@@ -26,7 +26,7 @@ export default function StyleGuide() {
                 <div className={styles.banner}>
                   <div className={styles.banner_inner}>
                     <img
-                      src="./pexels-ryan-hiebendahl-9801666-28-styleguide.png"
+                      src="/pexels-ryan-hiebendahl-9801666-28-styleguide.png"
                       alt="StyleBanner"
                     />
                   </div>
@@ -48,7 +48,7 @@ export default function StyleGuide() {
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
                           <img
-                            src="./app-store.svg"
+                            src="/app-store.svg"
                             alt="Appstore"
                             className="d_w_156"
                           />
@@ -57,7 +57,7 @@ export default function StyleGuide() {
                       <li>
                         <Link href={APP_LINK_GOOGLE} target="_blank">
                           <img
-                            src="./g-play.svg"
+                            src="/g-play.svg"
                             alt="Playstore"
                             className="d_w_156"
                           />
@@ -122,7 +122,7 @@ export default function StyleGuide() {
                   <div class="img_text_box_inner m_switcher">
                     <div class="text_box_content text_center no-space-center no_space_center">
                       <div class="bg_overlay_img m_img_resize">
-                        <img src="./g10.svg" alt="" class="svg_h_inherit" />
+                        <img src="/g10.svg" alt="" class="svg_h_inherit" />
                       </div>
                       <div class="text_box_content_inner pr_0">
                         <h2 class="letter_spacing_025 color_black_h">
@@ -166,12 +166,12 @@ export default function StyleGuide() {
                           </li>
                           <li>
                             <Link href={APP_LINK_APPLE} target="_blank">
-                              <img src="./app-store.svg" alt="Appstore" />
+                              <img src="/app-store.svg" alt="Appstore" />
                             </Link>
                           </li>
                           <li>
                             <Link href={APP_LINK_GOOGLE} target="_blank">
-                              <img src="./g-play.svg" alt="Playstore" />
+                              <img src="/g-play.svg" alt="Playstore" />
                             </Link>
                           </li>
                         </ul>
@@ -238,7 +238,7 @@ export default function StyleGuide() {
                     </div>
                     <div class="text_box_content text_center no_space_center">
                       <div class="bg_overlay_img m_img_resize">
-                        <img src="./g12.svg" alt="" class="svg_h_inherit" />
+                        <img src="/g12.svg" alt="" class="svg_h_inherit" />
                       </div>
                       <div class="text_box_content_inner pr_0">
                         <h2 class="letter_spacing_025">
@@ -255,7 +255,7 @@ export default function StyleGuide() {
                     <div class="text_box_content text_center no_space_center">
                       <div class="bg_overlay_img m_img_resize">
                         <img
-                          src="./traditional-82713.svg"
+                          src="/traditional-82713.svg"
                           alt=""
                           class="svg_h_inherit"
                         />

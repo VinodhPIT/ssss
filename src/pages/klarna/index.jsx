@@ -21,25 +21,25 @@ export default function Klarna() {
   
   const items = [
     {
-      image: "./paylater_bg.svg",
+      image: "/paylater_bg.svg",
       text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
       option1: "Option 1",
       heading: "Pay Later",
     },
     {
-      image: "./Group.svg",
+      image: "/Group.svg",
       text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
       option1: "Option 2",
       heading: "Pay Later 2",
     },
     {
-      image: "./Group 82677.svg",
+      image: "/Group 82677.svg",
       text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
       option1: "Option 3",
       heading: "Pay Later 3",
     },
     {
-      image: "./Group 82674.svg",
+      image: "/Group 82674.svg",
       text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
       option1: "Option 4",
       heading: "Pay Later 4",
@@ -61,11 +61,11 @@ export default function Klarna() {
             <div className={styles.banner}>
               <div className={styles.banner_inner}>
                 <img
-                  src="./pexels-cottonbro-studio-5320148-14-klarna.png"
+                  src="/pexels-cottonbro-studio-5320148-14-klarna.png"
                   alt="Boost your business with inckd" className="mob_hidden"
                 />
                 <img
-                  src="./pexels-cottonbro-studio-5320148-14-klarna-mob.png"
+                  src="/pexels-cottonbro-studio-5320148-14-klarna-mob.png"
                   alt="Boost your business with inckd" className="desk_hidden"
                 />
               </div>
@@ -97,12 +97,12 @@ export default function Klarna() {
                   </li>
                   <li>
                     <Link href={APP_LINK_APPLE} target="_blank">
-                      <img src="./app-store.svg" alt="apple store" />
+                      <img src="/app-store.svg" alt="apple store" />
                     </Link>
                   </li>
                   <li>
                     <Link href={APP_LINK_GOOGLE} target="_blank">
-                      <img src="./g-play.svg" alt="google play" />
+                      <img src="/g-play.svg" alt="google play" />
                     </Link>
                   </li>
                 </ul>
@@ -123,14 +123,14 @@ export default function Klarna() {
                     <ul class="custom-listing how_work_list">
                       <li>
                         <img
-                          src="./download.svg"
+                          src="/download.svg"
                           alt="Download the inckd. App"
                         />
                         <span>Download the inckd. App</span>
                       </li>
                       <li>
                         <img
-                          src="./bookmark-square-minimalistic.svg"
+                          src="/bookmark-square-minimalistic.svg"
                           alt="Accept an offer from your favourite artist."
                         />
                         <span>
@@ -140,21 +140,21 @@ export default function Klarna() {
                       </li>
                       <li>
                         <img
-                          src="./klarna-icon-black.svg"
+                          src="/klarna-icon-black.svg"
                           alt="Select Klarna as payment option."
                         />
                         <span>Select Klarna as payment option.</span>
                       </li>
                       <li>
                         <img
-                          src="./heart-icon-black.svg"
+                          src="/heart-icon-black.svg"
                           alt="Get your tattoo done."
                         />
                         <span>Get your tattoo done.</span>
                       </li>
                       <li>
                         <img
-                          src="./money-bag.svg"
+                          src="/money-bag.svg"
                           alt="Pay later or in instalments."
                         />
                         <span>Pay later or in instalments.</span>
@@ -165,14 +165,14 @@ export default function Klarna() {
                 <div class="img_box_wrap block_bg_orange justify_content_center block_bg_gradient_3">
                   <div class="bg_overlay_img z_index_1">
                     <img
-                      src="./inckd-klarna-works.png"
+                      src="/inckd-klarna-works.png"
                       alt="How it Works!"
                       class="svg_h_inherit img_box_shadow_2 m_klarna_work_reset"
                     />                                    
                   </div>
                   <div class="bg_overlay_img">
                     <img
-                      src="./dragon.svg"
+                      src="/dragon.svg"
                       alt="How it Works!"
                       class="svg_h_inherit"
                     />
@@ -196,7 +196,7 @@ export default function Klarna() {
               <div class="img_text_box_inner">
                 <div class="img_box_wrap block_bg_gradient_1">
                   <div class="klarna_bg">
-                    <img src="./klarna-white.svg" alt="" />
+                    <img src="/klarna-white.svg" alt="" />
                   </div>
                   <div class="box_text_img_over color_pink m_left_0 m_right_0 m_text_center">
                     <h2 class="txt_mob_fs50">
@@ -232,63 +232,63 @@ export default function Klarna() {
                     <h2 class="m_text_center">Availability</h2>
                     <ul class="custom-listing-grid">
                       <li>
-                        <img src="./afghanistan.svg" alt="afghanistan" />
+                        <img src="/afghanistan.svg" alt="afghanistan" />
                         <span>afghanistan</span>
                       </li>
                       <li>
-                        <img src="./aland islands.svg" alt="aland islands" />
+                        <img src="/aland islands.svg" alt="aland islands" />
                         <span>aland islands</span>
                       </li>
                       <li>
-                        <img src="./albania.svg" alt="albania" />
+                        <img src="/albania.svg" alt="albania" />
                         <span>albania</span>
                       </li>
                       <li>
-                        <img src="./Algeria.svg" alt="Algeria" />
+                        <img src="/Algeria.svg" alt="Algeria" />
                         <span>Algeria</span>
                       </li>
                       <li>
-                        <img src="./american samoa.svg" alt="american samoa" />
+                        <img src="/american samoa.svg" alt="american samoa" />
                         <span>american samoa</span>
                       </li>
                       <li>
-                        <img src="./angola.svg" alt="angola" />
+                        <img src="/angola.svg" alt="angola" />
                         <span>angola</span>
                       </li>
                       <li>
-                        <img src="./anguilla.svg" alt="anguilla" />
+                        <img src="/anguilla.svg" alt="anguilla" />
                         <span>anguilla</span>
                       </li>
                       <li>
-                        <img src="./monaco.svg" alt="monaco" />
+                        <img src="/monaco.svg" alt="monaco" />
                         <span>monaco</span>
                       </li>
                       <li>
-                        <img src="./mongolia.svg" alt="mongolia" />
+                        <img src="/mongolia.svg" alt="mongolia" />
                         <span>mongolia</span>
                       </li>
                       <li>
-                        <img src="./montenegro.svg" alt="montenegro" />
+                        <img src="/montenegro.svg" alt="montenegro" />
                         <span>montenegro</span>
                       </li>
                       <li>
-                        <img src="./morocco.svg" alt="morocco" />
+                        <img src="/morocco.svg" alt="morocco" />
                         <span>morocco</span>
                       </li>
                       <li>
-                        <img src="./mozambique.svg" alt="mozambique" />
+                        <img src="/mozambique.svg" alt="mozambique" />
                         <span>mozambique</span>
                       </li>
                       <li>
-                        <img src="./myanmar.svg" alt="myanmar" />
+                        <img src="/myanmar.svg" alt="myanmar" />
                         <span>myanmar</span>
                       </li>
                       <li>
-                        <img src="./namibia.svg" alt="namibia" />
+                        <img src="/namibia.svg" alt="namibia" />
                         <span>namibia</span>
                       </li>
                       <li>
-                        <img src="./nato.svg" alt="nato" />
+                        <img src="/nato.svg" alt="nato" />
                         <span>nato</span>
                       </li>
                     </ul>
@@ -296,7 +296,7 @@ export default function Klarna() {
                 </div>
                 <div class="img_box_wrap block_bg_gradient_1 justify_content_right img-btm-7pc">
                   <div class="klarna_bg klarna_page_align">
-                    <img src="./klarna-white.svg" alt="" />                    
+                    <img src="/klarna-white.svg" alt="" />                    
                   </div>
                   <div class="box_text_img_over color_pink txt-right-align">
                     <h2 class="text_right m_text_center txt_mob_fs50">
@@ -328,12 +328,12 @@ export default function Klarna() {
                       </li>
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
-                          <img src="./app-store.svg" alt="" />
+                          <img src="/app-store.svg" alt="" />
                         </Link>
                       </li>
                       <li>
                         <Link href={APP_LINK_GOOGLE} target="_blank">
-                          <img src="./g-play.svg" alt="" />
+                          <img src="/g-play.svg" alt="" />
                         </Link>
                       </li>
                     </ul>
@@ -344,13 +344,13 @@ export default function Klarna() {
                   <ul class="app_download_img_list img_box_img_m20pc justify_content_right slider_resize">
                     <li>
                       <img
-                        src="./mockup-iPhone-download.png"
+                        src="/mockup-iPhone-download.png"
                         alt="Download the App & Explore more!"
                       />
                     </li>
                     <li>
                       <img
-                        src="./mockup-iPhone-download.png"
+                        src="/mockup-iPhone-download.png"
                         alt="Download the App & Explore more!"
                       />
                     </li>

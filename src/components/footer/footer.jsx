@@ -105,7 +105,7 @@ export default function Footer() {
                   <h6>Download app on</h6>
                 </li>
                 <li>
-                  <Link href={APP_LINK_APPLE}>
+                  <Link href={APP_LINK_APPLE}  target="_blank">
                    
                     <Image
                       src={"/app-store.svg"}
@@ -117,7 +117,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href={APP_LINK_GOOGLE}>
+                  <Link href={APP_LINK_GOOGLE}  target="_blank">
                   <Image
                       src={"/g-play.svg"}
                       alt="GooglePlay"

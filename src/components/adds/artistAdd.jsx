@@ -18,7 +18,7 @@ export default function ArtistAdd() {
           </Link>
         </span>
         <img
-          src="./pexels-cottonbro-studio-5320059-3.png"
+          src="/pexels-cottonbro-studio-5320059-3.png"
           alt="View Artists"
         />
       </div>
