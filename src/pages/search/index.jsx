@@ -11,7 +11,7 @@ import { tabs } from "@/components/tabMenu/menu";
 import SearchField from "@/components/tattooSearch/tattooSearch";
 import { addAdsToResults } from "@/helpers/helper";
 import { getUrl } from "@/utils/getUrl";
-
+import Image from 'next/image'
 import { useGlobalState } from "@/context/Context";
 const MobileDetect = require('mobile-detect');
 const Search = ({
@@ -87,11 +87,18 @@ const Search = ({
             <div className={style.main_wrap}>
               {state.currentTab === "artist" && (
                 <div className={style.wrapper_block}>
-                  <img
-                    src="/location-small.svg"
-                    alt="location"
-                    className={style.location_icon}
-                  />
+
+
+<Image
+    src="/location-small.svg"
+      width={16}
+      height={17}
+      alt="location"
+      className={style.location_icon}
+      priority
+    />
+
+
                   <Autocomplete
                     apiKey={process.env.googlePlacesApiKey}
                     onPlaceSelected={handlePlaceSelected}
@@ -100,11 +107,17 @@ const Search = ({
               )}
 
               <div className={style.wrapper_filter}>
-                <img
-                  src="/setting_tuning.svg"
-                  alt="location"
-                  className={style.filter_icon}
-                />
+
+              <Image
+      src="/setting_tuning.svg"
+      width={20}
+      height={21}
+      alt="style"
+      className={style.filter_icon}
+      priority
+    />
+
+           
                 <select
                   onChange={(event) => searchStyle(event.target.value)}
                   value={state.selectedStyle}

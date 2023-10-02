@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { countryList } from "@/constants/coutry";
 import { useRouter } from "next/router";
+import Image from 'next/image'
+
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -200,7 +202,17 @@ const router = useRouter()
         </div>
       ) : 
           <div class="form_submit_block">
-            <img src="/success-tick.svg" alt="Form submitted" />
+
+   <Image
+      src="/success-tick.svg" 
+      width={81}
+      height={81}
+      priority
+      alt="Form submitted" 
+    />
+           
+
+
             <h4>Form submitted</h4>
             <p>
               Thank you!

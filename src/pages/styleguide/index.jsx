@@ -25,10 +25,16 @@ export default function StyleGuide() {
               <div className={styles.banner_item}>
                 <div className={styles.banner}>
                   <div className={styles.banner_inner}>
-                    <img
-                      src="/pexels-ryan-hiebendahl-9801666-28-styleguide.png"
-                      alt="StyleBanner"
-                    />
+                  <Image
+                  src={"/pexels-ryan-hiebendahl-9801666-28-styleguide.png"}
+                  alt="pexels"
+                  fill
+                  blurDataURL={blurDataURL}
+                  placeholder="blur"
+                  priority
+                  objectFit="cover"
+                />
+
                   </div>
                 </div>
                 <div className={styles.banner_content}>

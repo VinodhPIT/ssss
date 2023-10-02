@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./custom.module.css";
-import { APP_LINK_APPLE, APP_LINK_GOOGLE } from "@/constants/constants";
+import { APP_LINK_APPLE, APP_LINK_GOOGLE ,blurDataURL} from "@/constants/constants";
 
 export default function Tattooartists() {
   return (
@@ -14,6 +14,33 @@ export default function Tattooartists() {
               <div className={styles.banner_item}>
                 <div className={styles.banner}>
                   <div className={styles.banner_inner}>
+
+
+                  <Image
+                    src="/istockphoto-1367127235-1024x1024-6-tatoo-banner.png"
+                    alt="Boost your business with inckd"
+                  fill
+                  blurDataURL={blurDataURL}
+                  placeholder="blur"
+                  priority
+                  objectFit="cover"
+                  className="mob_hidden"
+                />
+
+              <Image
+                      src="/istockphoto-1367127235-1024x1024 6-mob.png"
+                      alt="Boost your business with inckd"
+                  fill
+                  blurDataURL={blurDataURL}
+                  placeholder="blur"
+                  priority
+                  objectFit="cover"
+                  className="desk_hidden"
+                /> 
+
+
+
+{/* 
                     <img
                       src="/istockphoto-1367127235-1024x1024-6-tatoo-banner.png"
                       alt="Boost your business with inckd"
@@ -23,7 +50,10 @@ export default function Tattooartists() {
                       src="/istockphoto-1367127235-1024x1024 6-mob.png"
                       alt="Boost your business with inckd"
                       className="desk_hidden"
-                    />
+                    /> */}
+
+
+
                   </div>
                 </div>
                 <div className={styles.banner_content}>

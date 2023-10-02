@@ -10,6 +10,8 @@ import {
   blurDataURL,
 } from "@/constants/constants";
 import useWindowResize from "@/hooks/useWindowSize";
+import Image from 'next/image'
+
 
 export default function Dictionary() {
 
@@ -149,8 +151,30 @@ export default function Dictionary() {
                       the right meaning for you in the app
                     </p>
                   </div>
-                  <img src="/mythology.png" alt="" />
+
+
+
+                  <Image
+                    priority
+                    src="/mythology.png" 
+                    alt="Picture of the author"
+                    width={500}
+                    height={800}
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    layout="responsive"
+                  
+                  />
+
+              
+
+
+
+
                 </div>
+
+
+
                 <div className="text_box_content justify_content_start block_bg_gray_150">
                   <div className="text_box_content_inner custom_carousel_wrap">
                     {/* 
@@ -249,7 +273,21 @@ export default function Dictionary() {
                       the right meaning for you in the app
                     </p>
                   </div>
-                  <img src="/mythology.png" alt="Greek Mythology" />
+
+                  <Image
+                    priority
+                    src="/mythology.png" 
+                    alt="Greek Mythology" 
+                    width={500}
+                    height={800}
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    layout="responsive"
+                  
+                  />
+
+
+                  {/* <img src="/mythology.png" alt="Greek Mythology" /> */}
                 </div>
               </div>
             </div>
@@ -308,7 +346,26 @@ export default function Dictionary() {
                       the right meaning for you in the app
                     </p>
                   </div>
-                  <img src="/aztec-symbols.png" alt="" />
+
+
+                  <Image
+                    priority
+                    src="/aztec-symbols.png" 
+                    alt="Picture of the author"
+                    width={500}
+                    height={800}
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    layout="responsive"
+                  
+                  />
+
+
+                  {/* <img src="/aztec-symbols.png" alt="" /> */}
+
+
+
+
                 </div>
                 <div class="text_box_content justify_content_start block_bg_gray_150">
                   <div class="text_box_content_inner custom_carousel_wrap">

@@ -60,14 +60,42 @@ export default function Klarna() {
           <div className={styles.banner_item}>
             <div className={styles.banner}>
               <div className={styles.banner_inner}>
-                <img
-                  src="/pexels-cottonbro-studio-5320148-14-klarna.png"
-                  alt="Boost your business with inckd" className="mob_hidden"
+
+              <Image
+                 src="/pexels-cottonbro-studio-5320148-14-klarna.png"
+                  alt="pexels"
+                  fill
+                  blurDataURL={blurDataURL}
+                  placeholder="blur"
+                  priority
+                  objectFit="cover"
+                  className="mob_hidden"
                 />
+
+<Image
+                   src="/pexels-cottonbro-studio-5320148-14-klarna-mob.png"
+                  alt="pexels"
+                  fill
+                  blurDataURL={blurDataURL}
+                  placeholder="blur"
+                  priority
+                  objectFit="cover"
+                  className="desk_hidden"
+                />
+                
+                {/* <img
+                  src="/pexels-cottonbro-studio-5320148-14-klarna.png"
+                  alt="Boost your business with inckd"
+                />
+
+
                 <img
                   src="/pexels-cottonbro-studio-5320148-14-klarna-mob.png"
-                  alt="Boost your business with inckd" className="desk_hidden"
-                />
+                  alt="Boost your business with inckd" 
+                /> */}
+
+
+
               </div>
             </div>
             <div className={styles.banner_content}>

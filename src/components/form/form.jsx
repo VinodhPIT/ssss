@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
+import Image from 'next/image'
+
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
@@ -178,7 +180,13 @@ const _Form = () => {
             </div>
           ) : (
             <div class="form_submit_block">
-              <img src="/success-tick.svg" alt="Form submitted" />
+               <Image
+      src="/success-tick.svg" 
+      width={81}
+      height={81}
+      priority
+      alt="Form submitted" 
+    />
 
               <h4>Form submitted</h4>
               <p>
