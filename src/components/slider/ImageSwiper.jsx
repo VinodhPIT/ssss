@@ -5,7 +5,7 @@ import "swiper/swiper-bundle.min.css"; // Import the CSS file from your styles d
 import SwiperCore, { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 SwiperCore.use([EffectCoverflow, Pagination, Autoplay]);
-const images = ["./dragon_swiper.svg","./mummy egypt.svg","./butterfly.svg"];
+const images = ["/dragon_swiper.svg","/mummy egypt.svg","/butterfly.svg"];
 const ImageSwiper = () => {
   swiper.om;
   const params = {

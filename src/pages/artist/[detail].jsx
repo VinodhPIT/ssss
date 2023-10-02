@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./artistdetail.module.css";
-import Header from "@/components/pageHeader/header";
+import Header from "@/components/customHeader/header";
 import { useRouter } from "next/router";
 import { fetchArtistDetail, artistGallery } from "@/action/action";
 import { blurDataURL } from "@/constants/constants";

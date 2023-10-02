@@ -1,6 +1,6 @@
 import React from "react";
 import _Form from "@/components/artistForm/form";
-import Header from '@/components/pageHeader/header'
+import Header from '@/components/customHeader/header'
 
 export default function JoinArtist() {
 

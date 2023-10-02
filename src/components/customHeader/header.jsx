@@ -3,13 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import SideDrawer from "@/components/sideDrawer/sideDrawer";
 import Image from "next/image";
+import LanguageSwitcher from "@/components/languageSwitcher/languageSwitcher";
 
 export default function Header({ logo, theme, isPosition }) {
 
 
 
-
-  
   const [toggle, setToggle] = useState(false);
   useEffect(() => {
     if (toggle) {
@@ -78,6 +77,8 @@ export default function Header({ logo, theme, isPosition }) {
                 </Link>
               </div>
 
+
+
               <div className="nav_block">
                 <ul className="nav main_nav navbar_collapse collapse">
                   {links.map((link) => (
@@ -105,37 +106,8 @@ export default function Header({ logo, theme, isPosition }) {
                 >
                   For Tattoo Artists
                 </button>
-
-                <div class="switch-lang">
-                    <div class= {  theme=== "white" ? 'wh-current-lang' : 'current-lang'}>
-                      <p class= {  theme=== "white" ?   'wh-select-lang' :  "select-Lang"}>EN</p>
-                     
-                      <Image
-                        src={ theme!== "white" ? "/dropDown.svg" : '/down-arrow.png'}
-                        alt="langDropdown"
-                        width={15}
-                        priority
-                        height={15}
-                      />
-                    </div>
-                    <div class= {  theme=== "white" ?  'wh-lang-dropdown':'lang-dropdown'} >
-                      <div class="selecting-lang">
-                        <p class="lang-text">EN</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">DE</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">FR</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">IT</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">ES</p>
-                      </div>
-                    </div>
-                  </div>
+                
+                <LanguageSwitcher theme={theme}   />
 
                 <Image
                   onClick={() => onToggle(true)}

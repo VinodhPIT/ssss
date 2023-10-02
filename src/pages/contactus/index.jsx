@@ -1,7 +1,7 @@
 import React from 'react'
 import _Form from '@/components/form/form'
 import Head from "next/head";
-import Header from '@/components/pageHeader/header'
+import Header from '@/components/customHeader/header'
 
 
 

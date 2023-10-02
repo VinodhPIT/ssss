@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "@/components/pageHeader/header";
+import Header from "@/components/customHeader/header";
 import Head from "next/head";
 import { fetchCategoryData, fetchMultiData } from "@/action/action";
 import Autocomplete from "react-google-autocomplete";

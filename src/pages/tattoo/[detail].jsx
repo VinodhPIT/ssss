@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "@/components/pageHeader/header";
+import Header from "@/components/customHeader/header";
 import Image from "next/image";
 import styles from "./tattoodetail.module.css";
 import { fetchTattooDetail } from "@/action/action";

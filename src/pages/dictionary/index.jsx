@@ -3,7 +3,7 @@ import Link from "next/link";
 import CarouselComponent from "@/components/carousel/Carousel";
 import ImageSwiper from "@/components/slider/ImageSwiper";
 import ImageSlider from "@/components/slider/ImageSlider";
-import Header from '@/components/pageHeader/header'
+import Header from '@/components/customHeader/header'
 import {
   APP_LINK_APPLE,
   APP_LINK_GOOGLE,

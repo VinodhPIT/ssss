@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import SideDrawer from "@/components/sideDrawer/sideDrawer";
+import LanguageSwitcher from "@/components/languageSwitcher/languageSwitcher";
 import Image from "next/image";
 
 export default function Header() {
@@ -102,7 +103,10 @@ export default function Header() {
                   For Tattoo Artists
                 </button>
 
-                <div class="switch-lang">
+
+
+<LanguageSwitcher/>
+                {/* <div class="switch-lang">
                   <div class="current-lang">
                     <p class="select-Lang">EN</p>
                     <Image
@@ -130,7 +134,7 @@ export default function Header() {
                       <p class="lang-text">ES</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <Image
                   onClick={() => onToggle(true)}
