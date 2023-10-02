@@ -117,15 +117,15 @@ const _Form = () => {
                           Other
                         </label>
 
-                        <ErrorMessage
+                     
+
+                      </div>
+
+                      <ErrorMessage
                           name="tattooType"
                           component="div"
                           className="error"
                         />
-
-                      </div>
-
-                  
 
                     </div>
 
