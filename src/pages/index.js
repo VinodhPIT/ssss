@@ -127,24 +127,6 @@ export default function Home() {
                 <div className="search_form">
                   <div className="search_form_wrap">
                     <SearchField isPage={"all"} />
-
-                    {/* <form className="position_relative">
-                      <div className="input_group position_relative">
-                        <input
-                          placeholder="Search"
-                          type="text"
-                          required="required"
-                          className="form_control input_txt"
-                        />
-                        <button
-                          type="submit"
-                          tabindex="-1"
-                          className="btn_lg btn_icon btn_search"
-                        >
-                          <img src="./search-magnifer.svg" alt="" />
-                        </button>
-                      </div>
-                    </form> */}
                     <div className="trend_list_wrap">
                       <span className="trend_list_label">
                         <p>Search by </p>
@@ -154,27 +136,27 @@ export default function Home() {
                         <li className="list_inline_item">
                           <Link
                             href={`/search?term=${""}&category=${"tattoo"}`}
-                            onClick={() => serverLoad(true)}
+                           
                           >
-                            <img src="./Flame.svg" alt="" />
+                            <img src="./Flame.svg" alt="Tattoos" />
                             Tattoos
                           </Link>
                         </li>
                         <li className="list_inline_item">
                           <Link
                             href={`/search?term=${""}&category=${"flash"}`}
-                            onClick={() => serverLoad(true)}
+                           
                           >
-                            <img src="./Bolt.svg" alt="" />
+                            <img src="./Bolt.svg" alt="Flash" />
                             Flash
                           </Link>
                         </li>
                         <li className="list_inline_item">
                           <Link
                             href={`/search?term=${""}&category=${"artist"}`}
-                            onClick={() => serverLoad(true)}
+                            
                           >
-                            <img src="./colour-palette.svg" alt="" />
+                            <img src="./colour-palette.svg" alt="Artists" />
                             Artists
                           </Link>
                         </li>

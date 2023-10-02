@@ -114,20 +114,20 @@ export default function Dictionary() {
                       <div className="find_tattoo_right">
                         <ul className="download_app">
                           <li>
-                            <a
+                            <Link
                               target="_blank"
-                              href="https://apps.apple.com/us/app/inckd/id1526690381"
+                              href={APP_LINK_APPLE}
                             >
                               <img src="./app-store.svg" alt="apple store" />
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a
+                            <Link
                               target="_blank"
-                              href="https://play.google.com/store/apps/details?id=com.inckd.tattoo"
+                              href={APP_LINK_GOOGLE}
                             >
                               <img src="./g-play.svg" alt="google play" />
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -273,20 +273,20 @@ export default function Dictionary() {
                       <div class="find_tattoo_right">
                         <ul class="download_app">
                           <li>
-                            <a
+                            <Link
                               target="_blank"
-                              href="https://apps.apple.com/us/app/inckd/id1526690381"
+                              href={APP_LINK_APPLE}
                             >
                               <img src="./app-store.svg" alt="apple store" />
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a
+                            <Link
                               target="_blank"
-                              href="https://play.google.com/store/apps/details?id=com.inckd.tattoo"
+                              href={APP_LINK_GOOGLE}
                             >
                               <img src="./g-play.svg" alt="google play" />
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
