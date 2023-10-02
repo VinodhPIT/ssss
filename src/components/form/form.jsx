@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
   message: Yup.string().required("Message is required"),
+  tattooType: Yup.string().required("Please select one option"),
+
 });
 
 const _Form = () => {
@@ -34,6 +36,8 @@ const _Form = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { resetForm }) => {
+
+                  console.log(values ,"ojcospdjcospdc")
                   // `https://us-central1-inckd-9a593.cloudfunctions.net/openZendeskTicket`
 
                   // assignee_email: 'roland@inckd.com',
@@ -112,7 +116,17 @@ const _Form = () => {
                           />
                           Other
                         </label>
+
+                        <ErrorMessage
+                          name="tattooType"
+                          component="div"
+                          className="error"
+                        />
+
                       </div>
+
+                  
+
                     </div>
 
                     <div class="form_block">
@@ -164,7 +178,7 @@ const _Form = () => {
             </div>
           ) : (
             <div class="form_submit_block">
-              <img src="./success-tick.svg" alt="Form submitted" />
+              <img src="/success-tick.svg" alt="Form submitted" />
 
               <h4>Form submitted</h4>
               <p>
