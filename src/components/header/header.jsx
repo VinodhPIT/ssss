@@ -105,36 +105,12 @@ export default function Header() {
 
 
 
-<LanguageSwitcher/>
-                {/* <div class="switch-lang">
-                  <div class="current-lang">
-                    <p class="select-Lang">EN</p>
-                    <Image
-                      src={"/dropDown.svg"}
-                      alt="langDropdown"
-                      width={15}
-                      priority
-                      height={9}
-                    />
-                  </div>
-                  <div class="lang-dropdown">
-                    <div class="selecting-lang">
-                      <p class="lang-text">EN</p>
-                    </div>
-                    <div class="selecting-lang">
-                      <p class="lang-text">DE</p>
-                    </div>
-                    <div class="selecting-lang">
-                      <p class="lang-text">FR</p>
-                    </div>
-                    <div class="selecting-lang">
-                      <p class="lang-text">IT</p>
-                    </div>
-                    <div class="selecting-lang">
-                      <p class="lang-text">ES</p>
-                    </div>
-                  </div>
-                </div> */}
+           <LanguageSwitcher/>
+
+
+
+
+                
 
                 <Image
                   onClick={() => onToggle(true)}
