@@ -200,7 +200,7 @@ const router = useRouter()
         </div>
       ) : 
           <div class="form_submit_block">
-            <img src="./success-tick.svg" alt="Form submitted" />
+            <img src="/success-tick.svg" alt="Form submitted" />
             <h4>Form submitted</h4>
             <p>
               Thank you!
