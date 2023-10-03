@@ -14,13 +14,28 @@ import {
   blurDataURL,
 } from "@/constants/constants";
 import useWindowResize from "@/hooks/useWindowSize"; 
+import useTranslation from "next-translate/useTranslation";
 
 
 
 
-export default function Home() {
-  const { serverLoad, styleCollection } = useGlobalState();
+export default function Home({locale}) {
+  const { styleCollection ,getLocale } = useGlobalState();
   const { isMobileView ,cookieDropdown } = useWindowResize();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    try {
+      getLocale({
+        locale,
+      });
+    } catch (error) {}
+  }, [locale]);
+
+
+
+
+  
 
   const imagePaths = [
     "/s-1.svg",
@@ -64,16 +79,16 @@ export default function Home() {
         </div>
         <div className="header_cookie_txt">
           <p>
-            <span>Get tattoo now, pay later.</span>
+            <span>{t("common:tattooNow")}</span>
             <span className="header_cookie_desktop">
-              That&apos;s right, there&apos;s a new way to get tattooed smoooth!{" "}
-              <Link href="/klarna">Learn more</Link>
+             {t("common:payLater")}
+              <Link href="/klarna">{t("common:learnmore")}</Link>
             </span>
 
             {showCookie && (
               <span className="header_cookie_mob">
-                That&apos;s right, there&apos;s a new way to get tattooed
-                smoooth! <Link href="/klarna">Learn more</Link>
+                {t("common:payLater")}
+                <Link href="/klarna">{t("common:learnmore")}</Link>
               </span>
             )}
           </p>
@@ -116,10 +131,9 @@ export default function Home() {
               <div className={styles.home_banner_content_wrap}>
                 <div className={styles.home_banner_caption}>
                   <h1 class="color_aero_blue">
-                    <span>
-                      Book your dream{" "}
-                      <span className={styles.highlight_border}>tattoo</span>{" "}
-                      now!
+                    <span>{t("common:homePage.bookYourDream")}{" "}
+                      <span className={styles.highlight_border}>{t("common:homePage.tattoo")}</span>
+                      {t("common:homePage.now")}
                     </span>
                   </h1>
                 </div>
@@ -129,8 +143,8 @@ export default function Home() {
                     <SearchField isPage={"all"} />
                     <div className="trend_list_wrap">
                       <span className="trend_list_label">
-                        <p>Search by </p>
-                        <h6>Categories</h6>
+                        <p>{t("common:homePage.search-by")} </p>
+                        <h6>{t("common:homePage.categories")}</h6>
                       </span>
                       <ul className="trend_list">
                         <li className="list_inline_item">
@@ -139,7 +153,7 @@ export default function Home() {
                            
                           >
                             <img src="/Flame.svg" alt="Tattoos" />
-                            Tattoos
+                            {t("common:homePage.tattoos")}
                           </Link>
                         </li>
                         <li className="list_inline_item">
@@ -148,7 +162,7 @@ export default function Home() {
                            
                           >
                             <img src="/Bolt.svg" alt="Flash" />
-                            Flash
+                            {t("common:homePage.flash")}
                           </Link>
                         </li>
                         <li className="list_inline_item">
@@ -157,7 +171,7 @@ export default function Home() {
                             
                           >
                             <img src="/colour-palette.svg" alt="Artists" />
-                            Artists
+                            {t("common:homePage.artist")}
                           </Link>
                         </li>
                       </ul>
@@ -167,7 +181,7 @@ export default function Home() {
 
                 <ul className="download_app">
                   <li className="download_app_title">
-                    <h6>Download our app from</h6>
+                    <h6>{t("common:download-our-app")}</h6>
                   </li>
                   <li>
                     <Link href={APP_LINK_APPLE} target="_blank">
@@ -194,17 +208,16 @@ export default function Home() {
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0">
                     <h2>
-                      Find the right Artist for your next Tattoo!
+                    {t("common:homePage.title1")}
                     </h2>
                     <p>
-                      We hand-pick every tattoo artist to ensure your tattoo
-                      experience is handled with care, quality and inclusivity.
+                    {t("common:homePage.content1")}
                     </p>
                     <Link
                       href={`/search?term=${""}&category=${"artist"}`}
                       class="btn btn_secondary btn_xxl btn_sm_m btn_img"
                     >
-                      Find artists
+                     {t("common:findArtist")}
                       <img
                         src="/alt-arrow-right-white.svg"
                         alt=""
@@ -257,7 +270,7 @@ export default function Home() {
                   </div>
                   <div class="box_text_img_over color_pink">
                     <h2 class="txt_mob_fs50">
-                      Pay all at once? <br /> Never again!
+                    {t("common:homePage.title2")}
                     </h2>
                   </div>                  
                   <img
@@ -277,12 +290,10 @@ export default function Home() {
                   </div>
                   <div class="text_box_content_inner m_pr_0 pr_0">
                     <h2>
-                      Tattoo now, <br />
-                      Pay later
+                    {t("common:homePage.title3")}
                     </h2>
                     <p>
-                      Get tattoo now, pay later. That&apos;s right, there&apos;s
-                      a new way to get tattooed smoooth!
+                    {t("common:homePage.content3")}
                     </p>
                     <Link
                       href="/klarna"
@@ -304,14 +315,12 @@ export default function Home() {
                 <div className="img_text_box_inner">
                   <div className="text_box_content justify_content_start pl_0 pr_2_pc  m_pb_0">
                     <div className="text_box_content_inner m_pr_0">
-                      <h2>Tattoo Dictionary</h2>
+                      <h2>{t("common:homePage.title4")}</h2>
                       <p>
-                        We hand-pick every tattoo artist to ensure your tattoo
-                        experience is handled with care, quality and
-                        inclusivity.
+                      {t("common:homePage.content4")}
                       </p>
                       <Link href="/dictionary" className="btn btn_default btn_xxl btn_sm_m">
-                      Visit Tattoo Dictionary
+                      {t("common:visitTattoo")}
                         <img
                           src="/alt-arrow-right-black.svg"
                           alt=""
@@ -332,7 +341,7 @@ export default function Home() {
                 <div class="img_box_wrap block_bg_gradient_1">
                   <div class="box_text_img_over color_yellow md_max_75">
                     <h2 class="letter_spacing_025 color_yellow">
-                      <span class="small">My Style is </span>Lettering
+                      <span class="small">{t("common:homePage.title7")} </span>{t("common:homePage.title7-Sub")}
                     </h2>
                   </div>
 
@@ -380,17 +389,14 @@ export default function Home() {
 
                   <div class="text_box_content_inner w_100pc pr_0">
                     <h2 class="letter_spacing_025">
-                      Whats your <br />
-                      Style?
+                    {t("common:homePage.title8")}
                     </h2>
-                    <br />
-                    <br />
-                    <br />
+                 
                     <Link
                       href="/styleguide"
                       class="btn btn_primary btn_xxl custom_fs_20"
                     >
-                      Check the Styleguide
+                      {t("common:checkStyle")}
                       <img
                         src="/alt-arrow-right-white.svg"
                         alt=""
@@ -406,19 +412,19 @@ export default function Home() {
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0 pr_0">
                     <h2>
-                      Boost your <br />
-                      business with <br />
-                      inckd.
+
+                    {t("common:homePage.title5")}
+                   
                     </h2>
                     <p>
-                      Grow your tattoo business by fulfilling your customers
-                      tattoo vision and offering them flexible payment options.
+                    {t("common:homePage.content5")}
                     </p>
                     <Link
                       href="/fortattooartists"
                       class="btn btn_default btn_xxl btn_sm_m btn_img"
                     >
-                      Learn more
+                      {t("common:learnmore")}
+                    
                       <img
                         src="/alt-arrow-right-black.svg"
                         alt=""
@@ -430,8 +436,8 @@ export default function Home() {
                 <div class="img_box_wrap block_bg_gradient_1 justify_content_right img-btm-7pc">
                   <div class="box_text_img_over color_aero_blue_lite txt-right-align">
                     <h2 class="text_right">
-                      <span class="small letter_spacing_02">Are you a </span>
-                      Tattoo artist?
+                      <span class="small letter_spacing_02">{t("common:homePage.title6")}</span>
+                      {t("common:homePage.title6-Sub")}
                     </h2>
                   </div>
 
@@ -455,7 +461,7 @@ export default function Home() {
                   <div class="text_box_content_inner m_pr_0">
                     <ul class="download_app">
                       <li class="download_app_title">
-                        <h6>Download the App & Explore more!</h6>
+                        <h6>{t("common:downloadApp")}</h6>
                       </li>
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
@@ -517,3 +523,27 @@ export default function Home() {
     </>
   );
 }
+
+
+
+
+
+export async function getServerSideProps(context) {
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
+}
+
+
+

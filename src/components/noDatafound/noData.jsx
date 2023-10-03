@@ -3,9 +3,14 @@ import {useRouter} from 'next/router'
 import Image from 'next/image'
 import styles from './style.module.css'
 
+import useTranslation from "next-translate/useTranslation";
+
+
+
 
 export default function NoData({category}) {
 
+  const { t } = useTranslation();
 
 const router = useRouter()
 
@@ -29,11 +34,11 @@ const test =()=>{
 
 
 
-      <h1 className={styles.title}>No data found</h1>
-      <p className={styles.d}>Try adjusting your search/ filter  to find what you are looking for</p>
+      <h1 className={styles.title}>{t("common:nodata")}</h1>
+      <p className={styles.d}>{t("common:notFoundMessage")}</p>
 
       <button onClick={()=>test()} className={styles.button}>
-        Explore {category}
+        {t("common:exploreAll")} {category}
       </button>
 
     </div>

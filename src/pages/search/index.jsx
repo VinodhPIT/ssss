@@ -7,12 +7,14 @@ import { Parameters } from "@/components/parameters/params";
 import { renderCategoryComponent } from "@/components/customTabs/tab";
 import style from "@/pages/search/search.module.css";
 import { useRouter } from "next/router";
-import { tabs } from "@/components/tabMenu/menu";
+
 import SearchField from "@/components/tattooSearch/tattooSearch";
 import { addAdsToResults } from "@/helpers/helper";
 import { getUrl } from "@/utils/getUrl";
 import Image from 'next/image'
 import { useGlobalState } from "@/context/Context";
+import useTranslation from "next-translate/useTranslation";
+
 const MobileDetect = require('mobile-detect');
 const Search = ({
   data,
@@ -23,9 +25,23 @@ const Search = ({
   selectedStyle,
   lat,
   lon,
-  loading,
+  loading,locale
 }) => {
   const { state, fetchServerlData, changeTab, loadMore } = useGlobalState();
+
+  const { t } = useTranslation();
+
+
+  const categoryTab = [
+    { id: "all", label:t("common:tabs.all"), image: '/all.svg', activeImage: '/all-active.svg' },
+    { id: "tattoo", label:t("common:tabs.tattoo"), image: '/flame-new.svg', activeImage: '/Flame-active.svg' },
+    { id: "flash", label:t("common:tabs.flash"), image: '/bolt-new.svg', activeImage: '/bolt-active.svg' },
+    { id: "artist",label:t("common:tabs.artist"),image :'/colour-palette-new.svg'  ,activeImage:'/colour-palette-active.svg'} 
+];
+
+
+
+
 
   useEffect(() => {
     try {
@@ -37,7 +53,7 @@ const Search = ({
         searchKey,
         selectedStyle,
         lat,
-        lon,
+        lon,locale
       });
     } catch (error) {}
   }, [data]);
@@ -136,7 +152,7 @@ const Search = ({
           <div className={style.tab_container}>
             <div className={style.tabSection}>
               <ul>
-                {tabs.map((tab) => (
+                {categoryTab.map((tab) => (
                   <li
                     key={tab.id}
                     className={
@@ -196,7 +212,10 @@ export default Search;
 
 export async function getServerSideProps(context) {
 
-  //detect Mobile
+ 
+
+
+
   const userAgent = context.req.headers["user-agent"];
 
   const md = new MobileDetect(userAgent);
@@ -226,6 +245,8 @@ export async function getServerSideProps(context) {
           selectedStyle: context.query.style ?? "",
           lat: context.query.lat ?? "",
           lon: context.query.lon ?? "",
+          locale:context.locale
+          
         },
       };
     } else {
@@ -250,6 +271,7 @@ export async function getServerSideProps(context) {
           selectedStyle: context.query.style ?? "",
           lat: context.query.lat ?? "",
           lon: context.query.lon ?? "",
+          locale:context.locale
         },
       };
     }

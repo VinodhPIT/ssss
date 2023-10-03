@@ -1,8 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import useTranslation from "next-translate/useTranslation";
+
+
 
 const CarouselKlarna = ({ items}) => {
+  const { t } = useTranslation();
+
   return (
     <Carousel
     preventMovementUntilSwipeScrollTolerance={true}
@@ -20,8 +25,8 @@ const CarouselKlarna = ({ items}) => {
           <p>{item.text}</p>
         </div>
       ):(<div className='download_app' key={index}>
-        <h1 className='download_app_title'>Download the app for more!</h1>
-        <p>We hand pick every tattoo artist to ensure your tattoo experience is handled with care,quality and inclusivity</p>
+        <h1 className='download_app_title'>{t("common:download-app-forMore")}</h1>
+        <p>{t("common:appContent")}</p>
         <span className='download_app_img'><a href="" className='list_inline_item'><img src="./app-store.svg" alt="" className='w_auto'/></a> <a href="" className='list_inline_item'><img src="./g-play.svg" alt="" className='w_auto' /></a></span></div>))}
     </Carousel>
   );

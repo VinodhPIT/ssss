@@ -3,6 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
 import Image from 'next/image'
+import useTranslation from "next-translate/useTranslation";
+
+
+
+
 
 
 const validationSchema = Yup.object().shape({
@@ -13,6 +18,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const _Form = () => {
+  const { t } = useTranslation();
+
+
   const [state, setState] = useState({
     isShown: false,
   });
@@ -28,8 +36,8 @@ const _Form = () => {
         <div style={{ margin: "0 auto", padding: "0px" }}>
           {!state.isShown ? (
             <div>
-              <h4>Get in touch</h4>
-              <h6>Who you are?</h6>
+              <h4>{t("common:contactUsPage.in-touch")}</h4>
+              <h6>{t("common:contactUsPage.who-you-are")}</h6>
               <Formik
                 initialValues={{
                   tattooType: "",
@@ -170,7 +178,7 @@ const _Form = () => {
                           class="btn_secondary h_48 w_100pc"
                           style={{ opacity: isSubmitting ? 0.5 : 1 }}
                         >
-                          {isSubmitting ? "Submitting ...." : "Submit"}
+                          {isSubmitting ?  t("common:submitting")  : t("common:submit") }
                         </button>
                       </div>
                     </div>

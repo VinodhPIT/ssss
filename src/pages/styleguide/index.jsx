@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./custom.module.css";
@@ -10,11 +9,12 @@ import {
 } from "@/constants/constants";
 import ImageSlider from "@/components/slider/ImageSlider";
 import useWindowResize from "@/hooks/useWindowSize";
-
+import useTranslation from "next-translate/useTranslation";
 export default function StyleGuide() {
   const { isMobileView } = useWindowResize();
 
   
+  const { t } = useTranslation();
 
   return (
     <>
@@ -43,9 +43,9 @@ export default function StyleGuide() {
                   >
                     <div className={styles.banner_caption}>
                       <h1 class="color_yellow">
-                        <span>Know your style</span>
+                        <span>{t("common:styleGuidePage.bannerContent1")}</span>
                       </h1>
-                      <h5>with the inckd. Styleguide in our App</h5>
+                      <h5>{t("common:styleGuidePage.bannerContent2")}</h5>
                     </div>
                     <ul className="download_app mt_0 m_mt_50 d_mxw_325">
                       <li class="download_app_title desk_hidden">
@@ -116,8 +116,7 @@ export default function StyleGuide() {
                       </div>
                       <div class="text_box_content_inner pr_0">
                         <h2 class="letter_spacing_025">
-                          Whats <br />
-                          your Style?
+                        {t("common:styleGuidePage.title2")}
                         </h2>
                       </div>
                     </div>
@@ -132,8 +131,7 @@ export default function StyleGuide() {
                       </div>
                       <div class="text_box_content_inner pr_0">
                         <h2 class="letter_spacing_025 color_black_h">
-                          Tell me <br />
-                          your Style?
+                        {t("common:styleGuidePage.title3")}
                         </h2>
                       </div>
                     </div>
@@ -141,9 +139,9 @@ export default function StyleGuide() {
                       <div class="box_text_img_over color_orange txt-right-align">
                         <h2 class="text_right">
                           <span class="small letter_spacing_02">
-                            My Style is{" "}
+                          {t("common:styleGuidePage.title4")}
                           </span>
-                          Fineline
+                          {t("common:styleGuidePage.title4-Sub")}
                         </h2>
                       </div>
                       <Image
@@ -167,7 +165,7 @@ export default function StyleGuide() {
                         <ul class="download_app ml_0 w_100pc max_w_100pc">
                           <li class="download_app_title">
                             <h6>
-                              Download the App <br />& Explore 30+ styles
+                            {t("common:styleGuidePage.download")}
                             </h6>
                           </li>
                           <li>
@@ -228,7 +226,7 @@ export default function StyleGuide() {
                     <div class="img_box_wrap block_bg_gradient_1">
                       <div class="box_text_img_over md_max_75">
                         <h2 class="letter_spacing_025 color_green_100">
-                          <span class="small">My Style is </span>Realistic
+                          <span class="small">{t("common:styleGuidePage.title5")} </span>{t("common:styleGuidePage.title5-Sub")}
                         </h2>
                       </div>
                       <Image
@@ -248,8 +246,7 @@ export default function StyleGuide() {
                       </div>
                       <div class="text_box_content_inner pr_0">
                         <h2 class="letter_spacing_025">
-                          Whats <br />
-                          your Style?
+                          {t("common:styleGuidePage.title2")}
                         </h2>
                       </div>
                     </div>
@@ -268,9 +265,9 @@ export default function StyleGuide() {
                       </div>
                       <div class="text_box_content_inner pr_0">
                         <h2 class="letter_spacing_025 color_black_h">
-                          Show me
-                          <br />
-                          your Style?
+
+                        {t("common:styleGuidePage.title6")}
+                      
                         </h2>
                       </div>
                     </div>
@@ -278,9 +275,9 @@ export default function StyleGuide() {
                       <div class="box_text_img_over color_aero_blue txt-right-align">
                         <h2 class="text_right">
                           <span class="small letter_spacing_02">
-                            My Style is{" "}
+                          {t("common:styleGuidePage.title7")}
                           </span>
-                          Traditional
+                          {t("common:styleGuidePage.title7-Sub")}
                         </h2>
                       </div>
                       <Image
@@ -315,4 +312,24 @@ export default function StyleGuide() {
       </main>
     </>
   );
+}
+
+
+
+
+export async function getServerSideProps(context) {
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }

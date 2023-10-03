@@ -1,45 +1,53 @@
-import React ,{useState} from "react";
+import React  from "react";
 import Link from "next/link";
 import  styles from './sideDrawer.module.css'
 import Image from 'next/image'
+import useTranslation from "next-translate/useTranslation";
 
 
 export default function SideDrawer({onCloseToggle}) {
+
+  const { t } = useTranslation();
+
+
   const links = [
     {
       id: 1,
-      title: "Home",
+      title:t("common:menus.home"),
       url: `/`,
     },
     {
       id: 2,
-      title: "Styleguide",
+      title:t("common:menus.styleGuide"),
       url: "/styleguide",
     },
     {
       id: 3,
-      title: "Dictionary",
+      title: t("common:menus.dictionary"),
       url: "/dictionary",
     },
 
     {
       id: 4,
-      title: "Klarna",
+      title: t("common:menus.klarna"),
       url: "/klarna",
     },
 
     {
       id: 5,
-      title: "For tattoo artists",
+      title:t("common:menus.forTattooArtists"),
       url: "/fortattooartists",
     },
 
     {
       id: 6,
-      title: "Contact Us",
+      title:t("common:menus.contactUs"),
       url: "/contactus",
     },
   ];
+
+
+
 
 
 

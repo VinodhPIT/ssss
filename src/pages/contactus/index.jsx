@@ -1,13 +1,17 @@
 import React from 'react'
 import _Form from '@/components/form/form'
-import Head from "next/head";
+
 import Header from '@/components/customHeader/header'
+import useTranslation from "next-translate/useTranslation";
+
+
+
 
 
 
 export default function Contact() {
 
-
+  const { t } = useTranslation();
 
   return (  
 <>
@@ -22,8 +26,8 @@ export default function Contact() {
         <div class="container">
           <div class="full_block_wrap">
             <div class="form_block_left">
-              <h1 class="page_title">Contact us</h1>
-              <p>Get in touch with us lorem ipsum is a dummy content for typesetting industry.</p>
+              <h1 class="page_title">{t("common:contactUsPage.contact-us")}</h1>
+              <p>{t("common:contactUsPage.getInTouch")}</p>
              					
             </div>
             <div class="form_block_right">
@@ -40,4 +44,21 @@ export default function Contact() {
     </main>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }

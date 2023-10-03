@@ -16,12 +16,17 @@ import SearchField from "@/components/tattooSearch/tattooSearch";
 import { useRouter } from "next/router";
 import TattooSearchModalPopup from "@/utils/modalUtils";
 import { useModal } from "@/utils/modalUtils";
+import useTranslation from "next-translate/useTranslation";
+
+
+
+
 
 export default function Detail({ data, status }) {
   const router = useRouter();
   const { state } = useGlobalState();
   const { isPopupOpen, openPopup, closePopup } = useModal();
-
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [tattoo, setTattoo] = useState([]);
   const [getStyle, setStyle] = useState([]);
@@ -144,7 +149,7 @@ export default function Detail({ data, status }) {
                         href={`/artist/${data.artist.slug}`}
                         className={styles.profile_getin}
                       >
-                        View Profile
+                       {t("common:viewProfile")}
                       </Link>
                       <a
                         onClick={openPopup}
@@ -166,7 +171,7 @@ export default function Detail({ data, status }) {
 
                 <div className={styles.product_style}>
                   <span className={styles.product_style_label}>
-                    Image tattoo style
+                  {t("common:image-tattoo-style")}
                   </span>
 
                   {getStyle.length > 0 && (
@@ -192,7 +197,7 @@ export default function Detail({ data, status }) {
 
                 <div className={styles.product_detail_location}>
                   <span className={styles.product_location_label}>
-                    Locations
+                  {t("common:locations")}
                   </span>
                   <div className={styles.product_location_list}>
                     {location.length > 0 &&
@@ -222,8 +227,8 @@ export default function Detail({ data, status }) {
                           <span>
                             <span className={styles.product_price_label}>
                               {data.tattoo.max_price !== null
-                                ? "Flexible price"
-                                : "Fixed Price"}
+                                ? t("common:flexible-price")
+                                : t("common:fixed-price")}
                             </span>
 
                             <span className={styles.product_price_value}>
@@ -246,7 +251,7 @@ export default function Detail({ data, status }) {
                     ) : (
                       <div>
                         <span className={styles.product_price_label}>
-                          This Flash doesn&apos;t have a price
+                          {t("common:flash-doesn't-price")}
                         </span>
                       </div>
                     )}
@@ -254,7 +259,7 @@ export default function Detail({ data, status }) {
                 </div>
                 <ul className={styles.download_app}>
                   <li className={styles.download_app_title}>
-                    <h6>Download our app from</h6>
+                    <h6>{t("common:download-our-app")}</h6>
                   </li>
                   <li>
                     <Link target="_blank" href={APP_LINK_APPLE}>
@@ -271,7 +276,7 @@ export default function Detail({ data, status }) {
             </div>
 
             <div className={styles.titleWrapper}>
-              <h1>You might also like</h1>
+            <h1>{t("common:you-might-like")}</h1>
             </div>
 
             {loading === true ? null : tattoo && tattoo.length > 0 ? (
@@ -322,6 +327,7 @@ export async function getServerSideProps(context) {
       props: {
         data: data.data,
         status: true,
+        locale:context.locale
       },
     };
   } catch (error) {

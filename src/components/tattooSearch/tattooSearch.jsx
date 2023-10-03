@@ -10,7 +10,7 @@ function SearchBar({ isPage  ,currentTab}) {
 
 
   
-  const { state, getHintsBySearch, searchData } = useGlobalState();
+  const { state, searchData } = useGlobalState();
   const [searchState, setSearchState] = useState({
     query: "",
     showDropdown: false,
@@ -81,7 +81,7 @@ function SearchBar({ isPage  ,currentTab}) {
       ...prevSearchState,
       query: e,
     }));
-    getHintsBySearch(e, router);
+    //getHintsBySearch(e, router);
   };
 
   const handleSubmit = (e) => {

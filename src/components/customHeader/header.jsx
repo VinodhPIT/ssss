@@ -4,8 +4,14 @@ import { useRouter } from "next/router";
 import SideDrawer from "@/components/sideDrawer/sideDrawer";
 import Image from "next/image";
 import LanguageSwitcher from "@/components/languageSwitcher/languageSwitcher";
+import useTranslation from "next-translate/useTranslation";
+
+
+
 
 export default function Header({ logo, theme, isPosition }) {
+
+  const { t } = useTranslation();
 
 
 
@@ -35,27 +41,33 @@ export default function Header({ logo, theme, isPosition }) {
 
 
   const links = [
+
+
     {
       id: 1,
-      title: "Tattoo search",
+      title:t("common:menus.tattooSearch"),
       url: `/search?term=${""}&category=${"tattoo"}`,
     },
     {
       id: 2,
-      title: "Styleguide",
+      title:t("common:menus.styleGuide"),
       url: "/styleguide",
     },
     {
       id: 3,
-      title: "Dictionary",
+      title:t("common:menus.dictionary"),
       url: "/dictionary",
     },
 
     {
       id: 4,
-      title: "Klarna",
+      title:t("common:menus.klarna"),
       url: "/klarna",
     },
+
+
+
+
   ];
 
   const router = useRouter();
@@ -104,7 +116,7 @@ export default function Header({ logo, theme, isPosition }) {
                     theme === "black" ? "bgWhite" : "bgBlack"
                   }`}
                 >
-                  For Tattoo Artists
+                   {t("common:menus.forTattooArtists")}
                 </button>
                 
                 <LanguageSwitcher theme={theme}   />

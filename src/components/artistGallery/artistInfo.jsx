@@ -1,13 +1,21 @@
 import React from 'react'
 import styles from "@/pages/artist/artistdetail.module.css";
+import useTranslation from "next-translate/useTranslation";
+
 
 
 const ArtistInfo = ({data}) => {
+
+
+  const { t } = useTranslation();
+
+
+
   return (
     <div className={styles.galleryWrapper} >
       <div className={styles.product_info_col}>
             <div className={styles.product_style}>
-             {data.style.length > 0 &&  <span className={styles.product_style_label}>Styles</span>}
+             {data.style.length > 0 &&  <span className={styles.product_style_label}>{t("common:styles")}</span>}
                 <ul className={styles.product_style_list}>
                 {data.style.length > 0 &&
                   data.style.map((e) => {
@@ -28,7 +36,7 @@ const ArtistInfo = ({data}) => {
 
             <div className={styles.product_info_wrap}>
               <div className={styles.product_detail_location}>
-              {data.studio.length > 0 && <span className={styles.product_location_label}>Locations</span>}
+              {data.studio.length > 0 && <span className={styles.product_location_label}>{t("common:locations")}</span>}
 
                 {data.studio.length > 0 &&
                   data.studio.map((e) => {
@@ -46,7 +54,7 @@ const ArtistInfo = ({data}) => {
                   })}
               </div>
               <div className={styles.product_style}>
-              {data.language.length > 0 &&  <span className={styles.product_style_label}>Languages</span>}
+              {data.language.length > 0 &&  <span className={styles.product_style_label}>{t("common:language")}</span>}
                 <ul className={styles.product_style_list}>
                 {data.language.length > 0 &&
                   data.language.map((e) => {

@@ -7,7 +7,7 @@ import { useGlobalState } from "@/context/Context";
 import { v4 as uuidv4 } from "uuid";
 
 function SearchBar({ isPage }) {
-  const { state, getHintsBySearch, searchData, serverLoad ,onClearText } = useGlobalState();
+  const { state, searchData ,onClearText } = useGlobalState();
 
   const [searchState, setSearchState] = useState({
     query: "",
@@ -80,16 +80,16 @@ function SearchBar({ isPage }) {
       ...prevSearchState,
       query: e,
     }));
-    getHintsBySearch(e, router);
+    // getHintsBySearch(e, router);
   }, 100);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isPage) {
       router.push(`/search?term=${searchState.query}&category=all`);
-      serverLoad(true);
+    
     } else {
-      serverLoad(true);
+    
 
       searchData(searchState.query, router, true);
     }

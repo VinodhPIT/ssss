@@ -1,10 +1,15 @@
 import React from "react";
 import _Form from "@/components/artistForm/form";
 import Header from '@/components/customHeader/header'
+import useTranslation from "next-translate/useTranslation";
+
+
+
 
 export default function JoinArtist() {
 
 
+  const { t } = useTranslation();
 
 
   return (
@@ -21,28 +26,27 @@ export default function JoinArtist() {
           <div class="full_block_wrap">
             <div class="form_block_left">
               <h1 class="page_title">
-                Become an inckd. <br />
-                Artist
+              {t("common:joinartistPage.title1")}
               </h1>
               <div class="form_left_wrap">
                 <section class="progress_block">
                   <ul class="progressbar">
                     <li class="active">
                       <div className="progressbar_block">
-                        <h4>Submit the contact form</h4>
-                        <p>Tell us more about yourself.</p>
+                        <h4> {t("common:joinartistPage.head1")}</h4>
+                        <p> {t("common:joinartistPage.text")}</p>
                       </div>
                     </li>
                     <li>
                       <div className="progressbar_block">
-                        <h4>Download the App & complete your profile</h4>
-                        <p>Tell us more about yourself.</p>
+                        <h4> {t("common:joinartistPage.head2")}</h4>
+                        <p> {t("common:joinartistPage.text")}</p>
                       </div>
                     </li>
                     <li>
                       <div className="progressbar_block">
-                        <h4>Get verified & bring your Profile live</h4>
-                        <p>Tell us more about yourself.</p>
+                        <h4> {t("common:joinartistPage.head3")}</h4>
+                        <p> {t("common:joinartistPage.text")}</p>
                       </div>
                     </li>
                   </ul>
@@ -60,4 +64,21 @@ export default function JoinArtist() {
     </>
 
   );
+}
+
+export async function getServerSideProps(context) {
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }

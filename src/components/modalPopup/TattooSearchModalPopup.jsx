@@ -1,7 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Image from 'next/image';
 import {APP_LINK_APPLE,APP_LINK_GOOGLE} from '@/constants/constants'
+import useTranslation from "next-translate/useTranslation";
+
+
+
 import Link from 'next/link';
 
 const customStyles = {
@@ -25,6 +28,11 @@ const customStyles = {
   },
 };
 const TattooSearchModalPopup = ({ isOpen, closeModal }) => {
+
+  const { t } = useTranslation();
+
+
+
   return (
     <Modal
     isOpen={isOpen}
@@ -48,10 +56,10 @@ const TattooSearchModalPopup = ({ isOpen, closeModal }) => {
                   <img src="/Inckd-logo-black.svg" alt="Picture of the author"/>
                 </div>
                 <div className="popup_content_wrap">
-                  <h2>Explore the <br/>Features in the App</h2>
+                  <h2>{t("common:explore")}</h2>
                   <ul class="download_app">
                     <li class="download_app_title">
-                      <h6>Download our app from</h6>
+                      <h6>{t("common:download-app-forMore")}</h6>
                     </li>
                     <li>
                       <Link target="_blank" href={APP_LINK_APPLE}>

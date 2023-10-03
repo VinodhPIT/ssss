@@ -20,19 +20,25 @@ const initialState = {
   latitude: "",
   longitude: "",
   searchData: [],
-  serverLoad: false,
+
   toggle: false,
+  locale:"EN",
 };
 
 const reducer = (state, action) => {
-  let data, currentTab, totalItems, searchKey, selectedStyle, pageNo, lat, lon;
+  let data, currentTab, totalItems, searchKey, selectedStyle, pageNo, lat, lon ,locale;
 
   switch (action.type) {
-    case "ON-LOAD":
+
+
+    case "GET_LOCALE":
+    
       return {
         ...state,
-        serverLoad: action.payload,
+        locale: action.payload.locale,
       };
+
+
     case "IS_LOADING":
       return {
         ...state,
@@ -48,7 +54,7 @@ const reducer = (state, action) => {
         searchKey,
         selectedStyle,
         lat,
-        lon,
+        lon,locale
       } = action.payload);
 
       return {
@@ -62,6 +68,7 @@ const reducer = (state, action) => {
         selectedStyle,
         latitude: lat,
         longitude: lon,
+        locale
       };
       
 
@@ -84,15 +91,15 @@ const reducer = (state, action) => {
 
    
 
-    case "GET_HINTS":
-      return {
-        ...state,
-        hints:
-          state.currentTab === "all" || state.currentTab === ""
-            ? action.payload.data
-            : action.payload.rows.hits,
-        errorMessage: state.hints.length === 0 ? true : false,
-      };
+    // case "GET_HINTS":
+    //   return {
+    //     ...state,
+    //     hints:
+    //       state.currentTab === "all" || state.currentTab === ""
+    //         ? action.payload.data
+    //         : action.payload.rows.hits,
+    //     errorMessage: state.hints.length === 0 ? true : false,
+    //   };
 
     case "SEARCH_QUERY":
       return {
@@ -133,9 +140,14 @@ export const useGlobalState = () => useContext(GlobalStateContext);
 export const GlobalStateProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const serverLoad = async (payload) => {
-    dispatch({ type: "ON-LOAD", payload });
+
+  const getLocale = async (payload) => {
+    try {
+      dispatch({ type: "GET_LOCALE", payload: payload });
+    } catch (error) {}
   };
+
+
 
   const fetchServerlData = async (payload) => {
     try {
@@ -170,22 +182,22 @@ export const GlobalStateProvider = ({ children }) => {
     } catch (error) {}
   };
 
-  const getHintsBySearch = async (payload) => {
-    try {
-      const requestData = {
-        ...Parameters,
-        category: state.currentTab,
-        search_key: payload,
-      };
-      let responseData;
-      if (state.currentTab === "all" || state.currentTab === "") {
-        responseData = await fetchMultiData(requestData);
-      } else {
-        responseData = await fetchCategoryData(requestData);
-      }
-      dispatch({ type: "GET_HINTS", payload: responseData });
-    } catch (error) {}
-  };
+  // const getHintsBySearch = async (payload) => {
+  //   try {
+  //     const requestData = {
+  //       ...Parameters,
+  //       category: state.currentTab,
+  //       search_key: payload,
+  //     };
+  //     let responseData;
+  //     if (state.currentTab === "all" || state.currentTab === "") {
+  //       responseData = await fetchMultiData(requestData);
+  //     } else {
+  //       responseData = await fetchCategoryData(requestData);
+  //     }
+  //     dispatch({ type: "GET_HINTS", payload: responseData });
+  //   } catch (error) {}
+  // };
 
 
 
@@ -234,9 +246,9 @@ export const GlobalStateProvider = ({ children }) => {
         fetchServerlData,
       
         loadMore,
-        getHintsBySearch,
+  
         searchData,
-        serverLoad,
+        getLocale,
         styleCollection,
       }}
     >

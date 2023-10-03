@@ -16,12 +16,16 @@ import { useRouter } from "next/router";
 import style from "@/pages/search/search.module.css";
 import TattooSearchModalPopup from "@/utils/modalUtils";
 import { useModal } from "@/utils/modalUtils";
+import useTranslation from "next-translate/useTranslation";
+
 
 
 export default function Detail({ data, status }) {
   const { isPopupOpen, openPopup, closePopup } = useModal();
   const router = useRouter();
   const { state } = useGlobalState();
+
+  const { t } = useTranslation();
 
   const [loading, setLoading] = useState(false);
   const [tattoo, setTattoo] = useState([]);
@@ -154,7 +158,7 @@ export default function Detail({ data, status }) {
                       href={`/artist/${data.artist.slug}`}
                       className={styles.profile_getin}
                     >
-                      View Profile
+                     {t("common:viewProfile")}
                     </Link>
                     <a
                       onClick={openPopup}
@@ -176,8 +180,7 @@ export default function Detail({ data, status }) {
 
               <div className={styles.product_style}>
                 <span className={styles.product_style_label}>
-                  Image tattoo style
-                </span>
+                 {t("common:image-tattoo-style")}</span>
 
                 {getStyle.length > 0 && (
                   <ul className={styles.product_style_list}>
@@ -199,7 +202,7 @@ export default function Detail({ data, status }) {
               </div>
 
               <div className={styles.product_detail_location}>
-                <span className={styles.product_location_label}>Locations</span>
+                <span className={styles.product_location_label}>{t("common:locations")}</span>
                 <div className={styles.product_location_list}>
                   {location.length > 0 &&
                     location.map((el) => {
@@ -219,17 +222,9 @@ export default function Detail({ data, status }) {
                 </div>
               </div>
 
-              {/* <div className={styles.product_price_block}>
-              <div className={styles.product_price_wrap}>
-                <span className={styles.product_price_label}>Fixed price</span>                
-                <span className={styles.product_price_value}>CHF 200</span>
-                <span className={styles.product_price_to}>to</span>
-                <span className={styles.product_price_value}>CHF 400</span>
-              </div>
-            </div> */}
               <ul className={styles.download_app}>
                 <li className={styles.download_app_title}>
-                  <h6>Download our app from</h6>
+                  <h6>{t("common:download-our-app")}</h6>
                 </li>
                 <li>
                   <Link target="_blank" href={APP_LINK_APPLE}>
@@ -248,7 +243,7 @@ export default function Detail({ data, status }) {
         
 
 <div className={styles.titleWrapper}>
-<h1>You might also like</h1>
+<h1>{t("common:you-might-like")}</h1>
 </div>
          
 
@@ -304,6 +299,7 @@ export async function getServerSideProps(context) {
       props: {
         data: data.data,
         status: true,
+        locale:context.locale
       },
     };
   } catch (error) {

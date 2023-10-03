@@ -1,6 +1,5 @@
-//
 
-import React ,{ useState, useEffect } from "react";
+import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -13,42 +12,49 @@ import {
 import CarouselKlarna from "@/components/carousel/CarouselKlarna";
 import ImageSlider from "@/components/slider/ImageSlider";
 import useWindowResize from "@/hooks/useWindowSize";
+import useTranslation from "next-translate/useTranslation";
+
 
 
 export default function Klarna() {
 
   const { isMobileView } = useWindowResize();
+  const { t } = useTranslation();
+
+
   
   const items = [
-    {
+    { heading: t("common:klarnaPage.heading1"),
       image: "/paylater_bg.svg",
-      text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
-      option1: "Option 1",
-      heading: "Pay Later",
+      text: t("common:klarnaPage.carouselText1"),
+      option1: t("common:klarnaPage.option1"),
+      
     },
     {
+      heading: t("common:klarnaPage.heading2"),
       image: "/Group.svg",
-      text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
-      option1: "Option 2",
-      heading: "Pay Later 2",
+      text:  t("common:klarnaPage.carouselText2"),
+      option1: t("common:klarnaPage.option2"),
+     
     },
-    {
+    { heading: t("common:klarnaPage.heading3"),
       image: "/Group 82677.svg",
-      text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
-      option1: "Option 3",
-      heading: "Pay Later 3",
+      text:  t("common:klarnaPage.carouselText3"),
+      option1: t("common:klarnaPage.option3"),
+ 
     },
-    {
+    { heading: t("common:klarnaPage.heading4"),
       image: "/Group 82674.svg",
-      text: "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
-      option1: "Option 4",
-      heading: "Pay Later 4",
+      text:  t("common:klarnaPage.carouselText4"),
+      option1: t("common:klarnaPage.option4"),
+
     },
     {
       text: "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
       option1: "Wake",
       heading: "Itzscuintli",
     },
+
   ];
   return (
     <main>
@@ -82,17 +88,7 @@ export default function Klarna() {
                   objectFit="cover"
                   className="desk_hidden"
                 />
-                
-                {/* <img
-                  src="/pexels-cottonbro-studio-5320148-14-klarna.png"
-                  alt="Boost your business with inckd"
-                />
-
-
-                <img
-                  src="/pexels-cottonbro-studio-5320148-14-klarna-mob.png"
-                  alt="Boost your business with inckd" 
-                /> */}
+      
 
 
 
@@ -111,12 +107,11 @@ export default function Klarna() {
 
                   <h1 class="color_pink">
                     <span>
-                      Tattoo now, <br />
-                      Pay later
+                    {t("common:klarnaPage.bannerTitle1")}
                     </span>
                   </h1>
                   <p>
-                  Get tattoo now, pay later. That&apos;s right, there&apos;s a new way to get tattooed smoooth!
+                  {t("common:klarnaPage.bannerTitle2")}
                   </p>
                 </div>
                 <ul className={styles.download_app}>
@@ -147,14 +142,14 @@ export default function Klarna() {
               <div class="img_text_box_inner">
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner max_w_100pc m_pr_0">
-                    <h2 class="color_gray_550">How it Works!</h2>
+                    <h2 class="color_gray_550"> {t("common:klarnaPage.title1")}</h2>
                     <ul class="custom-listing how_work_list">
                       <li>
                         <img
                           src="/download.svg"
                           alt="Download the inckd. App"
                         />
-                        <span>Download the inckd. App</span>
+                        <span>{t("common:klarnaPage.download-inckd")}</span>
                       </li>
                       <li>
                         <img
@@ -162,8 +157,7 @@ export default function Klarna() {
                           alt="Accept an offer from your favourite artist."
                         />
                         <span>
-                          Accept an offer from your <br />
-                          favourite artist.
+                        {t("common:klarnaPage.accept-an-offer")}
                         </span>
                       </li>
                       <li>
@@ -171,21 +165,21 @@ export default function Klarna() {
                           src="/klarna-icon-black.svg"
                           alt="Select Klarna as payment option."
                         />
-                        <span>Select Klarna as payment option.</span>
+                        <span> {t("common:klarnaPage.select-Klarna")}.</span>
                       </li>
                       <li>
                         <img
                           src="/heart-icon-black.svg"
                           alt="Get your tattoo done."
                         />
-                        <span>Get your tattoo done.</span>
+                        <span> {t("common:klarnaPage.get-your-tattoo")}.</span>
                       </li>
                       <li>
                         <img
                           src="/money-bag.svg"
                           alt="Pay later or in instalments."
                         />
-                        <span>Pay later or in instalments.</span>
+                        <span> {t("common:klarnaPage.pay-later")}.</span>
                       </li>
                     </ul>
                   </div>
@@ -228,9 +222,7 @@ export default function Klarna() {
                   </div>
                   <div class="box_text_img_over color_pink m_left_0 m_right_0 m_text_center">
                     <h2 class="txt_mob_fs50">
-                      You choose <br />
-                      how you <br />
-                      want to pay!
+                    {t("common:klarnaPage.title2")}
                     </h2>
                   </div>
 
@@ -328,7 +320,7 @@ export default function Klarna() {
                   </div>
                   <div class="box_text_img_over color_pink txt-right-align">
                     <h2 class="text_right m_text_center txt_mob_fs50">
-                      Where i can pay my tattoo with Klarna?
+                    {t("common:klarnaPage.title4")}
                     </h2>
                   </div>
 
@@ -352,7 +344,7 @@ export default function Klarna() {
                   <div class="text_box_content_inner m_pr_0">
                     <ul class="download_app">
                       <li class="download_app_title">
-                        <h6>Download the App & Explore more!</h6>
+                        <h6>{t("common:downloadApp")}</h6>
                       </li>
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
@@ -405,4 +397,26 @@ export default function Klarna() {
     </div>
     </main>
   );
+}
+
+
+export async function getServerSideProps(context) {
+
+
+
+  
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }

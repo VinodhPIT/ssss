@@ -9,16 +9,17 @@ import SearchField from "@/components/tattooSearch/tattooSearch";
 import Autocomplete from "react-google-autocomplete";
 import style from "@/pages/search/search.module.css";
 import { useGlobalState } from "@/context/Context";
-import { artistTab } from "@/components/tabMenu/menu";
+
 import { renderArtistGallery } from "@/components/customTabs/tab";
 import TattooSearchModalPopup  from "@/utils/modalUtils";
 import  {useModal}  from "@/utils/modalUtils";
 
+import useTranslation from "next-translate/useTranslation";
 
 
 export default function Detail({ data }) {
   const { isPopupOpen, openPopup, closePopup } = useModal();
-
+  const { t } = useTranslation();
   
   const { state } = useGlobalState();
   const router = useRouter();
@@ -31,6 +32,24 @@ export default function Detail({ data }) {
   const [tattooList, setTattooList] = useState([]);
   const [flashList, setFlashList] = useState([]);
   const [artistProfile, setProfile] = useState();
+
+
+
+  const commonTabData = [
+    { id: "all", label:t("common:tabs.all"), image: '/all.svg', activeImage: '/all-active.svg' },
+    { id: "tattoo", label:t("common:tabs.tattoo"), image: '/flame-new.svg', activeImage: '/Flame-active.svg' },
+    { id: "flash", label:t("common:tabs.flash"), image: '/bolt-new.svg', activeImage: '/bolt-active.svg' },
+    { id: "Information", label: t("common:tabs.info"), image: '/Info-circle.svg', activeImage: '/Info-circle-active.svg' }
+];
+
+
+
+
+
+
+
+
+
 
   const changeTab = (tab) => {
     setCurrentTab(tab);
@@ -156,7 +175,9 @@ export default function Detail({ data }) {
                   target="_blank"
                   className={styles.profile_getin}
                 >
-                  Get in Touch
+                  {t("common:getIntouch")}
+           
+
                 </a>
                 <a
                   onClick={openPopup}
@@ -179,7 +200,7 @@ export default function Detail({ data }) {
           <div className={style.tab_container}>
             <div className={style.tabSection}>
               <ul>
-                {artistTab.map((tab) => (
+                {commonTabData.map((tab) => (
                   <li
                     key={tab.id}
                     className={
@@ -238,6 +259,7 @@ export async function getServerSideProps(context) {
       props: {
         data: data.data,
         status: true,
+        locale:context.locale
       },
     };
   } catch (error) {

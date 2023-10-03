@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-// import setLanguage from "next-translate/setLanguage";
-// import Cookies from "js-cookie";
+ import setLanguage from "next-translate/setLanguage";
+ import Cookies from "js-cookie";
+ import { useGlobalState } from "@/context/Context";
 
+
+ 
 
 export default function LanguageSwitcher({theme}) {
+
+  const { state} = useGlobalState();
 
 
 
@@ -17,8 +22,11 @@ export default function LanguageSwitcher({theme}) {
       ]);
     
       const [pageLang, setPageLang] = useState(
-        // Cookies.get("inckd_language") || "en"
+       Cookies.get("inckd_language") || "en"
       );
+
+     
+
       useEffect(() => {
         if (pageLang) {
           const fetchLang = async () => {
@@ -30,11 +38,12 @@ export default function LanguageSwitcher({theme}) {
       }, [pageLang]);
     
       const languageHandler = async (lang) => {
-        // Cookies.set("inckd_language", lang);
+         Cookies.set("inckd_language", lang);
         setPageLang(lang);
       };
     
     
+
 
       
 
@@ -42,7 +51,7 @@ export default function LanguageSwitcher({theme}) {
   return (
     <div class="switch-lang">
       <div class= {  theme=== "white" ? 'wh-current-lang' : 'current-lang'}>
-        <p class= {  theme=== "white" ?   'wh-select-lang' :  "select-Lang"}>EN</p>
+        <p class= {  theme=== "white" ?   'wh-select-lang' :  "select-Lang"}>{state.locale}</p>
         <Image
           src={ theme!== "white" ? "/dropDown.svg" : '/down-arrow.png'}
           alt="langDropdown"
@@ -56,9 +65,9 @@ export default function LanguageSwitcher({theme}) {
           <div
             class="selecting-lang"
             key={index}
-            // onClick={() => languageHandler(lang?.value)}
+             onClick={() => languageHandler(lang?.value)}
           >
-            <p class="lang-text"> {lang?.name}</p>
+            <p class="lang-text">{lang?.name}</p>
           </div>
         ))}
       </div>

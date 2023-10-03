@@ -3,8 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./custom.module.css";
 import { APP_LINK_APPLE, APP_LINK_GOOGLE ,blurDataURL} from "@/constants/constants";
+import useTranslation from "next-translate/useTranslation";
+
 
 export default function Tattooartists() {
+
+
+  const { t } = useTranslation();
+
+
+
   return (
     <>
       <main>
@@ -37,38 +45,19 @@ export default function Tattooartists() {
                   objectFit="cover"
                   className="desk_hidden"
                 /> 
-
-
-
-{/* 
-                    <img
-                      src="/istockphoto-1367127235-1024x1024-6-tatoo-banner.png"
-                      alt="Boost your business with inckd"
-                      className="mob_hidden"
-                    />
-                    <img
-                      src="/istockphoto-1367127235-1024x1024 6-mob.png"
-                      alt="Boost your business with inckd"
-                      className="desk_hidden"
-                    /> */}
-
-
-
-                  </div>
+               </div>
                 </div>
                 <div className={styles.banner_content}>
                   <div className={styles.banner_content_wrap}>
                     <div className={styles.banner_caption}>
                       <h1 class="color_white">
                         <span>
-                          Boost your business <br />
-                          with inckd.
+                        {t("common:forArtistPage.bannerContent1")}
                         </span>
                       </h1>
                       <p>
-                        Grow your tattoo business by fulfilling your
-                        customers&apos; tattoo vision and offering them flexible
-                        payment options.
+
+                      {t("common:forArtistPage.bannerContent2")}
                       </p>
                     </div>
                     <ul className={styles.download_app}>
@@ -90,15 +79,19 @@ export default function Tattooartists() {
                       <ul className={styles.trend_list}>
                         <li className={styles.list_inline_item}>
                           <img src="/hourglass-icon.svg" alt="Easy setup" />
-                          <span>Easy setup</span>
+                          <span>
+                          {t("common:forArtistPage.easySetup")}
+                          </span>
                         </li>
                         <li className={styles.list_inline_item}>
                           <img src="/heart-icon.svg" alt="Free to use" />
-                          <span>Free to use</span>
+                          <span>
+                          {t("common:forArtistPage.free-to-use")}
+                          </span>
                         </li>
                         <li className={styles.list_inline_item}>
                           <img src="/card-icon.svg" alt="Easy payments" />
-                          <span>Easy payments</span>
+                          <span>{t("common:forArtistPage.easy-payments")}</span>
                         </li>
                       </ul>
                     </div>
@@ -115,29 +108,29 @@ export default function Tattooartists() {
                   <div class="img_text_box_inner">
                     <div class="text_box_content justify_content_start">
                       <div class="text_box_content_inner m_pr_0 tattoo_art_mgt_mob">
-                        <h2>Manage your business</h2>
+                        <h2>{t("common:forArtistPage.title1")}</h2>
                         <ul class="custom-listing">
                           <li>
                             <img
                               src="/heart-icon.svg"
                               alt="Free to use & no subscpriptions"
                             />
-                            Free to use & no subscpriptions
+                            {t("common:forArtistPage.nosubscpriptions")}
                           </li>
                           <li>
                             <img
-                              src="hourglass-icon.svg"
+                              src="/hourglass-icon.svg"
                               alt="Easy to set up and manage"
                             />
-                            Easy to set up and manage
+                            {t("common:forArtistPage.set-up-and-manage")}
                           </li>
                           <li>
                             <img src="/shield-check.svg" alt="Verified users" />
-                            Verified users
+                            {t("common:forArtistPage.verified-users")}
                           </li>
                           <li>
                             <img src="/card-icon.svg" alt="Easy payments" />
-                            Easy payments
+                            {t("common:forArtistPage.easy-payments")}
                           </li>
                         </ul>
                       </div>
@@ -163,21 +156,15 @@ export default function Tattooartists() {
                     </div>
                     <div className="text_box_content justify_content_start">
                       <div className="text_box_content_inner pr_40 m_pr_0">
-                        <h2>Your tattoo business ally</h2>
+                        <h2>{t("common:forArtistPage.your-tattoo-business")}</h2>
                         <p className="custom_fs_20 custom_fs_m_16">
-                          Inckd is your ally in creating a thriving,
-                          client-focused tattoo business. Display your portfolio
-                          proudly to attract clients who appreciate your unique
-                          style. Expand your customer base effortlessly through
-                          seamless communication and hassle-free payment
-                          management, all within one user-friendly platform.
+                         {t("common:forArtistPage.content1")}  
                         </p>
                         <Link
                           href={"/joinartist"}
                           className="btn_default btn_custom_m bdr_rad_4"
                         >
-                          {" "}
-                          Get started{" "}
+                      {t("common:forArtistPage.button")}
                         </Link>
                       </div>
                     </div>
@@ -188,21 +175,15 @@ export default function Tattooartists() {
                   <div className="img_text_box_inner">
                     <div className="text_box_content justify_content_start">
                       <div className="text_box_content_inner m_pr_0">
-                        <h2>Keep clients in the Loop</h2>
+                        <h2 >{t("common:forArtistPage.title2")}</h2>
                         <p className="custom_fs_20 custom_fs_m_16">
-                          Engage in real-time chats to understand your clients
-                          preferences firsthand. Efficiently handle appointments
-                          and stay prepared to meet your clients needs. Discuss
-                          offers and provide progress updates with Inckd,
-                          ensuring their tattoo vision becomes a reality at
-                          every stage.
+                        {t("common:forArtistPage.content2")}
                         </p>
                         <Link
                           href={"/joinartist"}
                           className="btn_default btn_custom_m bdr_rad_4"
                         >
-                          {" "}
-                          Get started{" "}
+                     {t("common:forArtistPage.button")}  
                         </Link>
                       </div>
                     </div>
@@ -221,15 +202,13 @@ export default function Tattooartists() {
                     <div className="justify_content_start container w_100pc">
                       <div className="text_box_content_inner m_pr_0">
                         <h3>
-                          Get inckd. customers tattoing with you now. Are you
-                          ready?
+                        {t("common:forArtistPage.title3")}
                         </h3>
                         <Link
                           href={"/joinartist"}
                           className="btn_secondary btn_custom_m bdr_rad_4"
                         >
-                          {" "}
-                          Get started{" "}
+                  {t("common:forArtistPage.button")}  
                         </Link>
                       </div>
                     </div>
@@ -247,21 +226,15 @@ export default function Tattooartists() {
                     </div>
                     <div className="text_box_content justify_content_start">
                       <div className="text_box_content_inner pr_40 m_pr_0">
-                        <h2>Your booking buddy</h2>
+                        <h2>{t("common:forArtistPage.title4")}</h2>
                         <p className="custom_fs_20 custom_fs_m_16">
-                          inckd. puts you in the drivers seat of your tattoo
-                          business schedule, providing a comprehensive overview
-                          of all bookings through a real-time dashboard right at
-                          your fingertips. Define your availability and make it
-                          easier for clients to schedule appointments according
-                          to their preferences.
+                        {t("common:forArtistPage.content4")}
                         </p>
                         <Link
                           href={"/joinartist"}
                           className="btn_default btn_custom_m bdr_rad_4"
                         >
-                          {" "}
-                          Get started{" "}
+                          {t("common:forArtistPage.button")}
                         </Link>
                       </div>
                     </div>
@@ -272,21 +245,15 @@ export default function Tattooartists() {
                   <div className="img_text_box_inner">
                     <div className="text_box_content justify_content_start">
                       <div className="text_box_content_inner m_pr_0">
-                        <h2>Manage Payments</h2>
+                        <h2>{t("common:forArtistPage.title5")}</h2>
                         <p className="custom_fs_20 custom_fs_m_16">
-                          Get payments quickly and securely, monitor them in
-                          real-time, and offer attractive discounts to encourage
-                          repeat business. We support widely accepted payment
-                          methods, including credit cards, and have partnered
-                          with Klarna to provide convenient instalment plans for
-                          your larger projects.
+                        {t("common:forArtistPage.content5")}
                         </p>
                         <Link
                           href={"/joinartist"}
                           className="btn_default btn_custom_m bdr_rad_4"
                         >
-                          {" "}
-                          Get started{" "}
+                           {t("common:forArtistPage.button")}
                         </Link>
                       </div>
                     </div>
@@ -311,21 +278,16 @@ export default function Tattooartists() {
                     </div>
                     <div className="text_box_content justify_content_start">
                       <div className="text_box_content_inner pr_40 m_pr_0">
-                        <h2>Manage your Studios</h2>
+                        <h2>{t("common:forArtistPage.title6")}</h2>
                         <p className="custom_fs_20 custom_fs_m_16">
-                          Lorem ipsum inckd. puts you in the drivers seat of
-                          your tattoo business schedule, providing a overview of
-                          all bookings through a real-time dashboard right at
-                          your fingertips. Define your availability and make it
-                          easier for clients to schedule appointments according
-                          to their preferences.
+                        {t("common:forArtistPage.content6")}
                         </p>
                         <Link
                           href={"/joinartist"}
                           className="btn_default btn_custom_m bdr_rad_4"
                         >
-                          {" "}
-                          Get started{" "}
+                          {t("common:forArtistPage.button")}
+                      
                         </Link>
                       </div>
                     </div>
@@ -337,8 +299,7 @@ export default function Tattooartists() {
                     <div className="justify_content_start container w_100pc ">
                       <div className="text_box_content_inner m_pr_0 pb_20 m_pb_40">
                         <h3 className="mb_0">
-                          Explore more <br />
-                          Features in the App
+                        {t("common:explore")}
                         </h3>
                       </div>
                     </div>
@@ -351,4 +312,22 @@ export default function Tattooartists() {
       </main>
     </>
   );
+}
+
+
+export async function getServerSideProps(context) {
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }
