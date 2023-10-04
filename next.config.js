@@ -20,10 +20,6 @@ const nextConfig = {
     localeDetection: false,
     defaultLocale: "en",
   },
-
-  // experimental: {
-  //   serverActions: true,
-  // },
 };
 
 module.exports = nextTranslate({

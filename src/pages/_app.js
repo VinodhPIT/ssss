@@ -1,4 +1,4 @@
-//
+
 import { useRouter } from "next/router";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
@@ -19,8 +19,6 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   const shouldHideHeader = () => {
-    // Specify the routes where you want to hide the header
-
     const hideHeaderRoutes = [
       "/search",
       "/",

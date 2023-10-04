@@ -86,7 +86,7 @@ function SearchBar({ isPage }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isPage) {
-      router.push(`/search?term=${searchState.query}&category=all`);
+      router.push(`/search?term=${searchState.query}&category=tattoo`);
     
     } else {
     

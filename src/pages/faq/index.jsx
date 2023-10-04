@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "@/components/customHeader/header";
-import { FAQ_ARTISTS, FAQ_GENERAL, FAQ_CUSTOMERS } from "@/constants/faq";
+
 import useTranslation from "next-translate/useTranslation";
 
 import {
@@ -13,6 +13,7 @@ import {
 import "react-accessible-accordion/dist/fancy-example.css";
 import Search from "@/components/tattooSearch/tattooSearch";
 import style from "@/pages/search/search.module.css";
+
 export default function FAQ() {
   const [state, setState] = useState("general");
 
@@ -25,11 +26,16 @@ export default function FAQ() {
   const faqTab = [
     {
       id: "general",
-      label:t("common:tabs.general"),
+      label: t("common:tabs.general"),
       image: "/all.svg",
       activeImage: "/all-active.svg",
     },
-    { id: "artist",label:t("common:tabs.artist"),image :'/colour-palette-new.svg'  ,activeImage:'/colour-palette-active.svg'} ,
+    {
+      id: "artist",
+      label: t("common:tabs.artist"),
+      image: "/colour-palette-new.svg",
+      activeImage: "/colour-palette-active.svg",
+    },
 
     {
       id: "tattoo",
@@ -39,11 +45,103 @@ export default function FAQ() {
     },
   ];
 
+  const FAQ_GENERAL = [
+    {
+      id: 1,
+      summary: t("common:faqScreen.title1"),
+      details: t("common:faqScreen.content1"),
+    },
+    {
+      id: 2,
+
+      summary: t("common:faqScreen.title2"),
+      details: t("common:faqScreen.content2"),
+    },
+    {
+      id: 3,
+      summary: t("common:faqScreen.title3"),
+      details: t("common:faqScreen.content3"),
+    },
+    {
+      id: 4,
+
+      summary: t("common:faqScreen.title4"),
+      details: t("common:faqScreen.content4"),
+    },
+
+    {
+      id: 5,
+
+      summary: t("common:faqScreen.title5"),
+      details: t("common:faqScreen.content5"),
+    },
+
+    {
+      id: 6,
+
+      summary: t("common:faqScreen.title6"),
+      details: t("common:faqScreen.content6"),
+    },
+  ];
+
+  const FAQ_ARTISTS = [
+    {
+      id: 1,
+      summary: t("common:faqScreen.title7"),
+      details: t("common:faqScreen.content7")},
+
+
+    {
+      id: 2,
+      summary: t("common:faqScreen.title8"),
+      details: t("common:faqScreen.content8")},
+
+    {
+      id: 3,
+      summary: t("common:faqScreen.title9"),
+      details: t("common:faqScreen.content9")},
 
 
 
+    {
+      id: 4,
+      summary: t("common:faqScreen.title10"),
+      details: t("common:faqScreen.content10")},
 
-  
+    {
+      id: 5,
+       summary: t("common:faqScreen.title11"),
+      details: t("common:faqScreen.content11")},
+      
+    {
+      id: 6,
+      summary: t("common:faqScreen.title12"),
+      details: t("common:faqScreen.content12")}
+
+  ];
+
+  const FAQ_CUSTOMERS = [
+    {
+      id: 1,
+      summary: t("common:faqScreen.title13"),
+      details: t("common:faqScreen.content13")},
+
+    {
+      id: 2,
+     summary: t("common:faqScreen.title14"),
+      details: t("common:faqScreen.content14")},
+
+    {
+      id: 3,
+      summary: t("common:faqScreen.title15"),
+      details: t("common:faqScreen.content15")},
+      
+    {
+      id: 4,
+      summary: t("common:faqScreen.title16"),
+      details: t("common:faqScreen.content16")},
+
+  ];
 
   return (
     <>
@@ -155,16 +253,14 @@ export default function FAQ() {
   );
 }
 
-
 export async function getServerSideProps(context) {
   try {
-      return {
-        props: {
-         locale:context.locale
-        },
-      };
-    }
-   catch (error) {
+    return {
+      props: {
+        locale: context.locale,
+      },
+    };
+  } catch (error) {
     return {
       props: {
         data: null,
