@@ -114,7 +114,7 @@ function SearchBar({ isPage }) {
       showDropdown: false,
     }));
     if (isPage) {
-      router.push(`/search?term=${item}&category=${"all"}`);
+      router.push(`/search?term=${item}&category=${"tattoo"}`);
     } else {
       searchData(item, router);
     }

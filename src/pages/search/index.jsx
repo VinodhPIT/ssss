@@ -118,6 +118,7 @@ const Search = ({
                   <Autocomplete
                     apiKey={process.env.googlePlacesApiKey}
                     onPlaceSelected={handlePlaceSelected}
+                    placeholder={t("common:enterLocation")}
                   />
                 </div>
               )}
@@ -138,7 +139,7 @@ const Search = ({
                   onChange={(event) => searchStyle(event.target.value)}
                   value={state.selectedStyle}
                 >
-                  <option value="0">Choose Style</option>
+                  <option value="0">{t("common:chooseStyle")}</option>
                   {state.styleCollection.map((el) => (
                     <option key={el._id} value={el._id}>
                       {el.sort[0]}
@@ -196,7 +197,8 @@ const Search = ({
                     }}
                     className="btn_secondary btn_view_more"
                   >
-                    Load more
+                    {t("common:loadMore")}
+                  
                   </button>
                 </div>
               </div>

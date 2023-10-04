@@ -2,10 +2,12 @@ import React ,{useState} from 'react'
 import styles from "@/components/styles/listing.module.css";
 import TattooSearchModalPopup from "@/utils/modalUtils";
 import { useModal } from "@/utils/modalUtils";
+import useTranslation from "next-translate/useTranslation";
 
 
 export default function Offer() {
 
+  const { t } = useTranslation();
 
   const { isPopupOpen, openPopup, closePopup } = useModal();
 
@@ -15,13 +17,14 @@ export default function Offer() {
     <div className={styles.custom_adv_block_3}>
     <div className={styles.custom_adv_wrap}>
       <div className={styles.custom_adv_content}>
-        <h6>Get exciting offers!</h6>
-        <span className={styles.adv_price}>CHF 30</span>
-        <p>off on your next tattoo</p>
+        <h6>{t("common:offers")}</h6>
+        <span className={styles.adv_price}>{t("common:chf")}</span>
+        
+        <p>{t("common:nextTattoo")}</p>
         <span className={styles.adv_btn_wrap}>
           <a   onClick={openPopup}
                     target="_blank"   className={styles.btn_secondary}>
-            Refer and Earn
+           {t("common:refer")}
           </a>
         </span>
         <img

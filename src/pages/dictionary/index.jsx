@@ -31,39 +31,39 @@ export default function Dictionary() {
       heading: t("common:dictionaryPage.carousel.title1"),
       image: "/Group.svg",
       text: t("common:dictionaryPage.carousel.content1"),
-      button1: "Trust",
-      button2: "Remembrance",
+      button1:t("common:dictionaryPage.trust"),
+      button2: t("common:dictionaryPage.remembrance"),
      
     },
     
     { heading:t("common:dictionaryPage.carousel.title2"),
       image: "/Group 82721.png",
       text: t("common:dictionaryPage.carousel.content1"),
-      button1:t("common:dictionaryPage.carousel.trust"),
-      button2: t("common:dictionaryPage.carousel.remembrance"),
+      button1:t("common:dictionaryPage.trust"),
+      button2: t("common:dictionaryPage.remembrance"),
      
     },
     {
       heading: t("common:dictionaryPage.carousel.title1"),
       image: "/Group 82677.svg",
       text: t("common:dictionaryPage.carousel.content1"),
-      button1: t("common:dictionaryPage.carousel.trust"),
-      button2: t("common:dictionaryPage.carousel.remembrance"),
+      button1: t("common:dictionaryPage.trust"),
+      button2: t("common:dictionaryPage.remembrance"),
      
     },
     {
       heading: t("common:dictionaryPage.carousel.title2"),
       image: "/Group 82674.svg",
       text: t("common:dictionaryPage.carousel.content1"),
-      button1: t("common:dictionaryPage.carousel.trust"),
-      button2: t("common:dictionaryPage.carousel.remembrance"),
+      button1: t("common:dictionaryPage.trust"),
+      button2: t("common:dictionaryPage.remembrance"),
      
     },
     {
       heading: t("common:dictionaryPage.carousel.title1"),
       text: t("common:dictionaryPage.carousel.content1"),
-      button1:   t("common:dictionaryPage.carousel.trust"),
-      button2: t("common:dictionaryPage.carousel.remembrance"),
+      button1:   t("common:dictionaryPage.trust"),
+      button2: t("common:dictionaryPage.remembrance"),
     
     },
   ];

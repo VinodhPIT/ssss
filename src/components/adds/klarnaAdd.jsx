@@ -1,8 +1,14 @@
 import React from 'react'
 import styles from "@/components/styles/listing.module.css";
 import Link from 'next/link'
+import useTranslation from "next-translate/useTranslation";
+
+
+
+
 
 export default function KlarnaAdd() {
+  const { t } = useTranslation();
   return (
     <div className={styles.custom_adv_block_2}>
     <div className={styles.custom_adv_wrap}>
@@ -17,9 +23,8 @@ export default function KlarnaAdd() {
         />    </Link>
 
         <h6>
-          Tattoo now.
-          <br />
-          Pay later.
+   {t("common:payLater")}
+          
         </h6>
         <span className={styles.adv_btn_wrap}>
           <img
