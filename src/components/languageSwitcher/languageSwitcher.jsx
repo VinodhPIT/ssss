@@ -51,7 +51,7 @@ export default function LanguageSwitcher({theme}) {
   return (
     <div class="switch-lang">
       <div class= {  theme=== "white" ? 'wh-current-lang' : 'current-lang'}>
-        <p class= {  theme=== "white" ?   'wh-select-lang' :  "select-Lang"}>{state.locale}</p>
+        <p class= {  theme=== "white" ?   'wh-select-lang' :  "select-Lang"}>{pageLang}</p>
         <Image
           src={ theme!== "white" ? "/dropDown.svg" : '/down-arrow.png'}
           alt="langDropdown"
