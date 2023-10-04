@@ -5,14 +5,14 @@ import { postApiCall ,getApiCall } from "@/utils/apiUtils";
 export const fetchCategoryData = async (params) => {
 
   try {
-    const reposneCategory = await postApiCall(
+    const responseCategory = await postApiCall(
       `/${params.category}/search`,
       searchParam(params)
     );
 
 
   
-    return reposneCategory; // Return the actual data
+    return responseCategory; // Return the actual data
 
 
     }
@@ -27,7 +27,7 @@ export const fetchCategoryData = async (params) => {
 
 export const getStyles = async () => {
   try {
-    const reposneStyles = await postApiCall(
+    const reponseStyles = await postApiCall(
       `/style/search`,
       prepareRequest({
         sort: "alphabetical",
@@ -38,7 +38,7 @@ export const getStyles = async () => {
     );
 
     
-    return reposneStyles;
+    return reponseStyles;
   } catch (error) {
    
     // Handle error if needed
@@ -126,8 +126,8 @@ try {
 
 export const fetchTattooDetail = async (params) => {
   try {
-    const reponse = await getApiCall(`/tattoo/detail?tattoo_uid=${params}`);
-    return reponse;
+    const response = await getApiCall(`/tattoo/detail?tattoo_uid=${params}`);
+    return response;
     }
    catch (error) {
 

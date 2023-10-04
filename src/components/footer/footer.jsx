@@ -8,54 +8,57 @@ import {
   APP_LINK_APPLE,
   APP_LINK_GOOGLE,
 } from "@/constants/constants";
-import { useGlobalState } from "@/context/Context";
+
+
+import useTranslation from "next-translate/useTranslation";
 
 
 
 
 
 export default function Footer() {
+  const { t } = useTranslation();
 
-  const {
-    serverLoad
-  } = useGlobalState();
-  // href={`}
+
 
 
   const bookLinks = [
     {
       id: 1,
-      title: "Tattoo search",
+      title: t("common:menus.tattooSearch"),
       url: `/search?term=${""}&category=${"tattoo"}`,
     },
 
     {
       id: 2,
-      title: "Artist search",
+      title: t("common:menus.artistSearch"),
       url: `/search?term=${""}&category=${"artist"}`,
     },
     {
       id: 3,
-      title: "Flash search",
+      title: t("common:menus.flashSearch"),
       url: `/search?term=${""}&category=${"flash"}`,
     },
   ];
 
+
+
+
   const productLinks = [
     {
       id: 1,
-      title: "Styleguide",
+      title: t("common:menus.styleGuide"),
       url: "/styleguide",
     },
 
     {
       id: 2,
-      title: "Dictionary",
+      title: t("common:menus.dictionary"),
       url: "/dictionary",
     },
     {
       id: 3,
-      title: "Klarna",
+      title: t("common:menus.klarna"),
       url: "/klarna",
     },
   ];
@@ -65,7 +68,7 @@ export default function Footer() {
 
     {
       id: 2,
-      title: "For tattoo artists",
+      title: t("common:menus.forTattooArtists"),
       url: "/fortattooartists",
     },
   ];
@@ -73,15 +76,20 @@ export default function Footer() {
   const links = [
     {
       id: 1,
-      title: "Contact Us",
+      title: t("common:menus.contactUs"),
       url: "/contactus",
     },
     {
       id: 2,
-      title: "FAQ",
+      title: t("common:menus.faq"),
       url: "/faq",
     },
   ];
+
+
+
+
+
 
   return (
     <footer >
@@ -102,10 +110,10 @@ export default function Footer() {
               </div>
               <ul class="footer_list">
                 <li class="footer_title">
-                  <h6>Download app on</h6>
+                  <h6>{t("common:download-app-on")}</h6>
                 </li>
                 <li>
-                  <Link href={APP_LINK_APPLE}>
+                  <Link href={APP_LINK_APPLE}  target="_blank">
                    
                     <Image
                       src={"/app-store.svg"}
@@ -117,7 +125,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href={APP_LINK_GOOGLE}>
+                  <Link href={APP_LINK_GOOGLE}  target="_blank">
                   <Image
                       src={"/g-play.svg"}
                       alt="GooglePlay"
@@ -133,17 +141,17 @@ export default function Footer() {
             <div class="footer_right">
               <ul class="footer_list">
                 <li>
-                  <h4>Book</h4>
+                  <h4>{t("common:book")}</h4>
                 </li>
                 {bookLinks.map((link) => (
                   <li key={link.id}>
-                    <Link href={link.url} onClick={()=>serverLoad(true)} >{link.title}</Link>
+                    <Link href={link.url}>{link.title}</Link>
                   </li>
                 ))}
               </ul>
               <ul class="footer_list">
                 <li>
-                  <h4>Product</h4>
+                  <h4>{t("common:product")}</h4>
                 </li>
                 {productLinks.map((link) => (
                   <li key={link.id}>
@@ -153,7 +161,7 @@ export default function Footer() {
               </ul>
               <ul class="footer_list">
                 <li>
-                  <h4>Business</h4>
+                  <h4>{t("common:business")}</h4>
                 </li>
                 {businesstLinks.map((link) => (
                   <li key={link.id}>
@@ -182,7 +190,7 @@ export default function Footer() {
             </div>
             <div class="social_icons">
               <ul>
-                <li class="footer_title">Follow us on</li>
+                <li class="footer_title">{t("common:followus")}</li>
                 <li>
                   <Link href={INSTAGRAM_PROFILE_LINK} target="_blank">
                   <Image

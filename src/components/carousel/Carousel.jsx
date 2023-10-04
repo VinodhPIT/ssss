@@ -1,6 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Link from "next/link";
+import {
+  APP_LINK_APPLE,
+  APP_LINK_GOOGLE,
+} from "@/constants/constants";
 
 const CarouselComponent = ({ items,itemStyle }) => {
   return (
@@ -27,7 +32,19 @@ const CarouselComponent = ({ items,itemStyle }) => {
       ):(<div className='download_app' key={index}>
         <h1 className='download_app_title'>Download the app for more!</h1>
         <p>We hand pick every tattoo artist to ensure your tattoo experience is handled with care,quality and inclusivity</p>
-        <span className='download_app_img'><a href="" className='list_inline_item'><img src="./app-store.svg" alt="" className='w_auto'/></a> <a href="" className='list_inline_item'><img src="./g-play.svg" alt="" className='w_auto' /></a></span></div>))}
+        <span className='download_app_img'>
+          
+          
+          <Link  href={APP_LINK_APPLE}  target="_blank" className='list_inline_item'><img src="/app-store.svg" alt="AppStore" className='w_auto'/></Link>
+          
+          
+           <Link href={APP_LINK_GOOGLE}  target="_blank"  className='list_inline_item'><img src="/g-play.svg" alt="PlayStore" className='w_auto' /></Link>
+           
+           
+           
+           
+           
+           </span></div>))}
     </Carousel>
   );
 };

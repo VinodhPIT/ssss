@@ -2,13 +2,25 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/router";
+import Image from 'next/image'
+import useTranslation from "next-translate/useTranslation";
+
+
+
+
+
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
   message: Yup.string().required("Message is required"),
+  tattooType: Yup.string().required("Please select one option"),
+
 });
 
 const _Form = () => {
+  const { t } = useTranslation();
+
+
   const [state, setState] = useState({
     isShown: false,
   });
@@ -24,8 +36,8 @@ const _Form = () => {
         <div style={{ margin: "0 auto", padding: "0px" }}>
           {!state.isShown ? (
             <div>
-              <h4>Get in touch</h4>
-              <h6>Who you are?</h6>
+              <h4>{t("common:contactUsPage.in-touch")}</h4>
+              <h6>{t("common:contactUsPage.who-you-are")}</h6>
               <Formik
                 initialValues={{
                   tattooType: "",
@@ -34,6 +46,8 @@ const _Form = () => {
                 }}
                 validationSchema={validationSchema}
                 onSubmit={(values, { resetForm }) => {
+
+                  console.log(values ,"ojcospdjcospdc")
                   // `https://us-central1-inckd-9a593.cloudfunctions.net/openZendeskTicket`
 
                   // assignee_email: 'roland@inckd.com',
@@ -112,7 +126,17 @@ const _Form = () => {
                           />
                           Other
                         </label>
+
+                     
+
                       </div>
+
+                      <ErrorMessage
+                          name="tattooType"
+                          component="div"
+                          className="error"
+                        />
+
                     </div>
 
                     <div class="form_block">
@@ -154,7 +178,7 @@ const _Form = () => {
                           class="btn_secondary h_48 w_100pc"
                           style={{ opacity: isSubmitting ? 0.5 : 1 }}
                         >
-                          {isSubmitting ? "Submitting ...." : "Submit"}
+                          {isSubmitting ?  t("common:submitting")  : t("common:submit") }
                         </button>
                       </div>
                     </div>
@@ -164,7 +188,13 @@ const _Form = () => {
             </div>
           ) : (
             <div class="form_submit_block">
-              <img src="./success-tick.svg" alt="Form submitted" />
+               <Image
+      src="/success-tick.svg" 
+      width={81}
+      height={81}
+      priority
+      alt="Form submitted" 
+    />
 
               <h4>Form submitted</h4>
               <p>

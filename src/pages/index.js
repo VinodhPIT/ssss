@@ -1,11 +1,10 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import { useGlobalState } from "@/context/Context";
-import HomLoading from "@/components/homeLoading";
-import SearchField from "@/components/searchField";
+import SearchField from "@/components/searchField/search";
 import Header from "@/components/header/header";
 import ImageSlider from "@/components/slider/ImageSlider";
 import ImageSwiper from "@/components/slider/ImageSwiper";
@@ -14,29 +13,47 @@ import {
   APP_LINK_GOOGLE,
   blurDataURL,
 } from "@/constants/constants";
-export default function Home() {
-  const { state, serverLoad, styleCollection } = useGlobalState();
+import useWindowResize from "@/hooks/useWindowSize"; 
+import useTranslation from "next-translate/useTranslation";
+
+
+
+
+export default function Home({locale}) {
+  const { styleCollection ,getLocale } = useGlobalState();
+  const { isMobileView ,cookieDropdown } = useWindowResize();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    try {
+      getLocale({
+        locale,
+      });
+    } catch (error) {}
+  }, [locale]);
+
+
+
+
+  
 
   const imagePaths = [
-    "./s-1.svg",
-    "./s-2.svg",
-    "./s-3.svg",
-    "./s-4.svg",
-    "./s-5.svg",
-    "./s-6.svg",
-    "./s-7.svg",
-    "./s-8.svg",
-    "./s-9.svg",
-    "./s-10.svg",
+    "/s-1.svg",
+    "/s-2.svg",
+    "/s-3.svg",
+    "/s-4.svg",
+    "/s-5.svg",
+    "/s-6.svg",
+    "/s-7.svg",
+    "/s-8.svg",
+    "/s-9.svg",
+    "/s-10.svg",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobileView, setIsMobileView] = useState(false);
-  const [cookieDropdown, setCoookieDropdown] = useState(false);
-  const [toggle, setToggle] = useState(false);
+  const [showCookie, setCookie] = useState(false);
 
   useEffect(() => {
     styleCollection();
-
     const timer = setInterval(changeImage, 2000);
     return () => clearInterval(timer);
   }, []);
@@ -45,48 +62,40 @@ export default function Home() {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % imagePaths.length);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 767.98); // Adjust the breakpoint as needed
-      setCoookieDropdown(window.innerWidth <= 767.98);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
-  const onToggle = () => {
-    setToggle(!toggle);
+
+
+
+
+  const onShowCookie = () => {
+    setCookie(!showCookie);
   };
 
-  return (
-    <div className="page_wrapper tete">
-      <div className="header_cookies">
+  return (<>
+
+       <div className="header_cookies">
         <div className="header_cookie_img">
-          <img src="./logo-cookies.svg" alt="" />
+          <img src="/logo-cookies.svg" alt="" />
         </div>
         <div className="header_cookie_txt">
           <p>
-            <span>Get tattoo now, pay later.</span>
+            <span>{t("common:tattooNow")}</span>
             <span className="header_cookie_desktop">
-              That&apos;s right, there&apos;s a new way to get tattooed smoooth!{" "}
-              <Link href="/klarna">Learn more</Link>
+             {t("common:payLater")}
+              <Link href="/klarna">{t("common:learnmore")}</Link>
             </span>
 
-            {toggle && (
+            {showCookie && (
               <span className="header_cookie_mob">
-                That&apos;s right, there&apos;s a new way to get tattooed
-                smoooth! <Link href="/klarna">Learn more</Link>
+                {t("common:payLater")}
+                <Link href="/klarna">{t("common:learnmore")}</Link>
               </span>
             )}
           </p>
         </div>
         {cookieDropdown && (
           <Image
-            onClick={() => onToggle()}
+            onClick={() => onShowCookie()}
             src={"/arrowDown.svg"}
             alt="arrowDown"
             width={16}
@@ -95,18 +104,24 @@ export default function Home() {
           />
         )}
       </div>
-      <Header />
 
+
+<Header />
+
+<main>
+
+    <div className="page_wrapper tete">
+  
       <div className={styles.home_banner_block}>
         <div className={styles.home_banner_wrap}>
           <div className={styles.home_banner_item}>
             <div className={styles.home_banner}>
               <div className={styles.home_banner_inner}>
                 <video loop autoPlay muted className="mob_hidden">
-                  <source src="./home-video.mp4" type="video/mp4" />
+                  <source src="/home-video.mp4" type="video/mp4" />
                 </video>
                 <img
-                  src="./istockphoto-1386481647-640_adpp_is1-mob.png"
+                  src="/istockphoto-1386481647-640_adpp_is1-mob.png"
                   alt=""
                   className={`${styles.desk_hidden} ${styles.home_banner_img}`}
                 />
@@ -116,10 +131,9 @@ export default function Home() {
               <div className={styles.home_banner_content_wrap}>
                 <div className={styles.home_banner_caption}>
                   <h1 class="color_aero_blue">
-                    <span>
-                      Book your dream{" "}
-                      <span className={styles.highlight_border}>tattoo</span>{" "}
-                      now!
+                    <span>{t("common:homePage.bookYourDream")}{" "}
+                      <span className={styles.highlight_border}>{t("common:homePage.tattoo")}</span>
+                      {t("common:homePage.now")}
                     </span>
                   </h1>
                 </div>
@@ -127,55 +141,37 @@ export default function Home() {
                 <div className="search_form">
                   <div className="search_form_wrap">
                     <SearchField isPage={"all"} />
-
-                    {/* <form className="position_relative">
-                      <div className="input_group position_relative">
-                        <input
-                          placeholder="Search"
-                          type="text"
-                          required="required"
-                          className="form_control input_txt"
-                        />
-                        <button
-                          type="submit"
-                          tabindex="-1"
-                          className="btn_lg btn_icon btn_search"
-                        >
-                          <img src="./search-magnifer.svg" alt="" />
-                        </button>
-                      </div>
-                    </form> */}
                     <div className="trend_list_wrap">
                       <span className="trend_list_label">
-                        <p>Search by </p>
-                        <h6>Categories</h6>
+                        <p>{t("common:homePage.search-by")} </p>
+                        <h6>{t("common:homePage.categories")}</h6>
                       </span>
                       <ul className="trend_list">
                         <li className="list_inline_item">
                           <Link
                             href={`/search?term=${""}&category=${"tattoo"}`}
-                            onClick={() => serverLoad(true)}
+                           
                           >
-                            <img src="./Flame.svg" alt="" />
-                            Tattoos
+                            <img src="/Flame.svg" alt="Tattoos" />
+                            {t("common:homePage.tattoos")}
                           </Link>
                         </li>
                         <li className="list_inline_item">
                           <Link
                             href={`/search?term=${""}&category=${"flash"}`}
-                            onClick={() => serverLoad(true)}
+                           
                           >
-                            <img src="./Bolt.svg" alt="" />
-                            Flash
+                            <img src="/Bolt.svg" alt="Flash" />
+                            {t("common:homePage.flash")}
                           </Link>
                         </li>
                         <li className="list_inline_item">
                           <Link
                             href={`/search?term=${""}&category=${"artist"}`}
-                            onClick={() => serverLoad(true)}
+                            
                           >
-                            <img src="./colour-palette.svg" alt="" />
-                            Artists
+                            <img src="/colour-palette.svg" alt="Artists" />
+                            {t("common:homePage.artist")}
                           </Link>
                         </li>
                       </ul>
@@ -185,16 +181,16 @@ export default function Home() {
 
                 <ul className="download_app">
                   <li className="download_app_title">
-                    <h6>Download our app from</h6>
+                    <h6>{t("common:download-our-app")}</h6>
                   </li>
                   <li>
                     <Link href={APP_LINK_APPLE} target="_blank">
-                      <img src="./app-store.svg" alt="" />
+                      <img src="/app-store.svg" alt="" />
                     </Link>
                   </li>
                   <li>
                     <Link href={APP_LINK_GOOGLE} target="_blank">
-                      <img src="./g-play.svg" alt="" />
+                      <img src="/g-play.svg" alt="" />
                     </Link>
                   </li>
                 </ul>
@@ -211,20 +207,19 @@ export default function Home() {
               <div class="img_text_box_inner">
                 <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0">
-                    <h2 class="letter_spacing_03">
-                      Find the right Artist for your next Tattoo!
+                    <h2>
+                    {t("common:homePage.title1")}
                     </h2>
                     <p>
-                      We hand-pick every tattoo artist to ensure your tattoo
-                      experience is handled with care, quality and inclusivity.
+                    {t("common:homePage.content1")}
                     </p>
                     <Link
                       href={`/search?term=${""}&category=${"artist"}`}
                       class="btn btn_secondary btn_xxl btn_sm_m btn_img"
                     >
-                      Find artists
+                     {t("common:findArtist")}
                       <img
-                        src="./alt-arrow-right-white.svg"
+                        src="/alt-arrow-right-white.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -262,7 +257,7 @@ export default function Home() {
                     blurDataURL={blurDataURL}
                     layout="responsive"
                   />
-                  {/* <img src="./pexels-djordje-petrovic-1433270-3.png" alt="" />  */}
+                  
                 </div>
               </div>
             </div>
@@ -271,36 +266,34 @@ export default function Home() {
               <div class="img_text_box_inner">
                 <div class="img_box_wrap block_bg_gradient_1 m_min_h_425">
                   <div class="klarna_bg">
-                    <img src="./klarna-white.svg" alt="" />
+                    <img src="/klarna-white.svg" alt="" />
                   </div>
                   <div class="box_text_img_over color_pink">
-                    <h2 class="letter_spacing_04 txt_mob_fs50">
-                      Pay all at once? <br /> Never again!
+                    <h2 class="txt_mob_fs50">
+                    {t("common:homePage.title2")}
                     </h2>
                   </div>                  
                   <img
-                    src="./pexels-cottonbro-studio-5320148-6.png"
+                    src="/pexels-cottonbro-studio-5320148-6.png"
                     alt=""
                     className="object_position_left mob_hidden"
                   />
                   <img
-                    src="./pexels-cottonbro-studio-5320148-6-mob.png"
+                    src="/pexels-cottonbro-studio-5320148-6-mob.png"
                     alt=""
                     className="desk_hidden"
                   />
                 </div>
                 <div class="text_box_content justify_content_start">
                   <div class="klarna_bg">
-                    <img src="./klarna.svg" alt="" />
+                    <img src="/klarna.svg" alt="" />
                   </div>
                   <div class="text_box_content_inner m_pr_0 pr_0">
-                    <h2 class="letter_spacing_02">
-                      Tattoo now, <br />
-                      Pay later
+                    <h2>
+                    {t("common:homePage.title3")}
                     </h2>
                     <p>
-                      Get tattoo now, pay later. That&apos;s right, there&apos;s
-                      a new way to get tattooed smoooth!
+                    {t("common:homePage.content3")}
                     </p>
                     <Link
                       href="/klarna"
@@ -308,7 +301,7 @@ export default function Home() {
                     >
                       Learn more
                       <img
-                        src="./alt-arrow-right-white.svg"
+                        src="/alt-arrow-right-white.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -322,16 +315,14 @@ export default function Home() {
                 <div className="img_text_box_inner">
                   <div className="text_box_content justify_content_start pl_0 pr_2_pc  m_pb_0">
                     <div className="text_box_content_inner m_pr_0">
-                      <h2 className="letter_spacing_05">Tattoo Dictionary</h2>
+                      <h2>{t("common:homePage.title4")}</h2>
                       <p>
-                        We hand-pick every tattoo artist to ensure your tattoo
-                        experience is handled with care, quality and
-                        inclusivity.
+                      {t("common:homePage.content4")}
                       </p>
                       <Link href="/dictionary" className="btn btn_default btn_xxl btn_sm_m">
-                      Visit Tattoo Dictionary
+                      {t("common:visitTattoo")}
                         <img
-                          src="./alt-arrow-right-black.svg"
+                          src="/alt-arrow-right-black.svg"
                           alt=""
                           className="ml-8 mt-2"
                         />
@@ -350,7 +341,7 @@ export default function Home() {
                 <div class="img_box_wrap block_bg_gradient_1">
                   <div class="box_text_img_over color_yellow md_max_75">
                     <h2 class="letter_spacing_025 color_yellow">
-                      <span class="small">My Style is </span>Lettering
+                      <span class="small">{t("common:homePage.title7")} </span>{t("common:homePage.title7-Sub")}
                     </h2>
                   </div>
 
@@ -377,7 +368,7 @@ export default function Home() {
                     className="desk_hidden"
                   />
 
-                  {/* <img src="./pexels-ademola.png" alt="" />  */}
+                  
                 </div>
                 <div class="text_box_content">
                   <div class="bg_overlay_img">
@@ -398,19 +389,16 @@ export default function Home() {
 
                   <div class="text_box_content_inner w_100pc pr_0">
                     <h2 class="letter_spacing_025">
-                      Whats your <br />
-                      Style?
+                    {t("common:homePage.title8")}
                     </h2>
-                    <br />
-                    <br />
-                    <br />
+                 
                     <Link
                       href="/styleguide"
                       class="btn btn_primary btn_xxl custom_fs_20"
                     >
-                      Check the Styleguide
+                      {t("common:checkStyle")}
                       <img
-                        src="./alt-arrow-right-white.svg"
+                        src="/alt-arrow-right-white.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -421,24 +409,24 @@ export default function Home() {
             </div>
             <div class="text_box_wrap right block_bg_black">
               <div class="img_text_box_inner m_switcher">
-                <div class="text_box_content justify_content_start align_item_end txt-btm-7pc m_txt-btm-40">
+                <div class="text_box_content justify_content_start">
                   <div class="text_box_content_inner m_pr_0 pr_0">
-                    <h2 class="letter_spacing_05">
-                      Boost your <br />
-                      business with <br />
-                      inckd.
+                    <h2>
+
+                    {t("common:homePage.title5")}
+                   
                     </h2>
                     <p>
-                      Grow your tattoo business by fulfilling your customers
-                      tattoo vision and offering them flexible payment options.
+                    {t("common:homePage.content5")}
                     </p>
                     <Link
                       href="/fortattooartists"
                       class="btn btn_default btn_xxl btn_sm_m btn_img"
                     >
-                      Learn more
+                      {t("common:learnmore")}
+                    
                       <img
-                        src="./alt-arrow-right-black.svg"
+                        src="/alt-arrow-right-black.svg"
                         alt=""
                         class="ml-8 mt-2"
                       />
@@ -447,9 +435,9 @@ export default function Home() {
                 </div>
                 <div class="img_box_wrap block_bg_gradient_1 justify_content_right img-btm-7pc">
                   <div class="box_text_img_over color_aero_blue_lite txt-right-align">
-                    <h2 class="letter_spacing_03 text_right">
-                      <span class="small letter_spacing_02">Are you a </span>
-                      Tattoo artist?
+                    <h2 class="text_right">
+                      <span class="small letter_spacing_02">{t("common:homePage.title6")}</span>
+                      {t("common:homePage.title6-Sub")}
                     </h2>
                   </div>
 
@@ -473,16 +461,16 @@ export default function Home() {
                   <div class="text_box_content_inner m_pr_0">
                     <ul class="download_app">
                       <li class="download_app_title">
-                        <h6>Download the App & Explore more!</h6>
+                        <h6>{t("common:downloadApp")}</h6>
                       </li>
                       <li>
                         <Link href={APP_LINK_APPLE} target="_blank">
-                          <img src="./app-store.svg" alt="" />
+                          <img src="/app-store.svg" alt="" />
                         </Link>
                       </li>
                       <li>
                         <Link href={APP_LINK_GOOGLE} target="_blank">
-                          <img src="./g-play.svg" alt="" />
+                          <img src="/g-play.svg" alt="" />
                         </Link>
                       </li>
                     </ul>
@@ -530,8 +518,32 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* {state.serverLoad && <HomLoading />} */}
     </div>
+    </main>
+    </>
   );
 }
+
+
+
+
+
+export async function getServerSideProps(context) {
+  try {
+      return {
+        props: {
+         locale:context.locale
+        },
+      };
+    }
+   catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
+}
+
+
+

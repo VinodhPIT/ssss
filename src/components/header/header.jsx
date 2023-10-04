@@ -2,11 +2,18 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import SideDrawer from "@/components/sideDrawer/sideDrawer";
+import LanguageSwitcher from "@/components/languageSwitcher/languageSwitcher";
 import Image from "next/image";
+import useTranslation from "next-translate/useTranslation";
+
 
 export default function Header() {
-  const [toggle, setToggle] = useState(false);
 
+  const { t } = useTranslation();
+
+  
+  const [toggle, setToggle] = useState(false);
+  
   useEffect(() => {
     if (toggle) {
       document.body.classList.add("nav_open");
@@ -27,34 +34,48 @@ export default function Header() {
   };
 
 
-  
+
+
+
+
+
   const links = [
+   
+
+
+
     {
       id: 1,
-      title: "Tattoo search",
+      title:t("common:menus.tattooSearch"),
       url: `/search?term=${""}&category=${"tattoo"}`,
     },
     {
       id: 2,
-      title: "Styleguide",
+      title:t("common:menus.styleGuide"),
       url: "/styleguide",
     },
     {
       id: 3,
-      title: "Dictionary",
+      title:t("common:menus.dictionary"),
       url: "/dictionary",
     },
 
     {
       id: 4,
-      title: "Klarna",
+      title:t("common:menus.klarna"),
       url: "/klarna",
     },
+
+
+
+
+
+
+
+
   ];
 
   const router = useRouter();
-
-  const isRootPath = router.pathname === "/";
 
   return (
     <>
@@ -93,40 +114,17 @@ export default function Header() {
                   className="btn btn_tattoo_art "
                   style={{ background: "#000", color: "#fff" }}
                 >
-                  For Tattoo Artists
+                  {t("common:menus.forTattooArtists")}
                 </button>
 
-                {isRootPath && (
-                  <div class="switch-lang">
-                    <div class="current-lang">
-                      <p class="select-Lang">EN</p>
-                      <Image
-                        src={"/dropDown.svg"}
-                        alt="langDropdown"
-                        width={15}
-                        priority
-                        height={9}
-                      />
-                    </div>
-                    <div class="lang-dropdown">
-                      <div class="selecting-lang">
-                        <p class="lang-text">EN</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">DE</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">FR</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">IT</p>
-                      </div>
-                      <div class="selecting-lang">
-                        <p class="lang-text">ES</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
+
+
+           <LanguageSwitcher/>
+
+
+
+
+                
 
                 <Image
                   onClick={() => onToggle(true)}
@@ -147,3 +145,8 @@ export default function Header() {
     </>
   );
 }
+
+
+
+
+

@@ -3,6 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { countryList } from "@/constants/coutry";
 import { useRouter } from "next/router";
+import Image from 'next/image'
+import useTranslation from "next-translate/useTranslation";
+
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -23,7 +26,7 @@ const _Form = () => {
 
 const router = useRouter()
 
-
+const { t } = useTranslation();
 
   const onSubmit = () => {
     router.push('/')
@@ -34,7 +37,7 @@ const router = useRouter()
     <div style={{ margin: "0 auto", padding: "0px" }}>
       {state.isShown === false ? (
         <div>
-        <h4>Enter details</h4>
+        <h4>{t("common:joinartistPage.enter-details")}</h4>
         <Formik
           initialValues={{
             name: "",
@@ -190,7 +193,9 @@ const router = useRouter()
                     disabled={isSubmitting}
                     style={{ opacity: isSubmitting ? 0.5 : 1 }}
                   >
-                    {isSubmitting ? "Submitting ...." : "Submit"}
+                   {isSubmitting ?  t("common:submitting")  : t("common:submit") }
+
+
                   </button>
                 </div>
               </div>
@@ -200,7 +205,17 @@ const router = useRouter()
         </div>
       ) : 
           <div class="form_submit_block">
-            <img src="./success-tick.svg" alt="Form submitted" />
+
+   <Image
+      src="/success-tick.svg" 
+      width={81}
+      height={81}
+      priority
+      alt="Form submitted" 
+    />
+           
+
+
             <h4>Form submitted</h4>
             <p>
               Thank you!

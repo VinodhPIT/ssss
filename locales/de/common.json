@@ -1,0 +1,264 @@
+{
+  "menus": {
+    "home": "Home",
+    "tattooSearch": "Tattoo search",
+    "styleGuide": "Styleguide",
+    "dictionary": "Dictionary",
+    "forTattooArtists": "For tattoo artists",
+    "klarna": "Klarna",
+    "contactUs": "Contact us",
+    "faq": "FAQ",
+    "artistSearch": "Artist search",
+    "flashSearch": "Flash search"
+  },
+
+  "downloadApp": "Download the App & Explore more!",
+  "explore": "Explore more Features in the App",
+  "download-app-forMore": "Download the app for more!",
+  "appContent": "We hand pick every tattoo artist to ensure your tattoo experience is handled with care,quality and inclusivity",
+  "submit": "Submit",
+  "submitting": "Submitting",
+  "learnmore": "Learn more",
+  "visitTattoo": "Visit Tattoo Dictionary",
+  "checkStyle": "Check the Styleguide",
+  "download-our-app": "Download our app from",
+  "tattooNow": "Get tattoo now, pay later.",
+  "payLater": "That's right, there's a new way to get tattooed smoooth!",
+  "findArtist": "Find artists",
+  "pageNotfound": "Ooops... Page not found",
+  "cantfind": "Sorry, We can’t find the page you’re looking for",
+  "backHome": "Back Home",
+  "you-might-like": "You might also like",
+  "image-tattoo-style": "Image tattoo style",
+  "locations": "Locations",
+  "getIntouch": "Get in Touch",
+  "viewProfile": "View Profile",
+  "fixed-price": "Fixed Price",
+  "flexible-price": "Flexible price",
+  "flash-doesn't-price": "This Flash doesn't have a price",
+  "language": "Language",
+  "styles": "Styles",
+  "nodata": "No data found",
+  "exploreAll": "Explore All",
+  "notFoundMessage": "Try adjusting your search/ filter to find what you are looking for",
+  "followus":"Follow us on",
+  "book":"Book",
+  "product":"Product",
+  "business":"Business",
+  "download-app-on":"Download app on",
+  "findArtist" :"Find your Artist now!",
+  "payLater":"Tattoo now.Pay later.",
+  "offers":"Get exciting offers!",
+  "nextTattoo":"off on your next tattoo",
+  "chf":"CHF 30",
+  "viewArtist":"View Artists",
+  "refer":"Refer and Earn",
+  "checkProfile":"Check Profile",
+  "chooseStyle":"Choose Style",
+  "enterLocation":"Enter Location",
+  "loadMore":"LOAD MORE",
+
+
+
+
+  "tabs": {
+    "all": "All",
+    "tattoo": "Tattoo",
+    "flash": "Flash",
+    "artist": "Artist",
+    "info": "Information",
+    "tattooLovers":"TattooLovers",
+    "general":"General"
+  },
+
+  "homePage": {
+    "bookYourDream": "Book your dream",
+    "tattoo": "tattoo",
+    "now": "now!",
+    "search-by": "Search by",
+    "categories": "Categories",
+    "tattoos": "Tattoos",
+    "flash": "Flash",
+    "artist": "Artists",
+    "title1": "Find the right Artist for your next Tattoo!",
+    "content1": "We hand-pick every tattoo artist to ensure your tattoo experience is handled with care, quality and inclusivity.",
+    "title2": "Pay all at once? Never again",
+
+    "title3": "Tattoo now,Pay later",
+    "content3": "Get tattoo now, pay later. That's right, there's a new way to get tattooed smoooth!",
+    "title4": "Tattoo Dictionary",
+    "content4": "We hand-pick every tattoo artist to ensure your tattoo experience is handled with care, quality and inclusivity.",
+    "title5": "Boost your business with inckd.",
+    "content5": "Grow your tattoo business by fulfilling your customers tattoo vision and offering them flexible payment options.",
+    "title6": "Are you a",
+    "title6-Sub": "Tattoo artist?",
+    "title7": "My Style is",
+    "title7-Sub": "Lettering",
+    "title8": "Whats your Style?"
+  },
+
+  "styleGuidePage": {
+    "bannerContent1": "Know your style",
+    "bannerContent2": "with the inckd. Styleguide in our App",
+    "title1": "My Style is",
+    "title1-Sub": "Lettering",
+    "title2": "Whats your Style?",
+    "title2-Sub": "Style?",
+    "title3": "Tell me your Style",
+
+    "title4": "My Style is",
+    "title4-Sub": "Fineline",
+    "download": "Download the App & Explore 30+ styles",
+    "title5": "My Style is",
+    "title5-Sub": "Realistic",
+    "title6": "Show me your Style?",
+    "title7": "My Style is",
+    "title7-Sub": "Traditional"
+  },
+
+  "forArtistPage": {
+    "button": "Get Started",
+    "bannerContent1": "Boost your business with inckd.",
+    "bannerContent2": "Grow your tattoo business by fulfilling your customers' tattoo vision and offering them flexible payment options.",
+    "easySetup": "Easy setup",
+    "free-to-use": "Free to use",
+    "easy-payments": "Easy payments",
+    "nosubscpriptions": "Free to use & no subscpriptions",
+    "set-up-and-manage": "Easy to set up and manage",
+    "verified-users": "Verified users",
+    "your-tattoo-business": "Your tattoo business ally",
+    "title1": "Manage your business",
+    "content1": "Inckd is your ally in creating a thriving, client-focused tattoo business. Display your portfolio proudly to attract clients who appreciate your unique style. Expand your customer base effortlessly through seamless communication and hassle-free payment management, all within one user-friendly platform.",
+    "title2": "Keep clients in the Loop",
+    "content2": "Engage in real-time chats to understand your clients preferences firsthand. Efficiently handle appointments and stay prepared to meet your clients needs. Discuss offers and provide progress updates with Inckd, ensuring their tattoo vision becomes a reality at every stage.",
+    "title3": "Get inckd. customers tattoing with you now. Are you ready?",
+    "title4": "Your booking buddy",
+    "content4": "inckd. puts you in the drivers seat of your tattoo business schedule, providing a comprehensive overview of all bookings through a real-time dashboard right at your fingertips. Define your availability and make it easier for clients to schedule appointments according to their preferences.",
+    "title5": "Manage Payments",
+    "content5": "Get payments quickly and securely, monitor them in real-time, and offer attractive discounts to encourage repeat business. We support widely accepted payment methods, including credit cards, and have partnered with Klarna to provide convenient instalment plans for your larger projects.",
+    "title6": "Manage your Studios",
+    "content6": "Lorem ipsum inckd. puts you in the drivers seat of your tattoo business schedule, providing a overview of all bookings through a real-time dashboard right at your fingertips. Define your availability and make it easier for clients to schedule appointments according to their preferences."
+  },
+
+  "joinartistPage": {
+    "title1": "Become an inckd.Artist",
+    "text": "Tell us more about yourself.",
+
+    "enter-details": "Enter details",
+    "head1": "Submit the contact form",
+    "head2": "Download the App & complete your profile",
+    "head3": "Submit the contact form",
+    "head4": "Get verified & bring your Profile live"
+  },
+
+  "klarnaPage": {
+    "bannerTitle1": "Tattoo now,Pay later",
+    "bannerTitle2": "Get tattoo now, pay later. That's right, there's a new way to get tattooed smoooth!",
+    "title1": "How it Works!",
+    "download-inckd": "Download the inckd.App",
+    "accept-an-offer": "Accept an offer from your favourite artist.",
+    "select-Klarna": "Select Klarna as payment option.",
+    "get-your-tattoo": "Get your tattoo done.",
+    "pay-later": "Pay later or in instalments.",
+    "title2": "You choose how you want to pay!",
+    "option1": "Option1",
+    "option2": "Option2",
+    "option3": "Option3",
+    "option4": "Option4",
+
+    "heading1": "Pay Later",
+    "heading2": "Pay Later",
+    "heading3": "Pay Later",
+    "heading4": "Pay Later",
+
+    "carouselText1": "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
+    "carouselText2": "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
+    "carouselText3": "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
+    "carouselText4": "Tattoo now and pay up to 30 days later. No interest. No fees, when you pay on time.",
+
+    "title3": "Availability",
+    "title4": "Where i can pay my tattoo with Klarna?"
+  },
+  "dictionaryPage": {
+    "expoloreMore": "Explore more in the App",
+    "bannerContent1": "Tattoo Dictionary",
+    "bannerContent2": "We hand-pick every tattoo artist to ensure your tattoo experience is handled with care, quality and inclusivity.",
+    "findArtist": "Find artists",
+    "title1": "Find your Tattoo based on Emotions",
+    "remembrance": "Remembrance",
+    "trust": "Trust",
+    "explore-more-emotions": "Explore 500+ more emotions...",
+    "title2": "Zodiac Signs",
+    "content2": "Learn more about greek mythology and find the tattoo with the right meaning for you in the app",
+    "carousel": {
+      "title1": "Cancer",
+      "content1": "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
+
+      "title2": "Itzscuintli",
+      "content2": "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
+
+      "title3": "Cancer",
+      "content3": "Learn about greek mythology and find the tattoo with the right meaning for you in the app",
+
+      "title4": "Cancer",
+      "content4": "Learn about greek mythology and find the tattoo with the right meaning for you in the app"
+    },
+    "title3": "Aztec Symbols",
+    "content3": "Learn more about greek mythology and find the tattoo with the right meaning for you in the app",
+    "title4": "Greek Mythology",
+    "content4": "Learn more about greek mythology and find the tattoo with the right meaning for you in the app"
+  },
+
+  "contactUsPage": {
+    "contact-us": "Contact us",
+    "getInTouch": "Get in touch with us lorem ipsum is a dummy content for typesetting industry.",
+    "in-touch": "Get in touch",
+    "who-you-are": "Who you are?"
+  },
+
+  "faqScreen": {
+    "head1": "Find Answers to your questions",
+    "title1": "Why should I get the inckd. app?",
+    "content1": "You can discover new artists and style that fit just what you are looking for. Finding the right concept, style, and artist close to you is possible thanks to our search features. We provide you with a clear and simple way to get in touch, send your request, and pay safely for your tattoo all in one place.",
+    "title2": "Is inckd. free?",
+    "content2": "Yes! We do not believe in subscriptions or premium features. Whether for tattoo lovers or artists, the use of the app is free. When you pay for a tattoo, we take commision to cover the transaction fees.",
+    "title3": "In which countries is inckd. active?",
+    "content3": "inckd. is open in most European countries, and we are expanding fast!",
+    "title4": "Why did you create inckd.?",
+    "content4": "We want to build a platform where tattoo lovers can find the artist that really fit their needs and ideas. With more filters and a better browsing experience, you can discover amazing artists and get in touch with them easily. For artists, we are supporting them in finding new clients and with a management tool that takes the stress off bookings, so they can focus on their art!",
+    "title5": "Tell me more about the app",
+    "content5": "inckd. connects artists and tattoo lovers in a unique tattoo app where people can get inspired and get a new tattoo with only a few clicks. Focusing straight on tattoos, inckd. wants to help tattoo lovers to find the right artist for their style and vision.",
+    "title6": "Which payment method are accepted on the app?",
+    "content6": "You can pay with the most diffused payment methods: we accept credit cards and we have partnered with Klarna to offer you safe payments and the possibility to pay in installments for your big pieces! ",
+
+    "title7": "What are the conditions for being part of inckd. as an artist? And what's in for me?",
+    "content7": "inckd. verifies each artist which wants to be live on the platform as the tattoo lovers wants to find great and professional artist in Europe. With inckd. your work is reaching new customers from the whole of Europe! We provide you with a simplified booking process that reduces the stress of the administration for you and lets you focus on your art!",
+
+    "title8": "Can I be on inckd. but get paid outside of the app?",
+    "content8": "Once a booking has been confirmed, we collect the payment deposit and we transfer it in your bank account with the final customer payment. We advice not to avoid completing payment in the app.",
+
+    "title9": "When do I get paid the deposit?",
+    "content9": "Once the tattoo session is completed, you will get the full payment of the total amount of the tattoo in your bank account.",
+
+    "title10": "There are many apps like this, what makes this one different?",
+    "content10": "Instagram, Messenger, WhatsApp, Email... You do not have to stress about multiple apps. All clients can reach you via inckd. Just one place and peace of mind.",
+
+    "title11": "How can I reach inckd. Support?",
+    "content11": "You can write us via the contact form on the webpage and on Instagram: inckd_support",
+
+    "title12": "Will I retain ownership of my images and designs?",
+    "content12": "Of course, your art will always remain yours. What you post on inckd. might be featured in promotional material for the app, which will show you as the artist.",
+
+    "title13": "Do I have to create a profile to use inckd.?",
+    "content13": "You can browse designs and artists freely, but to save your favourites or book a session, you will need to create a profile. This allows the artist to verify who you are and the inckd. team to check in if you need any support.",
+
+    "title14": "Are the artists professional and do they work in a safe studio?",
+    "content14": "Yes, each tattoo artist and studio is verified by inckd.",
+
+    "title15": "How can I get in touch with an artist?",
+    "content15": "Go on the artist page, and on the top right you will see the \"Start chat\" button. Some artists might require you to submit a request form before messaging.",
+
+    "title16": "How can I reach the inckd. team for help?",
+    "content16": "You can write us via the contact form on the webpage and on Instagram: inckd.support"
+  }
+}
